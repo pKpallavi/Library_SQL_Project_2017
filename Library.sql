@@ -1,6 +1,11 @@
-create database Library_SQL;
+use tempdb;
+drop database Library_SQL_Project;
+create database Library_SQL_Project;
 
-use Library_SQL;
+use Library_SQL_Project;
+
+/* if exists( Select * from Library)
+	 drop table Library; */
 
 create table Library
 (
@@ -14,26 +19,35 @@ create table Library
 	Library_Timings varchar(100) not null
 );
 
+/* if exists( Select * from Media)
+	drop table Media; */
+
 create table Media
 (
 	Media_ID int primary key,
 	Media_Library_ID int not null,
 	Media_Format varchar not null, /*Book, eBook, Journal, eJournal, Magazine, Digital Magazine, DVD, CD*/
-	Media_Status varchar[30], /* enum checked out, returned, on hold, on shelf, due, lost, damaged, past due */
+	Media_Status varchar(30), /* enum checked out, returned, on hold, on shelf, due, lost, damaged, past due, order placed or waiting or order key */
 	CONSTRAINT FK_Library_Table FOREIGN KEY(Media_Library_ID) REFERENCES Library(Library_ID)
 );
 
+/* if exists( Select * from Book_Details)
+	drop table Book_Details; */
+
 create table Book_Details
-(á
+( 
 	Book_Details_ISBN_No int primary key,
 	Book_Details_Published_Year int not null,
 	Book_Details_Title varchar(100) not null,
 	Book_Details_Author_First_Name varchar(30),
 	Book_Details_Author_Last_Name varchar(30) not null,
 	Book_Details_Language varchar(30),
-	Book_Details_Rating á int,
+	Book_Details_Rating   int,
 	Book_Details_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */
 );
+
+/* if exists( Select * from Book)
+	drop table Book; */
 
 create table Book
 (
@@ -44,6 +58,9 @@ create table Book
 	CONSTRAINT FK_Media_Book_Table FOREIGN KEY(Book_Media_ID) REFERENCES Media(Media_ID),
 	CONSTRAINT FK_Book_Details_Table FOREIGN KEY(Book_ISBN_No) REFERENCES Book_Details(Book_Details_ISBN_No)
 );
+
+/* if exists( Select * from eBook_Details)
+	drop table eBook_Details; */
 
 create table eBook_Details
 ( 
@@ -60,6 +77,9 @@ create table eBook_Details
 	eBook_Details_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */
 );
  
+/* if exists( Select * from eBook)
+	drop table eBook; */
+
 create table eBook
 (
 	eBook_Media_ID int not null,
@@ -69,6 +89,9 @@ create table eBook
 	CONSTRAINT FK_Media_eBook_Table FOREIGN KEY(eBook_Media_ID) REFERENCES Media(Media_ID),
 	CONSTRAINT FK_eBook_Details_Table FOREIGN KEY(eBook_ISBN_No) REFERENCES eBook_Details(eBook_Details_ISBN_No)
 );
+
+/* if exists( Select * from Journal_Details)
+	drop table Journal_Details; */
 
 create table Journal_Details
 (
@@ -85,6 +108,9 @@ create table Journal_Details
 	Journal_Details_Entry_Changed timestamp not null /*default CURRENT_TIMESTAMP*/
 );
 
+/* if exists( Select * from Journal)
+	drop table Journal; */
+
 create table Journal
 (
 	Journal_Media_ID int not null,
@@ -94,6 +120,9 @@ create table Journal
 	CONSTRAINT FK_Media_Journal_Table FOREIGN KEY(Journal_Media_ID) REFERENCES Media(Media_ID),
 	CONSTRAINT FK_Journal_Details_Table FOREIGN KEY(Journal_ISSN_No) REFERENCES Journal_Details(Journal_Details_ISSN_Number)
 );
+
+/* if exists( Select * from eJournal_Details)
+	drop table eJournal_Details; */
 
 create table eJournal_Details
 (
@@ -111,6 +140,9 @@ create table eJournal_Details
 	eJournal_Details_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */
 );
 
+/* if exists( Select * from eJournal)
+	drop table eJournal; */
+
 create table eJournal
 (
 	eJournal_Media_ID int not null,
@@ -120,6 +152,9 @@ create table eJournal
 	CONSTRAINT FK_Media_eJournal_Table FOREIGN KEY(eJournal_Media_ID) REFERENCES Media(Media_ID),
 	CONSTRAINT FK_eJournal_Details_Table FOREIGN KEY(eJournal_ISSN_No) REFERENCES eJournal_Details(eJournal_Details_ISSN_Number)
 );
+
+/* if exists( Select * from Magazine_Details)
+	drop table Magazine_Details; */
 
 create table Magazine_Details
 (
@@ -134,6 +169,9 @@ create table Magazine_Details
 	Magazine_Details_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */
 );
 
+/* if exists( Select * from Magazine)
+	drop table Magazine; */
+
 create table Magazine
 (
 	Magazine_Media_ID int not null,
@@ -143,6 +181,9 @@ create table Magazine
 	CONSTRAINT FK_Media_Magazine_Table FOREIGN KEY(Magazine_Media_ID) REFERENCES Media(Media_ID),
 	CONSTRAINT FK_Magazine_Details_Table FOREIGN KEY(Magazine_Internal_ID) REFERENCES Magazine_Details(Magazine_Details_Internal_ID)
 );
+
+/* if exists( Select * from Digital_Magazine_Details)
+	drop table Digital_Magazine_Details; */
 
 create table Digital_Magazine_Details
 (
@@ -156,6 +197,9 @@ create table Digital_Magazine_Details
 	Digital_Magazine_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */
 );
 
+/* if exists( Select * from Digital_Magazine)
+	drop table Digital_Magazine; */
+
 create table Digital_Magazine
 (
 	Digital_Magazine_Media_ID int not null,
@@ -167,6 +211,9 @@ create table Digital_Magazine
 );
 
 --DEFINE datatype_video_type ENUM('PAL','NTSC','SECAM');
+
+/* if exists( Select * from DVD_Details)
+	drop table DVD_Details; */
 
 create table DVD_Details
 (
@@ -186,6 +233,9 @@ create table DVD_Details
 	DVD_Details_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */  
 );
 
+/* if exists( Select * from DVD)
+	drop table DVD; */
+
 create table DVD
 (
 	DVD_Media_ID int not null,
@@ -195,6 +245,9 @@ create table DVD
 	CONSTRAINT FK_Media_DVD_Table FOREIGN KEY(DVD_Media_ID) REFERENCES Media(Media_ID),
 	CONSTRAINT FK_DVD_Details_Table FOREIGN KEY(DVD_ISBN_No) REFERENCES DVD_Details(DVD_Details_ISBN_No)
 );
+
+/* if exists( Select * from CD_Details)
+	drop table CD_Details; */
 
 create table CD_Details
 (
@@ -212,6 +265,9 @@ create table CD_Details
 	CD_Details_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */ 
 );
 
+/* if exists( Select * from CD)
+	drop table CD; */
+
 create table CD
 (
 	CD_Media_ID int not null,
@@ -221,6 +277,9 @@ create table CD
 	CONSTRAINT FK_Media_CD_Table FOREIGN KEY(CD_Media_ID) REFERENCES Media(Media_ID),
 	CONSTRAINT FK_CD_Details_Table FOREIGN KEY(CD_Internal_ID) REFERENCES CD_Details(CD_Details_Internal_ID)
 );
+
+/* if exists( Select * from Library_Member)
+	drop table Library_Member; */
 
 create table Library_Member
 (
@@ -236,6 +295,9 @@ create table Library_Member
 	Library_Member_Zip_code int default '60173',
 	CONSTRAINT FK_Library_Member_Table FOREIGN KEY(Library_Member_Library_ID) REFERENCES Library(Library_ID)
 );
+
+/* if exists( Select * from Employee_Staff)
+	drop table Employee_Staff; */
 
 create table Employee_Staff
 (
@@ -258,6 +320,9 @@ create table Employee_Staff
 /* Check out transaction should update the Media_Status field in Media table 
 Also check out transaction should first check if the media is on hold by another member.
 If yes, then cannot check out */
+/* if exists( Select * from Media_Check_Out)
+	drop table Media_Check_Out; */
+
 create table Media_Check_Out
 (
 	Media_Check_Out_ID int primary key,
@@ -266,38 +331,80 @@ create table Media_Check_Out
 	Media_Check_Out_Date date not null,
 	Media_Check_Out_Due_Date date not null,
 	Media_Check_Out_Times_Renewed int default 0,
-	CONSTRAINT FK_Media_Check_Out_Table FOREIGN KEY(Media_Check_Out_Member_ID) REFERENCES Library_Member(Library_Member_ID),
-	CONSTRAINT FK_Media_Check_Out_Table FOREIGN KEY(Media_Check_Out_Media_ID) REFERENCES Media(Media_ID)
+	CONSTRAINT FK_Media_Check_Out_Table_1 FOREIGN KEY(Media_Check_Out_Member_ID) REFERENCES Library_Member(Library_Member_ID),
+	CONSTRAINT FK_Media_Check_Out_Table_2 FOREIGN KEY(Media_Check_Out_Media_ID) REFERENCES Media(Media_ID)
 );
 
 /* Check in transaction will delete row entries in Media_Check_Out & update status of Media_Status field in Media table and member fines if any */
 
 /* Before putting media on hold status, should be checked such as lost, damaged, max check out no reached eg 3*/
+/* if exists( Select * from Media_Hold)
+	drop table Media_Hold; */
+
 create table Media_Hold
 (
-	Media_Hold_Media_ID int not null;
-	Media_Hold_Member_ID int not null;
+	Media_Hold_Media_ID int not null,
+	Media_Hold_Member_ID int not null,
 	CONSTRAINT FK_Media_Hold_Member_ID FOREIGN KEY(Media_Hold_Member_ID) REFERENCES Library_Member(Library_Member_ID),
 	CONSTRAINT FK_Media_Hold_Media_ID FOREIGN KEY(Media_Hold_Media_ID) REFERENCES Media(Media_ID)
 );
 
+/* if exists( Select * from Supplier)
+	drop table Supplier;
+*/
 create table Supplier
 (
-Supplier_ID int primary key;
-Supplier_Name varchar(30);
-Serial_No int not null;
-Estimated_Delivery datetime;
-CONSTRAINT FK_Media_Hold_Member_ID FOREIGN KEY(Media_Hold_Member_ID) REFERENCES Library_Member(Library_Member_ID),
-CONSTRAINT FK_Media_Hold_Media_ID FOREIGN KEY(Media_Hold_Media_ID) REFERENCES Media(Media_ID)
+	Supplier_ID int primary key,
+	Supplier_Name varchar(100),
+	Supplier_Address varchar(100),
+	Supplier_City varchar(20) default 'Schaumburg',
+	Supplier_State char(2) default 'IL',
+	Supplier_Zip_code int default '60173',
+	Supplier_Phone_No varchar(10),
+	Supplier_Payment_Due int
 );
 
-create table Order_Detail
+/* if exists( Select * from Supplier_Media_Info)
+	drop table Supplier_Media_Info;
+*/
+
+/* This table consists of entries of media supplied by the supplier */
+create table Supplier_Media_Info
 (
-Order_ID int primary key,
-Order_Date datetime not null,
-Order_Number int 
-Item_Quantity varchar(50),
-Amount float,
-CONSTRAINT FK_Media_Hold_Member_ID FOREIGN KEY(Media_Hold_Member_ID) REFERENCES Library_Member(Library_Member_ID),
-CONSTRAINT FK_Media_Hold_Media_ID FOREIGN KEY(Media_Hold_Media_ID) REFERENCES Media(Media_ID)
+	Supplier_Media_Info_Line_No int primary key,
+	Supplier_Media_Info_Media_ID int,
+	Supplier_Media_Info_Supplier_ID int,
+	CONSTRAINT FK_Supplier_Media_1 FOREIGN KEY(Supplier_Media_Info_Media_ID) REFERENCES Media(Media_ID), 
+	CONSTRAINT FK_Supplier_Media_2 FOREIGN KEY(Supplier_Media_Info_Supplier_ID) REFERENCES Supplier(Supplier_ID) 
 );
+
+/* if exists( Select * from Orders)
+	drop table Orders;
+*/
+
+create table Orders
+(
+	Orders_ID int primary key,
+	Orders_Supplier_ID int,
+	Orders_Date_Ordered date not null default CURRENT_TIMESTAMP,
+	Orders_Date_Required date not null,
+	Orders_Status varchar(20), /* Accepted, Pending, Cancelled, Not available, Partially Delivered, Delivered, Payment Due, Paid */
+	Orders_Payment_Amount int default 0, /* Will be updated once order is delivered depending on the quantity or delivered items */
+	CONSTRAINT FK_Orders_Supplier FOREIGN KEY(Orders_Supplier_ID) REFERENCES Supplier(Supplier_ID) 
+);
+
+/* if exists( Select * from Orders_Details)
+	drop table Orders_Details;
+*/
+create table Orders_Details
+(
+	Orders_Details_Line_No int primary key,
+	Orders_Details_Orders_ID int not null, 
+	Orders_Details_Media_ID int not null,
+	Orders_Details_Quantity int not null,
+	Orders_Details_Status varchar(20), /* Accepted, Pending, Cancelled, Not available, Partially Delivered, Delivered, Payment Due, Paid */
+	Orders_Details_Date_Delivered date,
+	CONSTRAINT FK_Orders_Details_Orders FOREIGN KEY(Orders_Details_Orders_ID) REFERENCES Orders(Orders_ID),
+	CONSTRAINT FK_Orders_Details_Media FOREIGN KEY(Orders_Details_Media_ID) REFERENCES Media(Media_ID)
+);
+
