@@ -1,6 +1,6 @@
-create database Library_SQL_Project;
+create database Library_SQL;
 
-use Library_SQL_Project;
+use Library_SQL;
 
 create table Library
 (
@@ -19,18 +19,19 @@ create table Media
 	Media_ID int primary key,
 	Media_Library_ID int not null,
 	Media_Format varchar not null, /*Book, eBook, Journal, eJournal, Magazine, Digital Magazine, DVD, CD*/
+	Media_Status varchar[30], /* enum checked out, returned, on hold, on shelf, due, lost, damaged, past due */
 	CONSTRAINT FK_Library_Table FOREIGN KEY(Media_Library_ID) REFERENCES Library(Library_ID)
 );
 
 create table Book_Details
-( 
+(á
 	Book_Details_ISBN_No int primary key,
 	Book_Details_Published_Year int not null,
 	Book_Details_Title varchar(100) not null,
 	Book_Details_Author_First_Name varchar(30),
 	Book_Details_Author_Last_Name varchar(30) not null,
 	Book_Details_Language varchar(30),
-	Book_Details_Rating   int,
+	Book_Details_Rating á int,
 	Book_Details_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */
 );
 
@@ -254,31 +255,39 @@ create table Employee_Staff
 	CONSTRAINT FK_Library_Employee_Table FOREIGN KEY(Employee_Staff_Library_ID) REFERENCES Library(Library_ID)
 );
 
+/* Check out transaction should update the Media_Status field in Media table 
+Also check out transaction should first check if the media is on hold by another member.
+If yes, then cannot check out */
+create table Media_Check_Out
+(
+	Media_Check_Out_ID int primary key,
+	Media_Check_Out_Member_ID int not null,
+	Media_Check_Out_Media_ID int not null,
+	Media_Check_Out_Date date not null,
+	Media_Check_Out_Due_Date date not null,
+	Media_Check_Out_Times_Renewed int default 0,
+	CONSTRAINT FK_Media_Check_Out_Table FOREIGN KEY(Media_Check_Out_Member_ID) REFERENCES Library_Member(Library_Member_ID),
+	CONSTRAINT FK_Media_Check_Out_Table FOREIGN KEY(Media_Check_Out_Media_ID) REFERENCES Media(Media_ID)
+);
 
+/* Check in transaction will delete row entries in Media_Check_Out & update status of Media_Status field in Media table and member fines if any */
 
+/* Before putting media on hold status, should be checked such as lost, damaged, max check out no reached eg 3*/
+create table Media_Hold
+(
+	Media_Hold_Media_ID int not null;
+	Media_Hold_Member_ID int not null;
+	CONSTRAINT FK_Media_Hold_Member_ID FOREIGN KEY(Media_Hold_Member_ID) REFERENCES Library_Member(Library_Member_ID),
+	CONSTRAINT FK_Media_Hold_Media_ID FOREIGN KEY(Media_Hold_Media_ID) REFERENCES Media(Media_ID)
+);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+create table Supplier
+(
+Supplier_ID int primary key;
+Supplier_Name varchar(30);
+Serial_No int not null;
+Estimated_Delivery datetime;
+CONSTRAINT FK_Media_Hold_Member_ID FOREIGN KEY(Media_Hold_Member_ID) REFERENCES Library_Member(Library_Member_ID),
+CONSTRAINT FK_Media_Hold_Media_ID FOREIGN KEY(Media_Hold_Media_ID) REFERENCES Media(Media_ID)
+);
 
