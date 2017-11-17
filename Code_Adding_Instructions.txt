@@ -1,0 +1,47 @@
+
+Quick setup — if you’ve done this kind of thing before
+
+
+ Set up in Desktop 
+
+or 
+
+
+
+ 
+HTTPS 
+
+ 
+SSH 
+ Copy to clipboard   
+We recommend every repository include a README, LICENSE, and .gitignore. 
+
+ 
+
+…or create a new repository on the command line
+
+
+Copy to clipboard 
+echo "# Library_SQL_Project_2017" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/pKpallavi/Library_SQL_Project_2017.git
+git push -u origin master
+
+
+
+…or push an existing repository from the command line
+
+
+Copy to clipboard 
+git remote add origin https://github.com/pKpallavi/Library_SQL_Project_2017.git
+git push -u origin master
+
+
+…or import code from another repository
+
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+Import code 
+
+C:/Users/Purvi/Desktop/Pallavi/SQL_Course_ITExps/SQL_Server_Management_Studio/SQL Project/Library_SQL_Project_2017/Library_SQL_Project_2017.git
