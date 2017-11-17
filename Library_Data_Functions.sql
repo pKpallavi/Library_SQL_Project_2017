@@ -1084,7 +1084,9 @@ begin
 		else
 		begin 
 			update Media_Check_Out set Media_Check_Out_Times_Renewed += 1 where Media_Check_Out_Media_ID = @Media_ID; 
-			set @media_due_date = DATEADD(dd, 21, @Check_Out_Date);
+			--Get the old due date and add 3 more weeks to it and then update the checkout table
+			select @media_due_date = Media_Check_Out_Due_Date from Media_Check_Out where Media_Check_Out_Media_ID = @Media_ID;
+			set @media_due_date = DATEADD(dd, 21, @media_due_date);
 			update Media_Check_Out set Media_Check_Out_Due_Date = @media_due_date where Media_Check_Out_Media_ID = @Media_ID; 
 		end;
 		delete #chk_out_table;		
