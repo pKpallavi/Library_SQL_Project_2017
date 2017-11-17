@@ -1,169 +1,225 @@
-create database Library_Database;
+create database Library_SQL_Project;
 
-use Library_Database;
+use Library_SQL_Project;
 
 create table Library
 (
-	Library_ID_Number int primary key,
+	Library_ID int primary key,
 	Library_Name varchar(100) not null,
-	Library_Director_ID int not null,
 	Library_Contact_Number varchar(15) not null,
 	Library_Address varchar(100) not null,
 	Library_City varchar(20) default 'Chicago',
 	Library_State char(2) default 'IL',
 	Library_ZipCode int default '60195',
 	Library_Timings varchar(100) not null
- 	CONSTRAINT FK_Library_Table FOREIGN KEY(Library_Director_ID) REFERENCES Employee_Staff(Employee_Staff_ID)   
 );
 
-select * from Library;
+create table Media
+(
+	Media_ID int primary key,
+	Media_Library_ID int not null,
+	Media_Format varchar not null, /*Book, eBook, Journal, eJournal, Magazine, Digital Magazine, DVD, CD*/
+	CONSTRAINT FK_Library_Table FOREIGN KEY(Media_Library_ID) REFERENCES Library(Library_ID)
+);
+
+create table Book_Details
+( 
+	Book_Details_ISBN_No int primary key,
+	Book_Details_Published_Year int not null,
+	Book_Details_Title varchar(100) not null,
+	Book_Details_Author_First_Name varchar(30),
+	Book_Details_Author_Last_Name varchar(30) not null,
+	Book_Details_Language varchar(30),
+	Book_Details_Rating   int,
+	Book_Details_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */
+);
 
 create table Book
-( 
-	Book_ID int primary key,
-	Book_Library_Id int not null,
-	Book_Isbn_No int not null,
-	Book_Published_Year int not null,
-	Book_Title varchar(100) not null,
-	Book_Author_First_Name varchar(30),
-	Book_Author_Last_Name varchar(30) not null,
-	Book_Language varchar(30),
-	Book_Rating   int,
-	Book_Price    int,
-	Book_Bought_Date date not null default CURRENT_TIMESTAMP, --The default value should be date
-	Book_Entry_Changed timestamp not null  default CURRENT_TIMESTAMP,
- 	CONSTRAINT FK_Library_Table FOREIGN KEY(Book_Library_Id) REFERENCES Library(Library_ID_Number)   
+(
+	Book_Media_ID int not null,
+	Book_ISBN_No int not null,
+	Book_Bought_Date date not null default CURRENT_TIMESTAMP,
+	Book_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */,
+	CONSTRAINT FK_Media_Book_Table FOREIGN KEY(Book_Media_ID) REFERENCES Media(Media_ID),
+	CONSTRAINT FK_Book_Details_Table FOREIGN KEY(Book_ISBN_No) REFERENCES Book_Details(Book_Details_ISBN_No)
 );
 
-create table eBook
+create table eBook_Details
 ( 
-	eBook_ID int primary key,
-	eBook_Library_Id int not null,
-	eBook_Isbn_no int not null,
-	eBook_Release_Date date not null,
-	eBook_Title varchar(100) not null,
-	eBook_Author_First_Name varchar(30),
-	eBook_Author_Last_Name varchar(30) not null,
-	eBook_File_Size varchar(100),
-	eBook_File_Path varchar(100),
-	eBook_Duration time,
-	eBook_Language varchar(30),
-	eBook_Rating   int,
-	eBook_Bought_Date date not null default CURRENT_TIMESTAMP, --The default value should be date
-	eBook_Entry_Changed timestamp not null default CURRENT_TIMESTAMP, 
- 	CONSTRAINT FK_Library_Table FOREIGN KEY(eBook_Library_Id) REFERENCES Library(Library_ID_Number)   
+	eBook_Details_ISBN_No int primary key,
+	eBook_Details_Release_Date date not null,
+	eBook_Details_Title varchar(100) not null,
+	eBook_Details_Author_First_Name varchar(30),
+	eBook_Details_Author_Last_Name varchar(30) not null,
+	eBook_Details_File_Size varchar(100),
+	eBook_Details_File_Path varchar(100),
+	eBook_Details_Duration time,
+	eBook_Details_Language varchar(30),
+	eBook_Details_Rating   int,
+	eBook_Details_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */
 );
  
+create table eBook
+(
+	eBook_Media_ID int not null,
+	eBook_ISBN_No int not null,
+	eBook_Bought_Date date not null default CURRENT_TIMESTAMP, --The default value should be date
+	eBook_Entry_Changed timestamp not null /*default CURRENT_TIMESTAMP*/, 
+	CONSTRAINT FK_Media_eBook_Table FOREIGN KEY(eBook_Media_ID) REFERENCES Media(Media_ID),
+	CONSTRAINT FK_eBook_Details_Table FOREIGN KEY(eBook_ISBN_No) REFERENCES eBook_Details(eBook_Details_ISBN_No)
+);
+
+create table Journal_Details
+(
+	Journal_Details_ISSN_Number int primary key,
+	Journal_Details_Title varchar(100) not null,
+	Journal_Details_Alternate_Title varchar(100),
+	Journal_Details_Source varchar(100),
+	Journal_Details_Published_Date date not null,
+	Journal_Details_End_Date date not null,
+	Journal_Details_Volume int,
+	Journal_Details_Author_Last_Name varchar(30),
+	Journal_Details_Author_First_Name varchar(30), 
+	Journal_Details_Price int,
+	Journal_Details_Entry_Changed timestamp not null /*default CURRENT_TIMESTAMP*/
+);
+
 create table Journal
 (
-	Journal_ID int primary key,
-	Journal_Library_Id int not null,
-	Journal_Title varchar(100) not null,
-	Journal_Alternate_Title varchar(100),
-	Journal_Source varchar(100),
-	Journal_ISSN_Number int not null,
-	Journal_Published_Date date not null,
-	Journal_End_Date date not null,
-	Journal_Volume int,
-	Journal_Author_Last_Name varchar(30),
-	Journal_Author_First_Name varchar(30), 
-	Journal_Price int,
+	Journal_Media_ID int not null,
+	Journal_ISSN_No int not null,
 	Journal_Bought_Date date not null default CURRENT_TIMESTAMP, --The default value should be date
-	Journal_Entry_Changed timestamp not null default CURRENT_TIMESTAMP,
- 	CONSTRAINT FK_Library_Table FOREIGN KEY(Journal_Library_Id) REFERENCES Library(Library_ID_Number)   
+	Journal_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */, 
+	CONSTRAINT FK_Media_Journal_Table FOREIGN KEY(Journal_Media_ID) REFERENCES Media(Media_ID),
+	CONSTRAINT FK_Journal_Details_Table FOREIGN KEY(Journal_ISSN_No) REFERENCES Journal_Details(Journal_Details_ISSN_Number)
+);
+
+create table eJournal_Details
+(
+	eJournal_Details_ISSN_Number int primary key,
+	eJournal_Details_Title varchar(100) not null,
+	eJournal_Details_Alternate_Title varchar(100),
+	eJournal_Details_Source varchar(100),
+	eJournal_Details_Published_Date date not null,
+	eJournal_Details_End_Date date not null,
+	eJournal_Details_Volume int,
+	eJournal_Details_Author_Last_Name varchar(30),
+	eJournal_Details_Author_First_Name varchar(30) ,
+	eJournal_Details_File_Size varchar(100),
+	eJournal_Details_File_Path varchar(100),
+	eJournal_Details_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */
 );
 
 create table eJournal
 (
-	eJournal_ID int primary key,
-	eJournal_Library_Id int not null,
-	eJournal_Title varchar(100) not null,
-	eJournal_Alternate_Title varchar(100),
-	eJournal_Source varchar(100),
-	eJournal_ISSN_Number int not null,
-	eJournal_Published_Date date not null,
-	eJournal_End_Date date not null,
-	eJournal_Volume int,
-	eJournal_Author_Last_Name varchar(30),
-	eJournal_Author_First_Name varchar(30) ,
-	eJournal_File_Size varchar(100),
-	eJournal_File_Path varchar(100),
+	eJournal_Media_ID int not null,
+	eJournal_ISSN_No int not null,
 	eJournal_Bought_Date date not null default CURRENT_TIMESTAMP, --The default value should be date
-	eJournal_Entry_Changed timestamp not null default CURRENT_TIMESTAMP,
- 	CONSTRAINT FK_Library_Table FOREIGN KEY(eJournal_Library_Id) REFERENCES Library(Library_ID_Number)   
+	eJournal_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */, 
+	CONSTRAINT FK_Media_eJournal_Table FOREIGN KEY(eJournal_Media_ID) REFERENCES Media(Media_ID),
+	CONSTRAINT FK_eJournal_Details_Table FOREIGN KEY(eJournal_ISSN_No) REFERENCES eJournal_Details(eJournal_Details_ISSN_Number)
+);
+
+create table Magazine_Details
+(
+	Magazine_Details_Internal_ID int primary key, /* Magazine is uniquely identified by Name, Volume, Issue */
+	Magazine_Details_Name varchar(100) not null,
+	Magazine_Details_Published_Date date not null,
+	Magazine_Details_Volume_Num int not null,
+	Magazine_Details_Issue_Num int not null,
+	Magazine_Details_Publisher varchar(50),
+	Magazine_Details_Genre varchar(30), /* This type should be enumeration or user datatype */
+	Magazine_Details_Price int,
+	Magazine_Details_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */
 );
 
 create table Magazine
 (
-	Magazine_ID int primary key,
-	Magazine_Library_Id int not null,
-	Magazine_Name varchar(100) not null,
-	Magazine_Published_Date date not null,
-	Magazine_Volume_Num int,
-	Magazine_Issue_Num int,
-	Magazine_Publisher varchar(50),
-	Magazine_Genre varchar(30), --This type should be enumeration or user datatype 
-	Magazine_Price int,
+	Magazine_Media_ID int not null,
+	Magazine_Internal_ID int not null,
 	Magazine_Bought_Date date not null default CURRENT_TIMESTAMP, --The default value should be date
-	Magazine_Entry_Changed timestamp not null default CURRENT_TIMESTAMP,
-	CONSTRAINT FK_Library_Table FOREIGN KEY(Magazine_Library_Id) REFERENCES Library(Library_ID_Number)   
+	Magazine_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */, 
+	CONSTRAINT FK_Media_Magazine_Table FOREIGN KEY(Magazine_Media_ID) REFERENCES Media(Media_ID),
+	CONSTRAINT FK_Magazine_Details_Table FOREIGN KEY(Magazine_Internal_ID) REFERENCES Magazine_Details(Magazine_Details_Internal_ID)
 );
 
-create table Digital_Magazine
+create table Digital_Magazine_Details
 (
-	Digital_Magazine_ID int primary key,
-	Digital_Magazine_Library_Id int not null,
+	Digital_Magazine_Details_Internal_ID int primary key, /* Digital Magazine is uniquely identified by Name, Volume, Issue */
 	Digital_Magazine_Name varchar(100) not null,
 	Digital_Magazine_Published_Date date not null,
 	Digital_Magazine_Volume_Num int,
 	Digital_Magazine_Issue_Num int,
 	Digital_Magazine_Publisher varchar(50),
 	Digital_Magazine_Genre varchar(30), --This type should be enumeration or user datatype 
+	Digital_Magazine_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */
+);
+
+create table Digital_Magazine
+(
+	Digital_Magazine_Media_ID int not null,
+	Digital_Magazine_Internal_ID int not null,
 	Digital_Magazine_Bought_Date date not null default CURRENT_TIMESTAMP, --The default value should be date
-	Digital_Magazine_Entry_Changed timestamp not null default CURRENT_TIMESTAMP,
-	CONSTRAINT FK_Library_Table FOREIGN KEY(Digital_Magazine_Library_Id) REFERENCES Library(Library_ID_Number)
+	Digital_Magazine_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */, 
+	CONSTRAINT FK_Media_Digital_Magazine_Table FOREIGN KEY(Digital_Magazine_Media_ID) REFERENCES Media(Media_ID),
+	CONSTRAINT FK_Digital_Magazine_Details_Table FOREIGN KEY(Digital_Magazine_Internal_ID) REFERENCES Digital_Magazine_Details(Digital_Magazine_Details_Internal_ID)
+);
+
+--DEFINE datatype_video_type ENUM('PAL','NTSC','SECAM');
+
+create table DVD_Details
+(
+	DVD_Details_ISBN_No int primary key,
+	DVD_Details_Title varchar(100),
+	DVD_Details_Genre varchar(30), --This type should be enumeration or user datatype
+	DVD_Details_Rating int,
+	DVD_Details_Release_Date date not null,
+	DVD_Details_Length time,
+	DVD_Details_VideoType varchar(15), 
+	DVD_Details_Language varchar(30),
+	DVD_Details_Author_First_Name varchar(30),
+	DVD_Details_Author_Last_Name varchar(30) not null,
+	DVD_Details_Publisher varchar(50),
+	DVD_Details_Summary varchar(100),
+	DVD_Details_Price int,
+	DVD_Details_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */  
 );
 
 create table DVD
 (
-	DVD_ID int primary key,
-	DVD_Library_Id int not null,
-	DVD_Isbn_No int not null,
-	DVD_Title varchar(100),
-	DVD_Genre varchar(30), --This type should be enumeration or user datatype
-	DVD_Rating int,
-	DVD_Release_Date date not null,
-	DVD_Length time,
-	DVD_VideoType varchar(15), 
-	DVD_Language varchar(30),
-	DVD_Author_First_Name varchar(30),
-	DVD_Author_Last_Name varchar(30) not null,
-	DVD_Publisher varchar(50),
-	DVD_Summary varchar(100),
-	DVD_Price int,
+	DVD_Media_ID int not null,
+	DVD_ISBN_No int not null,
 	DVD_Bought_Date date not null default CURRENT_TIMESTAMP, --The default value should be date
-	DVD_Entry_Changed timestamp not null default CURRENT_TIMESTAMP,  
-	CONSTRAINT FK_Library_Table FOREIGN KEY(DVD_Library_Id) REFERENCES Library(Library_ID_Number)   
-)
+	DVD_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */, 
+	CONSTRAINT FK_Media_DVD_Table FOREIGN KEY(DVD_Media_ID) REFERENCES Media(Media_ID),
+	CONSTRAINT FK_DVD_Details_Table FOREIGN KEY(DVD_ISBN_No) REFERENCES DVD_Details(DVD_Details_ISBN_No)
+);
+
+create table CD_Details
+(
+	CD_Details_Internal_ID int primary key, /* CD is uniquely identified by Title, Date, Author */
+	CD_Details_Title varchar(100),
+	CD_Details_Genre varchar(50), --This type should be enumeration or user datatype
+	CD_Details_Length time,
+	CD_Details_Release_Date date not null,
+	CD_Details_Language varchar(30),
+	CD_Details_Author_First_Name varchar(30),
+	CD_Details_Author_Last_Name varchar(30),
+	CD_Details_Publisher varchar(50),
+	CD_Details_Summary varchar(100),
+	CD_Details_Price int,
+	CD_Details_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */ 
+);
 
 create table CD
 (
-	CD_ID int primary key,
-	DVD_Library_Id int not null,
-	CD_Title varchar(100),
-	CD_Genre varchar(50), --This type should be enumeration or user datatype
-	CD_Length time,
-	CD_Release_Date date not null,
-	CD_Language varchar(30),
-	CD_Author_First_Name varchar(30),
-	CD_Author_Last_Name varchar(30),
-	CD_Publisher varchar(50),
-	CD_Summary varchar(100),
-	CD_Price int,
+	CD_Media_ID int not null,
+	CD_Internal_ID int not null,
 	CD_Bought_Date date not null default CURRENT_TIMESTAMP, --The default value should be date
-	CD_Entry_Changed timestamp not null default CURRENT_TIMESTAMP, 
-	CONSTRAINT FK_Library_Table FOREIGN KEY(DVD_Library_Id) REFERENCES Library(Library_ID_Number)
-)
+	CD_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */, 
+	CONSTRAINT FK_Media_CD_Table FOREIGN KEY(CD_Media_ID) REFERENCES Media(Media_ID),
+	CONSTRAINT FK_CD_Details_Table FOREIGN KEY(CD_Internal_ID) REFERENCES CD_Details(CD_Details_Internal_ID)
+);
 
 create table Library_Member
 (
@@ -177,15 +233,14 @@ create table Library_Member
 	Library_Member_City varchar(20) default 'Schaumburg',
 	Library_Member_State char(2) default 'IL',
 	Library_Member_Zip_code int default '60173',
-	CONSTRAINT FK_Library_Table FOREIGN KEY(Library_Member_Library_ID) REFERENCES Library(Library_ID_Number)
+	CONSTRAINT FK_Library_Member_Table FOREIGN KEY(Library_Member_Library_ID) REFERENCES Library(Library_ID)
 );
-
-drop table Library_Member; 
 
 create table Employee_Staff
 (
 	Employee_Staff_ID int primary key,
 	Employee_Staff_Library_ID int not null,	
+	Employee_Staff_Designation varchar(30), /* This should be an enum */
 	Employee_Staff_SSN int not null,
 	Employee_Staff_Joining_Date date not null,
 	Employee_Staff_DOB date not null,
@@ -196,7 +251,7 @@ create table Employee_Staff
 	Employee_Staff_City varchar(20) default 'Schaumburg',
 	Employee_Staff_State char(2) default 'IL',
 	Employee_Staff_Zip_Code int default '60173'
-	CONSTRAINT FK_Library_Table FOREIGN KEY(Employee_Staff_Library_ID) REFERENCES Library(Library_ID_Number)
+	CONSTRAINT FK_Library_Employee_Table FOREIGN KEY(Employee_Staff_Library_ID) REFERENCES Library(Library_ID)
 );
 
 
