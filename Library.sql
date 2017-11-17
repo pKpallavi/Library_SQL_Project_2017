@@ -26,10 +26,23 @@ create table Media
 (
 	Media_ID int primary key,
 	Media_Library_ID int not null,
-	Media_Format varchar not null, /*Book, eBook, Journal, eJournal, Magazine, Digital Magazine, DVD, CD*/
+	Media_Format varchar(30) not null, /*Book, eBook, Journal, eJournal, Magazine, Digital Magazine, DVD, CD*/
 	Media_Status varchar(30), /* enum checked out, returned, on hold, on shelf, due, lost, damaged, past due, order placed or waiting or order key */
 	CONSTRAINT FK_Library_Table FOREIGN KEY(Media_Library_ID) REFERENCES Library(Library_ID)
 );
+
+insert into Media(Media_ID, Media_Library_ID, Media_Format, Media_Status) values(1, 1, 'Book', 'on shelf');
+insert into Media(Media_ID, Media_Library_ID, Media_Format, Media_Status) values(2, 1, 'Book', 'on shelf');
+insert into Media(Media_ID, Media_Library_ID, Media_Format, Media_Status) values(3, 1, 'Book', 'on shelf');
+insert into Media(Media_ID, Media_Library_ID, Media_Format, Media_Status) values(4, 1, 'Book', 'on shelf');
+insert into Media(Media_ID, Media_Library_ID, Media_Format, Media_Status) values(5, 2, 'Book', 'on shelf');
+insert into Media(Media_ID, Media_Library_ID, Media_Format, Media_Status) values(6, 2, 'Book', 'on shelf');
+insert into Media(Media_ID, Media_Library_ID, Media_Format, Media_Status) values(7, 2, 'Book', 'on shelf');
+insert into Media(Media_ID, Media_Library_ID, Media_Format, Media_Status) values(8, 2, 'Book', 'on shelf');
+
+insert into Media(Media_ID, Media_Library_ID, Media_Format, Media_Status) values(9, 1, 'eBook', 'on shelf');
+insert into Media(Media_ID, Media_Library_ID, Media_Format, Media_Status) values(10, 1, 'eBook', 'checked out');
+insert into Media(Media_ID, Media_Library_ID, Media_Format, Media_Status) values(11, 2, 'eBook', 'on shelf');
 
 /* if exists( Select * from Book_Details)
 	drop table Book_Details; */
@@ -43,8 +56,12 @@ create table Book_Details
 	Book_Details_Author_Last_Name varchar(30) not null,
 	Book_Details_Language varchar(30),
 	Book_Details_Rating   int,
-	Book_Details_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */
+	Book_Details_Entry_Changed timestamp /* not null default CURRENT_TIMESTAMP */
 );
+
+insert into Book_Details(Book_Details_ISBN_No, Book_Details_Published_Year, Book_Details_Title, 
+	Book_Details_Author_First_Name, Book_Details_Author_Last_Name, Book_Details_Language, Book_Details_Rating) 
+	values(42644, 2012, 'SQL Guide', 'Tushar', 'Patel', 'English', '4');
 
 /* if exists( Select * from Book)
 	drop table Book; */
@@ -54,10 +71,19 @@ create table Book
 	Book_Media_ID int not null,
 	Book_ISBN_No int not null,
 	Book_Bought_Date date not null default CURRENT_TIMESTAMP,
-	Book_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */,
+	Book_Entry_Changed timestamp /* not null default CURRENT_TIMESTAMP */,
 	CONSTRAINT FK_Media_Book_Table FOREIGN KEY(Book_Media_ID) REFERENCES Media(Media_ID),
 	CONSTRAINT FK_Book_Details_Table FOREIGN KEY(Book_ISBN_No) REFERENCES Book_Details(Book_Details_ISBN_No)
 );
+
+insert into Book(Book_Media_ID, Book_ISBN_No) values(1, 42644);
+insert into Book(Book_Media_ID, Book_ISBN_No) values(2, 42644);
+insert into Book(Book_Media_ID, Book_ISBN_No) values(3, 42644);
+insert into Book(Book_Media_ID, Book_ISBN_No) values(4, 42644);
+insert into Book(Book_Media_ID, Book_ISBN_No) values(5, 42644);
+insert into Book(Book_Media_ID, Book_ISBN_No) values(6, 42644);
+insert into Book(Book_Media_ID, Book_ISBN_No) values(7, 42644);
+insert into Book(Book_Media_ID, Book_ISBN_No) values(8, 42644);
 
 /* if exists( Select * from eBook_Details)
 	drop table eBook_Details; */
@@ -65,7 +91,7 @@ create table Book
 create table eBook_Details
 ( 
 	eBook_Details_ISBN_No int primary key,
-	eBook_Details_Release_Date date not null,
+	eBook_Details_Release_Date date /* not null */,
 	eBook_Details_Title varchar(100) not null,
 	eBook_Details_Author_First_Name varchar(30),
 	eBook_Details_Author_Last_Name varchar(30) not null,
@@ -74,9 +100,14 @@ create table eBook_Details
 	eBook_Details_Duration time,
 	eBook_Details_Language varchar(30),
 	eBook_Details_Rating   int,
-	eBook_Details_Entry_Changed timestamp not null /* default CURRENT_TIMESTAMP */
+	eBook_Details_Entry_Changed timestamp /* not null default CURRENT_TIMESTAMP */
 );
- 
+
+insert into eBook_Details(eBook_Details_ISBN_No, eBook_Details_Title, 
+	eBook_Details_Author_First_Name, eBook_Details_Author_Last_Name, eBook_Details_File_Size, eBook_Details_File_Path,
+	eBook_Details_Duration, eBook_Details_Language, eBook_Details_Rating) 
+	values(42645, 'SQL Guide', 'Tushar', 'Patel', '200MB', 'https:\\stdl.org\eBook\SQLGuide42645', '02:20:20','English', '4');
+	 
 /* if exists( Select * from eBook)
 	drop table eBook; */
 
@@ -85,10 +116,14 @@ create table eBook
 	eBook_Media_ID int not null,
 	eBook_ISBN_No int not null,
 	eBook_Bought_Date date not null default CURRENT_TIMESTAMP, --The default value should be date
-	eBook_Entry_Changed timestamp not null /*default CURRENT_TIMESTAMP*/, 
+	eBook_Entry_Changed timestamp /* not null default CURRENT_TIMESTAMP*/, 
 	CONSTRAINT FK_Media_eBook_Table FOREIGN KEY(eBook_Media_ID) REFERENCES Media(Media_ID),
 	CONSTRAINT FK_eBook_Details_Table FOREIGN KEY(eBook_ISBN_No) REFERENCES eBook_Details(eBook_Details_ISBN_No)
 );
+
+insert into eBook(eBook_Media_ID, eBook_ISBN_No) values(9, 42645);
+insert into eBook(eBook_Media_ID, eBook_ISBN_No) values(10, 42645);
+insert into eBook(eBook_Media_ID, eBook_ISBN_No) values(11, 42645);
 
 /* if exists( Select * from Journal_Details)
 	drop table Journal_Details; */
@@ -302,19 +337,12 @@ create table Library_Member
 create table Employee_Staff
 (
 	Employee_Staff_ID int primary key,
-	Employee_Staff_Library_ID int not null,	
+	Employee_Staff_Library_Member_ID int not null,	
 	Employee_Staff_Designation varchar(30), /* This should be an enum */
 	Employee_Staff_SSN int not null,
 	Employee_Staff_Joining_Date date not null,
-	Employee_Staff_DOB date not null,
 	Employee_Staff_Hours_Worked varchar(30)  not null,
-	Employee_Staff_First_Name varchar(50),
-	Employee_Staff_Last_Name varchar(50),
-	Employee_Staff_Address varchar(100),
-	Employee_Staff_City varchar(20) default 'Schaumburg',
-	Employee_Staff_State char(2) default 'IL',
-	Employee_Staff_Zip_Code int default '60173'
-	CONSTRAINT FK_Library_Employee_Table FOREIGN KEY(Employee_Staff_Library_ID) REFERENCES Library(Library_ID)
+	CONSTRAINT FK_Library_Employee_Table FOREIGN KEY(Employee_Staff_Library_Member_ID) REFERENCES Library_Member(Library_Member_ID)
 );
 
 /* Check out transaction should update the Media_Status field in Media table 
