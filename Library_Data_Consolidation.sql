@@ -1,20 +1,23 @@
 use Library_SQL_Project;
 go
 
-declare @chk_out_date date, @chk_out_due_date date, @memid int, @mediaid int, @mem_dues_updated varchar(3), @media_days_chked_out int, @mformat varchar(30), @media_status varchar(30);
+declare @chk_out_due_date date, @memid int, @mediaid int, @mem_dues_updated varchar(3),  @media_days_past_due int, @mformat varchar(30), @media_status varchar(30);
 
-declare media_check_out_loop cursor for (select Media_Check_Out_Member_ID, Media_Check_Out_Date, Media_Check_Out_Due_Date, Media_Check_Out_Media_ID, Media_Check_Out_Member_Dues_Updated from Media_Check_Out);
+declare media_check_out_loop cursor for (select Media_Check_Out_Member_ID, Media_Check_Out_Due_Date, Media_Check_Out_Media_ID, Media_Check_Out_Member_Dues_Updated from Media_Check_Out);
 
 --Updating media status
 
 open media_check_out_loop;
-fetch next from media_check_out_loop into @memid, @chk_out_date, @chk_out_due_date, @mediaid, @mem_dues_updated;
+fetch next from media_check_out_loop into @memid, @chk_out_due_date, @mediaid, @mem_dues_updated;
 while @@FETCH_STATUS = 0
 begin
-	set @media_days_chked_out = DATEDIFF(dd, @chk_out_date, convert(date,SYSDATETIME()));
+	set @media_days_past_due = DATEDIFF(dd, @chk_out_due_date, CONVERT(date, SYSDATETIME()));
 	select @media_status = Media_Status from Media where Media_ID = @mediaid;
-	if @media_days_chked_out >= 35 and @media_status = 'Due'
+
+	if (@media_days_past_due >= 14)
 	begin
+		update Media set Media_Status = 'Due' where Media_ID = @mediaid;
+		print('1. Updated media status when media past due for ' + CAST(@media_days_past_due as varchar(15)) + ' days');
 		if @mem_dues_updated = 'No'
 		begin
 			select @mformat = Media_Format from Media where Media_ID = @mediaid;
@@ -28,25 +31,23 @@ begin
 			)
 			where Library_Member_ID = @memid;
 			update Media_Check_Out set Media_Check_Out_Member_Dues_Updated = 'Yes' where Media_Check_Out_Media_ID = @mediaid;
-			print('Updated when media checked out for more than 56 days');
+			print('Updated Media dues when Media past due date for more than ' + CAST(@media_days_past_due as varchar(15)) + 'days');
 		end;
 	end;
-	else if @media_days_chked_out >= 21
+	else if (@media_days_past_due >= 0)
 	begin
 		update Media set Media_Status = 'Due' where Media_ID = @mediaid;
-		print('Updated when media checked out for more than 21 days');
+		print('2. Updated media status when media past due for ' + CAST(@media_days_past_due as varchar(15)) + ' days');
 	end;
 	else
 	begin
-		print('No updates needed for this media');
+		print('No updates when media past due for ' + CAST(@media_days_past_due as varchar(15)) + ' days');
 	end;
 
-	fetch next from media_check_out_loop into @memid, @chk_out_date, @chk_out_due_date, @mediaid, @mem_dues_updated;
+	fetch next from media_check_out_loop into @memid, @chk_out_due_date, @mediaid, @mem_dues_updated;
 end;
 
+close media_check_out_loop;
+deallocate media_check_out_loop;
 
 go
-
-
-
-

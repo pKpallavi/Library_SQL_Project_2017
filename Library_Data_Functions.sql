@@ -1,5 +1,40 @@
 use Library_SQL_Project;
 
+--select * from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' order by ROUTINE_NAME;
+
+--delete from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project';
+--select * from dbo.sysobjects where type IN ('P');
+--delete from dbo.sysobjects where type IN ('P');
+
+--Delete all the data in tables if any
+delete from Orders_Details;
+delete from Orders;
+delete from Supplier;
+delete from Supplier_Media_Info;
+delete from Media_Hold;
+delete from Media_Check_Out;
+delete from Login_Table;
+delete from Employee_Staff;
+delete from Library_Member;
+delete from CD;
+delete from CD_Details;
+delete from DVD;
+delete from DVD_Details;
+delete from Magazine;
+delete from Magazine_Details;
+delete from Digital_Magazine;
+delete from Digital_Magazine_Details;
+delete from Journal;
+delete from Journal_Details;
+delete from eJournal;
+delete from eJournal_Details;
+delete from Book;
+delete from Book_Details;
+delete from eBook;
+delete from eBook_Details;
+delete from Media;
+delete from Library;
+
 insert into Library (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Year_Opened,Library_Timings)values (89, 'Mount Propspect Public Library', '(847) 253-5675','10 S Emerson St', 'Mount Prospect','IL','60056', 1951, 'Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
 insert into Library (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Year_Opened,Library_Timings)values (90, 'Arlington Heights Memorial Library', '(847) 392-0100','500 N Dunton Ave',' Arlington Heights', 'IL','60004', 1952, 'Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
 insert into Library (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (91, 'Prospect Heights Public Library', '(847) 259-3500','12 N Elm Street',' Prospect Heights', 'IL','60070','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
@@ -22,7 +57,8 @@ delete from Book where Book_Media_ID = 890001;
 delete from Media where Media_ID = 890001;
 */
 
---drop proc L_Insert_Media_Table;
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_Media_Table') = 1)
+	drop proc L_Insert_Media_Table;
 
 go
 
@@ -35,183 +71,188 @@ end; --L_Insert_Media_Table
 go
 --update Media set Media_Status = 'Checked out' where Media_ID = 890001;
 
-execute L_Insert_Media_Table 890001,'Book','Checked out',89;
+execute L_Insert_Media_Table 890001,'Book','On shelf',89;
 execute L_Insert_Media_Table 890002,'Book','Returned',89;
-execute L_Insert_Media_Table 890003,'Book','Checked out',89;
+execute L_Insert_Media_Table 890003,'Book','On shelf',89;
 execute L_Insert_Media_Table 890004,'Book','On shelf',89;
-execute L_Insert_Media_Table 890005,'Book','Due',89;
+execute L_Insert_Media_Table 890005,'Book','On shelf',89;
 execute L_Insert_Media_Table 890006,'Book','Lost',89;
 execute L_Insert_Media_Table 890007,'Book','Damaged',89;
-execute L_Insert_Media_Table 890008,'Book','Due',89;
-execute L_Insert_Media_Table 890009,'Book','Checked out',89;
+execute L_Insert_Media_Table 890008,'Book','On shelf',89;
+execute L_Insert_Media_Table 890009,'Book','On shelf',89;
 execute L_Insert_Media_Table 890010,'Book','Returned',89;
-execute L_Insert_Media_Table 890011,'Book','Checked out',89;
+execute L_Insert_Media_Table 890011,'Book','On shelf',89;
 execute L_Insert_Media_Table 900001,'Book','On shelf',90;
 execute L_Insert_Media_Table 900002,'Book','Returned',90;
-execute L_Insert_Media_Table 900003,'Book','Checked out',90;
+execute L_Insert_Media_Table 900003,'Book','On shelf',90;
 execute L_Insert_Media_Table 900004,'Book','On shelf',90;
-execute L_Insert_Media_Table 900005,'Book','Due',90;
+execute L_Insert_Media_Table 900005,'Book','On shelf',90;
 execute L_Insert_Media_Table 900006,'Book','Lost',90;
 execute L_Insert_Media_Table 900007,'Book','Damaged',90;
-execute L_Insert_Media_Table 900008,'Book','Due',90;
+execute L_Insert_Media_Table 900008,'Book','On shelf',90;
 execute L_Insert_Media_Table 900009,'Book','On shelf',90;
-execute L_Insert_Media_Table 900010,'Book','Checked out',90;
-execute L_Insert_Media_Table 900011,'Book','Checked out',90;
+execute L_Insert_Media_Table 900010,'Book','On shelf',90;
+execute L_Insert_Media_Table 900011,'Book','On shelf',90;
 
-execute L_Insert_Media_Table 890200,'eBook','Checked out',89;
-execute L_Insert_Media_Table 890201,'eBook','Checked out',89;
+execute L_Insert_Media_Table 890200,'eBook','On shelf',89;
+execute L_Insert_Media_Table 890201,'eBook','On shelf',89;
 execute L_Insert_Media_Table 890202,'eBook','Returned',89;
-execute L_Insert_Media_Table 890203,'eBook','Checked out',89;
+execute L_Insert_Media_Table 890203,'eBook','On shelf',89;
 execute L_Insert_Media_Table 890204,'eBook','On shelf',89;
-execute L_Insert_Media_Table 890205,'eBook','Due',89;
+execute L_Insert_Media_Table 890205,'eBook','On shelf',89;
 execute L_Insert_Media_Table 890206,'eBook','On shelf',89;--
 execute L_Insert_Media_Table 890207,'eBook','On shelf',89;--
-execute L_Insert_Media_Table 890208,'eBook','Due',89;
-execute L_Insert_Media_Table 890209,'eBook','Checked out',89;
+execute L_Insert_Media_Table 890208,'eBook','On shelf',89;
+execute L_Insert_Media_Table 890209,'eBook','On shelf',89;
 execute L_Insert_Media_Table 890210,'eBook','Returned',89;
-execute L_Insert_Media_Table 900200,'eBook','Checked out',90;
+execute L_Insert_Media_Table 900200,'eBook','On shelf',90;
 execute L_Insert_Media_Table 900201,'eBook','On shelf',90;
 execute L_Insert_Media_Table 900202,'eBook','Returned',90;
-execute L_Insert_Media_Table 900203,'eBook','Due',90;
+execute L_Insert_Media_Table 900203,'eBook','On shelf',90;
 execute L_Insert_Media_Table 900204,'eBook','On shelf',90;
-execute L_Insert_Media_Table 900205,'eBook','Due',90;
+execute L_Insert_Media_Table 900205,'eBook','On shelf',90;
 execute L_Insert_Media_Table 900206,'eBook','On shelf',90;--
 execute L_Insert_Media_Table 900207,'eBook','On shelf',90;--
-execute L_Insert_Media_Table 900208,'eBook','Due',90;
+execute L_Insert_Media_Table 900208,'eBook','On shelf',90;
 execute L_Insert_Media_Table 900209,'eBook','On shelf',90;
-execute L_Insert_Media_Table 900210,'eBook','Checked out',90;
+execute L_Insert_Media_Table 900210,'eBook','On shelf',90;
 
-execute L_Insert_Media_Table 891200,'Journal','Due',89;
-execute L_Insert_Media_Table 891201,'Journal','Checked out',89;
+execute L_Insert_Media_Table 891200,'Journal','On shelf',89;
+execute L_Insert_Media_Table 891201,'Journal','On shelf',89;
 execute L_Insert_Media_Table 891202,'Journal','Returned',89;
-execute L_Insert_Media_Table 891203,'Journal','Due',89;
+execute L_Insert_Media_Table 891203,'Journal','On shelf',89;
 execute L_Insert_Media_Table 891204,'Journal','On shelf',89;
-execute L_Insert_Media_Table 891205,'Journal','Due',89;
+execute L_Insert_Media_Table 891205,'Journal','On shelf',89;
 execute L_Insert_Media_Table 891206,'Journal','Lost',89;
 execute L_Insert_Media_Table 891207,'Journal','Damaged',89;
-execute L_Insert_Media_Table 891208,'Journal','Due',89;
-execute L_Insert_Media_Table 891209,'Journal','Checked out',89;
-execute L_Insert_Media_Table 901200,'Journal','Checked out',90;
+execute L_Insert_Media_Table 891208,'Journal','On shelf',89;
+execute L_Insert_Media_Table 891209,'Journal','On shelf',89;
+execute L_Insert_Media_Table 901200,'Journal','On shelf',90;
 execute L_Insert_Media_Table 901201,'Journal','On shelf',90;
 execute L_Insert_Media_Table 901202,'Journal','Returned',90;
-execute L_Insert_Media_Table 901203,'Journal','Due',90;
+execute L_Insert_Media_Table 901203,'Journal','On shelf',90;
 execute L_Insert_Media_Table 901204,'Journal','On shelf',90;
-execute L_Insert_Media_Table 901205,'Journal','Due',90;
+execute L_Insert_Media_Table 901205,'Journal','On shelf',90;
 execute L_Insert_Media_Table 901206,'Journal','Lost',90;
 execute L_Insert_Media_Table 901207,'Journal','Damaged',90;
-execute L_Insert_Media_Table 901208,'Journal','Due',90;
+execute L_Insert_Media_Table 901208,'Journal','On shelf',90;
 execute L_Insert_Media_Table 901209,'Journal','On shelf',90;
 
-execute L_Insert_Media_Table 891400,'eJournal','Due',89;
-execute L_Insert_Media_Table 891401,'eJournal','Checked out',89;
+execute L_Insert_Media_Table 891400,'eJournal','On shelf',89;
+execute L_Insert_Media_Table 891401,'eJournal','On shelf',89;
 execute L_Insert_Media_Table 891402,'eJournal','Returned',89;
-execute L_Insert_Media_Table 891403,'eJournal','Due',89;
+execute L_Insert_Media_Table 891403,'eJournal','On shelf',89;
 execute L_Insert_Media_Table 891404,'eJournal','On shelf',89;
-execute L_Insert_Media_Table 891405,'eJournal','Due',89;
+execute L_Insert_Media_Table 891405,'eJournal','On shelf',89;
 execute L_Insert_Media_Table 891406,'eJournal','On shelf',89;--
 execute L_Insert_Media_Table 891407,'eJournal','On shelf',89;--
-execute L_Insert_Media_Table 891408,'eJournal','Due',89;
-execute L_Insert_Media_Table 891409,'eJournal','Checked out',89;
-execute L_Insert_Media_Table 901400,'eJournal','Checked out',90;
+execute L_Insert_Media_Table 891408,'eJournal','On shelf',89;
+execute L_Insert_Media_Table 891409,'eJournal','On shelf',89;
+execute L_Insert_Media_Table 901400,'eJournal','On shelf',90;
 execute L_Insert_Media_Table 901401,'eJournal','On shelf',90;
 execute L_Insert_Media_Table 901402,'eJournal','Returned',90;
-execute L_Insert_Media_Table 901403,'eJournal','Due',90;
+execute L_Insert_Media_Table 901403,'eJournal','On shelf',90;
 execute L_Insert_Media_Table 901404,'eJournal','On shelf',90;
-execute L_Insert_Media_Table 901405,'eJournal','Due',90;
+execute L_Insert_Media_Table 901405,'eJournal','On shelf',90;
 execute L_Insert_Media_Table 901406,'eJournal','On shelf',90;--
 execute L_Insert_Media_Table 901407,'eJournal','On shelf',90;--
-execute L_Insert_Media_Table 901408,'eJournal','Due',90;
+execute L_Insert_Media_Table 901408,'eJournal','On shelf',90;
 execute L_Insert_Media_Table 901409,'eJournal','On shelf',90;
 
-execute L_Insert_Media_Table 890800,'Magazine','Due',89;
-execute L_Insert_Media_Table 890801,'Magazine','Checked out',89;
+execute L_Insert_Media_Table 890800,'Magazine','On shelf',89;
+execute L_Insert_Media_Table 890801,'Magazine','On shelf',89;
 execute L_Insert_Media_Table 890802,'Magazine','Returned',89;
-execute L_Insert_Media_Table 890803,'Magazine','Due',89;
+execute L_Insert_Media_Table 890803,'Magazine','On shelf',89;
 execute L_Insert_Media_Table 890804,'Magazine','On shelf',89;
-execute L_Insert_Media_Table 890805,'Magazine','Due',89;
+execute L_Insert_Media_Table 890805,'Magazine','On shelf',89;
 execute L_Insert_Media_Table 890806,'Magazine','Lost',89;
 execute L_Insert_Media_Table 890807,'Magazine','Damaged',89;
-execute L_Insert_Media_Table 890808,'Magazine','Due',89;
+execute L_Insert_Media_Table 890808,'Magazine','On shelf',89;
 execute L_Insert_Media_Table 890809,'Magazine','Checked out',89;
 execute L_Insert_Media_Table 890810,'Magazine','Checked out',89;
 execute L_Insert_Media_Table 900800,'Magazine','On shelf',90;
 execute L_Insert_Media_Table 900801,'Magazine','Returned',90;
-execute L_Insert_Media_Table 900802,'Magazine','Due',90;
+execute L_Insert_Media_Table 900802,'Magazine','On shelf',90;
 execute L_Insert_Media_Table 900803,'Magazine','On shelf',90;
-execute L_Insert_Media_Table 900804,'Magazine','Due',90;
+execute L_Insert_Media_Table 900804,'Magazine','On shelf',90;
 execute L_Insert_Media_Table 900805,'Magazine','Lost',90;
 execute L_Insert_Media_Table 900806,'Magazine','Damaged',90;
-execute L_Insert_Media_Table 900807,'Magazine','Due',90;
+execute L_Insert_Media_Table 900807,'Magazine','On shelf',90;
 execute L_Insert_Media_Table 900808,'Magazine','On shelf',90;
 execute L_Insert_Media_Table 900809,'Magazine','On shelf',90;
 execute L_Insert_Media_Table 900810,'Magazine','Returned',90;
 
-execute L_Insert_Media_Table 891000,'Digital Magazine','Due',89;
-execute L_Insert_Media_Table 891001,'Digital Magazine','Checked out',89;
+execute L_Insert_Media_Table 891000,'Digital Magazine','On shelf',89;
+execute L_Insert_Media_Table 891001,'Digital Magazine','Returned',89;
 execute L_Insert_Media_Table 891002,'Digital Magazine','Returned',89;
-execute L_Insert_Media_Table 891003,'Digital Magazine','Due',89;
+execute L_Insert_Media_Table 891003,'Digital Magazine','On shelf',89;
 execute L_Insert_Media_Table 891004,'Digital Magazine','On shelf',89;
-execute L_Insert_Media_Table 891005,'Digital Magazine','Due',89;
+execute L_Insert_Media_Table 891005,'Digital Magazine','On shelf',89;
 execute L_Insert_Media_Table 891006,'Digital Magazine','On shelf',89;--
 execute L_Insert_Media_Table 891007,'Digital Magazine','On shelf',89;--
-execute L_Insert_Media_Table 891008,'Digital Magazine','Due',89;
-execute L_Insert_Media_Table 891009,'Digital Magazine','Checked out',89;
-execute L_Insert_Media_Table 891010,'Digital Magazine','Checked out',89;
+execute L_Insert_Media_Table 891008,'Digital Magazine','On shelf',89;
+execute L_Insert_Media_Table 891009,'Digital Magazine','On shelf',89;
+execute L_Insert_Media_Table 891010,'Digital Magazine','On shelf',89;
 execute L_Insert_Media_Table 901000,'Digital Magazine','On shelf',90;
-execute L_Insert_Media_Table 901001,'Digital Magazine','Returned',90;
-execute L_Insert_Media_Table 901002,'Digital Magazine','Due',90;
+execute L_Insert_Media_Table 901001,'Digital Magazine','On shelf',90;
+execute L_Insert_Media_Table 901002,'Digital Magazine','On shelf',90;
 execute L_Insert_Media_Table 901003,'Digital Magazine','On shelf',90;
-execute L_Insert_Media_Table 901004,'Digital Magazine','Due',90;
+execute L_Insert_Media_Table 901004,'Digital Magazine','On shelf',90;
 execute L_Insert_Media_Table 901005,'Digital Magazine','On shelf',90;--
 execute L_Insert_Media_Table 901006,'Digital Magazine','On shelf',90;--
-execute L_Insert_Media_Table 901007,'Digital Magazine','Due',90;
+execute L_Insert_Media_Table 901007,'Digital Magazine','On shelf',90;
 execute L_Insert_Media_Table 901008,'Digital Magazine','On shelf',90;
 execute L_Insert_Media_Table 901009,'Digital Magazine','On shelf',90;
-execute L_Insert_Media_Table 901010,'Digital Magazine','Returned',90;
+execute L_Insert_Media_Table 901010,'Digital Magazine','On shelf',90;
 
-execute L_Insert_Media_Table  890400,'DVD','checked out',89;
-execute L_Insert_Media_Table  890401,'DVD','returned',89;
-execute L_Insert_Media_Table  890402,'DVD','Due',89;
-execute L_Insert_Media_Table  890403,'DVD','on shelf',89;
-execute L_Insert_Media_Table  890404,'DVD','due',89;
-execute L_Insert_Media_Table  890405,'DVD','lost',89;
-execute L_Insert_Media_Table  890406,'DVD','damaged',89;
-execute L_Insert_Media_Table  890407,'DVD','Due',89;
-execute L_Insert_Media_Table  890408,'DVD','checked out',89;
-execute L_Insert_Media_Table  890409,'DVD','checked out',89;
-execute L_Insert_Media_Table  900400,'DVD','checked out',90;
-execute L_Insert_Media_Table  900401,'DVD','returned',90;
-execute L_Insert_Media_Table  900402,'DVD','Due',90;
-execute L_Insert_Media_Table  900403,'DVD','on shelf',90;
-execute L_Insert_Media_Table  900404,'DVD','due',90;
-execute L_Insert_Media_Table  900405,'DVD','lost',90;
-execute L_Insert_Media_Table  900406,'DVD','damaged',90;
-execute L_Insert_Media_Table  900407,'DVD','Due',90;
-execute L_Insert_Media_Table  900408,'DVD','checked out',90;
-execute L_Insert_Media_Table  900409,'DVD','checked out',90;
+execute L_Insert_Media_Table  890400,'DVD','On shelf',89;
+execute L_Insert_Media_Table  890401,'DVD','Returned',89;
+execute L_Insert_Media_Table  890402,'DVD','On shelf',89;
+execute L_Insert_Media_Table  890403,'DVD','On shelf',89;
+execute L_Insert_Media_Table  890404,'DVD','On shelf',89;
+execute L_Insert_Media_Table  890405,'DVD','Lost',89;
+execute L_Insert_Media_Table  890406,'DVD','Damaged',89;
+execute L_Insert_Media_Table  890407,'DVD','On shelf',89;
+execute L_Insert_Media_Table  890408,'DVD','On shelf',89;
+execute L_Insert_Media_Table  890409,'DVD','On shelf',89;
+execute L_Insert_Media_Table  900400,'DVD','On shelf',90;
+execute L_Insert_Media_Table  900401,'DVD','Returned',90;
+execute L_Insert_Media_Table  900402,'DVD','On shelf',90;
+execute L_Insert_Media_Table  900403,'DVD','On shelf',90;
+execute L_Insert_Media_Table  900404,'DVD','On shelf',90;
+execute L_Insert_Media_Table  900405,'DVD','Lost',90;
+execute L_Insert_Media_Table  900406,'DVD','Damaged',90;
+execute L_Insert_Media_Table  900407,'DVD','On shelf',90;
+execute L_Insert_Media_Table  900408,'DVD','On shelf',90;
+execute L_Insert_Media_Table  900409,'DVD','On shelf',90;
 
-execute L_Insert_Media_Table 890600,'CD','Due',89;
-execute L_Insert_Media_Table 890601,'CD','Checked out',89;
+execute L_Insert_Media_Table 890600,'CD','On shelf',89;
+execute L_Insert_Media_Table 890601,'CD','On shelf',89;
 execute L_Insert_Media_Table 890602,'CD','Returned',89;
-execute L_Insert_Media_Table 890603,'CD','Due',89;
+execute L_Insert_Media_Table 890603,'CD','On shelf',89;
 execute L_Insert_Media_Table 890604,'CD','On shelf',89;
-execute L_Insert_Media_Table 890605,'CD','Due',89;
+execute L_Insert_Media_Table 890605,'CD','On shelf',89;
 execute L_Insert_Media_Table 890606,'CD','Lost',89;
 execute L_Insert_Media_Table 890607,'CD','Damaged',89;
-execute L_Insert_Media_Table 890608,'CD','Due',89;
-execute L_Insert_Media_Table 890609,'CD','Checked out',89;
+execute L_Insert_Media_Table 890608,'CD','On shelf',89;
+execute L_Insert_Media_Table 890609,'CD','On shelf',89;
 execute L_Insert_Media_Table 900600,'CD','On shelf',90;
 execute L_Insert_Media_Table 900601,'CD','Returned',90;
-execute L_Insert_Media_Table 900602,'CD','Due',90;
+execute L_Insert_Media_Table 900602,'CD','On shelf',90;
 execute L_Insert_Media_Table 900603,'CD','On shelf',90;
-execute L_Insert_Media_Table 900604,'CD','Due',90;
+execute L_Insert_Media_Table 900604,'CD','On shelf',90;
 execute L_Insert_Media_Table 900605,'CD','Lost',90;
 execute L_Insert_Media_Table 900606,'CD','Damaged',90;
-execute L_Insert_Media_Table 900607,'CD','Due',90;
+execute L_Insert_Media_Table 900607,'CD','On shelf',90;
 execute L_Insert_Media_Table 900608,'CD','On shelf',90;
 execute L_Insert_Media_Table 900609,'CD','On shelf',90;
 
 select * from Media;
+
+go
+
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_Book_Details_Table') = 1)
+	drop proc L_Insert_Book_Details_Table;
 
 go
 
@@ -240,11 +281,16 @@ execute L_Insert_Book_Details_Table   1200,2010,'My social media for seniors','M
 execute L_Insert_Book_Details_Table   2000,2008,'Computers for seniors : email, internet, photos, and more in 14 easy lessons','Chris','Ewin','English',4, 10;
 execute L_Insert_Book_Details_Table   2487,1992,'Zero belly breakfasts','David','Zinczenko','English',4, 10;
 
+--delete from Book_Details;
 select * from Book_Details;
 
 go
 
---drop proc L_Insert_Book_Table;
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_Book_Table') = 1)
+	drop proc L_Insert_Book_Table;
+
+go
+
 create proc L_Insert_Book_Table @Media_ID as int, @ISBN_No as int, @Bought_Date as date
 as
 begin
@@ -288,15 +334,20 @@ execute L_Insert_Book_Table  900009,2278,'3/29/2016';
 execute L_Insert_Book_Table  900010,3843,'5/10/1955';
 execute L_Insert_Book_Table  900011,2671,'11/8/2015';
 
+--delete from Book;
 select * from Book;
 
 go
 
---drop proc L_Insert_eBook_Table;
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_eBook_Details_Table') = 1)
+	drop proc L_Insert_eBook_Details_Table;
+
+go
+
 create proc L_Insert_eBook_Details_Table @ISBN_No as int, @Release_Date as date, @Title as varchar(100), @Author_First_Name as varchar(30), @Author_Last_Name as varchar(30), @Language as varchar(30), @Rating as int
 as
 begin
-insert into dbo.eBook_Details(eBook_Details_ISBN_No, eBook_Details_Release_Date, eBook_Details_Title, eBook_Details_Author_First_Name, eBook_Details_Author_Last_Name, eBook_Details_Language, eBook_Details_Rating, eBook_Details_Duration) values(@ISBN_No, @Release_Date, @Title, @Author_First_Name, @Author_Last_Name, @Language, @Rating);
+insert into dbo.eBook_Details(eBook_Details_ISBN_No, eBook_Details_Release_Date, eBook_Details_Title, eBook_Details_Author_First_Name, eBook_Details_Author_Last_Name, eBook_Details_Language, eBook_Details_Rating) values(@ISBN_No, @Release_Date, @Title, @Author_First_Name, @Author_Last_Name, @Language, @Rating);
 end;
 
 go
@@ -317,7 +368,13 @@ execute L_Insert_eBook_Details_Table	7000,'2/22/2011','My social media for senio
 execute L_Insert_eBook_Details_Table	8000,'8/12/2009','Computers for seniors : email, internet, photos, and more in 14 easy lessons','Chris','Ewin','English',4;
 execute L_Insert_eBook_Details_Table	8010,'11/13/2008','Zero belly breakfasts','David','Zinczenko','English',4;
 
+--delete from eBook_Details;
 select * from eBook_Details;
+
+go
+
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_eBook_Table') = 1)
+	drop proc L_Insert_eBook_Table;
 
 go
 
@@ -362,40 +419,49 @@ execute L_Insert_eBook_Table 900208,8205,'6/11/2016';
 execute L_Insert_eBook_Table 900209,7382,'3/11/2005';
 execute L_Insert_eBook_Table 900210,7896,'10/10/2014';
 
+--delete from eBook;
 select * from eBook;
 
 go
 
---drop proc L_Insert_Journal_Details_Table;
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_Journal_Details_Table') = 1)
+	drop proc L_Insert_Journal_Details_Table;
+
+go
+
 create proc L_Insert_Journal_Details_Table @ISSN_No as int, @Title as varchar(100), @Source as varchar(100), 
 	@Publish_Date as date, @End_Date as date, @Volume as int, @Issue as int, @Author_Last_Name as varchar(30), 
 	@Author_First_Name as varchar(30), @Price as int
 as
 begin
-insert into dbo.Journal_Details(Journal_Details_ISSN_Number, Journal_Details_Title, Journal_Details_Source, 
-	Journal_Details_Published_Date, Journal_Details_End_Date, Journal_Details_Issue, Journal_Details_Author_Last_Name, 
-	Journal_Details_Author_First_Name, Journal_Details_Price) 
+insert into Journal_Details(Journal_Details_ISSN_Number, Journal_Details_Title, Journal_Details_Source, 
+	Journal_Details_Published_Date, Journal_Details_End_Date, Journal_Details_Volume, Journal_Details_Issue, Journal_Details_Author_Last_Name, Journal_Details_Author_First_Name, Journal_Details_Price) 
  values(@ISSN_No, @Title, @Source, @Publish_Date, @End_Date, @Volume, @Issue, @Author_Last_Name, @Author_First_Name, @Price);
 end;
 
 go
 
-execute L_Insert_Journal_Details_Table 62801,'The Plant Journal', 'John Wiley & Sons Ltd','09/01/2016',91,5,'Sweetlove','Lee',0;
-execute L_Insert_Journal_Details_Table 60618,'The Science XYZ','Society for Science','01/01/2017',78,1,'Smith','Jason',5;
-execute L_Insert_Journal_Details_Table 62596,'A History of Illinois','Society for Illinois study','10/21/2016',20,10,'Ampersand','Mark',7;
-execute L_Insert_Journal_Details_Table 62971,'The Animals Journal','Society for Zoology','8/22/2015',40,8,'Doe','Jane',6;
-execute L_Insert_Journal_Details_Table 63652,'The Rare Gems Catalogue','Unique Jewellers','10/02/2013',31,10,'Joe','Rank',6;
-execute L_Insert_Journal_Details_Table 60241,'The Heritage Parks','American Society for Parks ','7/23/2010',22,3,'King','Happy',4;
-execute L_Insert_Journal_Details_Table 60080,'The Education Journey','Society for Education','6/22/2013',30,6,'Deer','Hill',4;
-execute L_Insert_Journal_Details_Table 61364,'The Natural Science Journal','The Smithsonian Institute','6/10/2015',24,6,'Jam','Jello',6;
-execute L_Insert_Journal_Details_Table 63189,'A Knowledge of Nature','Society for Nature','7/20/2014',20,7,'Join','Just',4;
-execute L_Insert_Journal_Details_Table 63601,'The Automobile Journal','Society for Mechanics','10/10/2015',33,10,'Motors','Tata',6;
+execute L_Insert_Journal_Details_Table 62801,'The Plant Journal', 'John Wiley & Sons Ltd','09/01/2016','',91,5,'Sweetlove','Lee',0;
+execute L_Insert_Journal_Details_Table 60618,'The Science XYZ','Society for Science','01/01/2017','',78,1,'Smith','Jason',5;
+execute L_Insert_Journal_Details_Table 62596,'A History of Illinois','Society for Illinois study','10/21/2016','', 20,10,'Ampersand','Mark',7;
+execute L_Insert_Journal_Details_Table 62971,'The Animals Journal','Society for Zoology','8/22/2015','',40,8,'Doe','Jane',6;
+execute L_Insert_Journal_Details_Table 63652,'The Rare Gems Catalogue','Unique Jewellers','10/02/2013','',31,10,'Joe','Rank',6;
+execute L_Insert_Journal_Details_Table 60241,'The Heritage Parks','American Society for Parks ','7/23/2010','',22,3,'King','Happy',4;
+execute L_Insert_Journal_Details_Table 60080,'The Education Journey','Society for Education','6/22/2013','',30,6,'Deer','Hill',4;
+execute L_Insert_Journal_Details_Table 61364,'The Natural Science Journal','The Smithsonian Institute','6/10/2015','',24,6,'Jam','Jello',6;
+execute L_Insert_Journal_Details_Table 63189,'A Knowledge of Nature','Society for Nature','7/20/2014','',20,7,'Join','Just',4;
+execute L_Insert_Journal_Details_Table 63601,'The Automobile Journal','Society for Mechanics','10/10/2015','',33,10,'Motors','Tata',6;
 
-execute L_Insert_Journal_Details_Table 60070,'Consumer Price Index','US Bureau of Labor Statistics','7/20/2011',31,11,'Mark','Joyce',4;
-execute L_Insert_Journal_Details_Table 63210,'Development Outreach','World Bank','8/22/2012',21,8,'Vargaria','Roland',4;
-execute L_Insert_Journal_Details_Table 63821,'Automotive Design and Production','AD P','1/30/2012',14,10,'Ford','Mustang',4;
+execute L_Insert_Journal_Details_Table 60070,'Consumer Price Index','US Bureau of Labor Statistics','7/20/2011','',31,11,'Mark','Joyce',4;
+execute L_Insert_Journal_Details_Table 63210,'Development Outreach','World Bank','8/22/2012','',21,8,'Vargaria','Roland',4;
+execute L_Insert_Journal_Details_Table 63821,'Automotive Design and Production','AD P','1/30/2012','',14,10,'Ford','Mustang',4;
 
 select * from Journal_Details;
+
+go
+
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_Journal_Table') = 1)
+	drop proc L_Insert_Journal_Table;
 
 go
 
@@ -441,7 +507,11 @@ select * from Journal;
 
 go
 
---drop proc L_Insert_Journal_Details_Table;
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_eJournal_Details_Table') = 1)
+	drop proc L_Insert_eJournal_Details_Table;
+
+go
+
 create proc L_Insert_eJournal_Details_Table @ISSN_No as int, @Title as varchar(100), @Source as varchar(100), 
 	@Publish_Date as date, @End_Date as date, @Volume as int, @Issue as int, @Author_Last_Name as varchar(30), 
 	@Author_First_Name as varchar(30)
@@ -471,6 +541,11 @@ execute L_Insert_eJournal_Details_Table 67821,'Automotive Design and Production'
 
 
 select * from eJournal_Details;
+
+go
+
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_eJournal_Table') = 1)
+	drop proc L_Insert_eJournal_Table;
 
 go
 
@@ -516,7 +591,11 @@ select * from eJournal;
 
 go
 
---drop proc L_Insert_Magazine_Details_Table;
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_Magazine_Details_Table') = 1)
+	drop proc L_Insert_Magazine_Details_Table;
+
+go
+
 create proc L_Insert_Magazine_Details_Table @Int_ID as int, @Name as varchar(100), @Pub_Date as date, 
 	@Volume as int, @Issue as int, @Publisher as varchar(50), @Genre as varchar(30),
 	@Price as int
@@ -547,6 +626,11 @@ execute L_Insert_Magazine_Details_Table	40012,'Food Science and Nutrition','05/2
 execute L_Insert_Magazine_Details_Table	40013,'Export Today''s Global Business','07/29/2012',31,3,'Ebsco Business Source Complete','Finance',10;
 
 select * from Magazine_Details;
+
+go
+
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_Magazine_Table') = 1)
+	drop proc L_Insert_Magazine_Table;
 
 go
 
@@ -593,7 +677,11 @@ select * from Magazine;
 
 go
 
---drop proc L_Insert_Digital_Magazine_Details;
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_Digital_Magazine_Details_Table') = 1)
+	drop proc L_Insert_Digital_Magazine_Details_Table;
+
+go
+
 create proc L_Insert_Digital_Magazine_Details_Table @Int_ID as int, @Name as varchar(100), @Pub_Date as date, 
 	@Volume as int, @Issue as int, @Publisher as varchar(50), @Genre as varchar(30)
 as
@@ -616,6 +704,11 @@ execute L_Insert_Digital_Magazine_Details_Table	46009,'Motor trend','05/16/2004'
 execute L_Insert_Digital_Magazine_Details_Table	46010,'Car and driver','03/19/2002',30,3,'Ziff-Davis Pub. Co.','Automobiles';
 
 select * from Digital_Magazine_Details;
+
+go
+
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_Digital_Magazine_Table') = 1)
+	drop proc L_Insert_Digital_Magazine_Table;
 
 go
 
@@ -662,7 +755,11 @@ select * from Digital_Magazine;
 
 go
 
---drop proc L_Insert_DVD_Details;
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_DVD_Details') = 1)
+	drop proc L_Insert_DVD_Details;
+
+go
+
 create proc L_Insert_DVD_Details @ISBN_No as int, @Title as varchar(100), @Genre as varchar(30), 
 	@Rating as int, @Release_Date as date, @Length as time, @VideoType as varchar(15), @Language as varchar(30),
 	@Author_First_Name as varchar(30), @Author_Last_Name as varchar(30), @Publisher as varchar(50),
@@ -688,6 +785,11 @@ execute L_Insert_DVD_Details	22847,'Dilwale dulhania le jayenge','Foreign Films'
 execute L_Insert_DVD_Details	22499,'Lagaan : once upon a time in India','Foreign Films',4,'3/8/2001','3:45:00','NTSC','Hindi','Ashutosh','Gowarikar','Culver City, Calif.','An arrogant British Army captain forces a bet on a group of farmers. If they can win a cricket match against the army team, they will not have to pay the tax called lagaan for three years.',6;
 
 select * from DVD_Details;
+
+go
+
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_DVD_Table') = 1)
+	drop proc L_Insert_DVD_Table;
 
 go
 
@@ -732,7 +834,11 @@ select * from DVD;
 
 go
 
---drop proc L_Insert_CD_Details;
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_CD_Details') = 1)
+	drop proc L_Insert_CD_Details;
+
+go
+
 create proc L_Insert_CD_Details @Int_ID as int, @Title as varchar(100), @Genre as varchar(50), 
 	@Release_Date as date, @Author_First_Name as varchar(30), @Author_Last_Name as varchar(30), 
 	@Publisher as varchar(50), @Summary as varchar(100), @Price as int, @Language as varchar(30), @Length as varchar(30)
@@ -755,6 +861,11 @@ execute L_Insert_CD_Details	26008,'The rescue','Fiction, Firefighters','8/5/2000
 execute L_Insert_CD_Details	26009,'Classics for relaxation : gentle dawn','Music, Relaxation','9/12/2003','Time-Life','Music','Time Life Music','Classics for relaxation : gentle dawn',8, 'English', '';
 
 select * from CD_Details;
+
+go
+
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_CD_Table') = 1)
+	drop proc L_Insert_CD_Table;
 
 go
 
@@ -801,7 +912,11 @@ select * from CD;
 
 go
 
---drop proc L_Insert_Library_Member;
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_Library_Member') = 1)
+	drop proc L_Insert_Library_Member;
+
+go
+
 create proc L_Insert_Library_Member @Mem_ID as int, @Lib_ID as int, @Parent_ID as int, 
 	@First_Name as varchar(30), @Last_Name as varchar(30), @DOB as date, @Address as varchar(100),
 	@City as varchar(20), @State as char(2), @Zip_code as int
@@ -829,7 +944,7 @@ begin
 end;
 
 --Check for zip code to be among enrolled library or neighboring libraries.
-if (@Zip_code NOT IN (Select Library_ZipCode from Library;))
+if (@Zip_code NOT IN (Select Library_ZipCode from Library))
 begin
 	set @msg = 'Error in data entered value. Zip Code should be among the list of neighboring libraries';
 	Raiserror(@msg,16,1);
@@ -869,6 +984,11 @@ select * from Library_Member;
 
 go
 
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Update_Library_Member') = 1)
+	drop proc L_Update_Library_Member;
+
+go
+
 create proc L_Update_Library_Member @Mem_ID as int, @Parent_ID as int, 
 	@Address as varchar(100), @City as varchar(20), @State as char(2), @Zip_code as int
 as
@@ -878,7 +998,10 @@ begin
 -- cannot be altered. 
 -- @Lib_ID as int, @First_Name as varchar(30), @Last_Name as varchar(30), @DOB as date, 
 
-declare @curr_date as date, @date_diff as int, @msg as varchar(50);
+declare @curr_date as date, @date_diff as int, @msg as varchar(50), @DOB as date;
+
+--Get the date of birth of the member 
+select @DOB = Library_Member_DOB from Library_Member where Library_Member_ID = @Mem_ID;
 
 --Check for child under age 18 to have a link to parent id
 set @curr_date = GETDATE();
@@ -899,7 +1022,7 @@ begin
 end;
 
 --Check for zip code to be among enrolled library or neighboring libraries.
-if (@Zip_code NOT IN (Select Library_ZipCode from Library;))
+if (@Zip_code NOT IN (Select Library_ZipCode from Library))
 begin
 	set @msg = 'Error in data entered value. Zip Code should be among the list of neighboring libraries';
 	Raiserror(@msg,16,1);
@@ -915,7 +1038,11 @@ end;
 
 go
 
---drop proc L_Insert_Employee_Staff;
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_Employee_Staff') = 1)
+	drop proc L_Insert_Employee_Staff;
+
+go
+
 create proc L_Insert_Employee_Staff @Staff_ID as int, @Lib_Mem_ID as int, @Des as varchar(30), 
 	@SSN as int, @Joining_Date as date, @Hours_Worked as varchar(30)
 as
@@ -934,14 +1061,18 @@ select * from Employee_Staff;
 
 go
 
---drop proc L_Insert_Login_Table;
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_Login_Table') = 1)
+	drop proc L_Insert_Login_Table;
+
+go
+
 create proc L_Insert_Login_Table @ID as int, @Name as varchar(35), @UserName as varchar(15), 
 	@Pass as varchar(15), @LoginDT as varchar(30), @LogoutDT as varchar(30), @Mem_ID as int
 as
 begin
 insert into dbo.Login_Table(Login_ID, Login_Name, Login_UserName, Login_Password, Login_Library_Member_ID) values(@ID, @Name, @UserName, @Pass, @Mem_ID);
-insert into dbo.Login_Table(Login_DateTime) values(cast(@LoginDT as datetime)) where Login_Table.Login_ID = @ID;
-insert into dbo.Login_Table(LogOut_DateTime) values(cast(@LogoutDT as datetime)) where Login_Table.Login_ID = @ID;
+update dbo.Login_Table set Login_DateTime = CONVERT(datetime, @LoginDT, 9) where Login_Table.Login_ID = @ID;
+update dbo.Login_Table set LogOut_DateTime = CONVERT(datetime, @LogoutDT, 9) where Login_Table.Login_ID = @ID;
 end;
 
 go
@@ -952,20 +1083,20 @@ execute L_Insert_Login_Table 3,'Nicki_Nova','nicn','uwRab','20140804 02:34:18 AM
 execute L_Insert_Login_Table 4,'Mona_Smith','smithmona5','arUsegu','20120808 10:15:28 AM','20120808 10:25:28 AM',890001003;
 execute L_Insert_Login_Table 5,'Riddley_Smith','riddleys','G10prU','20160312 09:25:19 AM','20160312 09:35:19 AM',890001004;
 execute L_Insert_Login_Table 6,'Zack_Smith','z678s','ABEDUj89','20130215 07:12:16 PM','20130215 07:23:16 PM',890001005;
-execute L_Insert_Login_Table 7,'Rena_Xavier','renaxavier','wurab67','20140514 02:35:7 PM','20140514 02:40:7 PM',890001006;
+execute L_Insert_Login_Table 7,'Rena_Xavier','renaxavier','wurab67','20140514 02:35:07 PM','20140514 02:40:07 PM',890001006;
 execute L_Insert_Login_Table 8,'Iris_Johnson','irisjohnson','uyr57u','20170204 12:30:17 PM','20170204 12:45:17 PM',890001007;
 execute L_Insert_Login_Table 9,'Mike_Williams','mwill890','UH3489H','20121023 08:19:17 PM','20121023 08:29:17 PM',890001008;
 execute L_Insert_Login_Table 10,'Julie_Xo','juliexo45','UY345fj','20150824 07:40:23 PM','20150824 08:00:23 PM',890001009;
 execute L_Insert_Login_Table 11,'James_Jones','James_J2','OIO349','20160524 10:45:17 AM','20160524 10:55:40 AM',900001000;
-execute L_Insert_Login_Table 12,'Robert_Jones','RJones3','K23HKkkl','20150524 01:45:7 PM','20150524 01:55:7 PM',900001001;
-execute L_Insert_Login_Table 13,'Michael_Jones','MichaelJ','U3jkjke','20140724 02:50:7 PM','20140724 02:52:13 PM',900001002;
+execute L_Insert_Login_Table 12,'Robert_Jones','RJones3','K23HKkkl','20150524 01:45:07 PM','20150524 01:55:07 PM',900001001;
+execute L_Insert_Login_Table 13,'Michael_Jones','MichaelJ','U3jkjke','20140724 02:50:07 PM','20140724 02:52:13 PM',900001002;
 execute L_Insert_Login_Table 14,'William_Brown','WillBrown','H89yuerj','20150226 06:23:27 PM','20150226 06:28:27 PM',900001003;
 execute L_Insert_Login_Table 15,'Patricia_Brown','PatriciaBrown','hhhH345','20160424 11:23:17 PM','20160424 11:28:17 PM',900001004;
 execute L_Insert_Login_Table 16,'Jennifer_Brown','JenniferBrown','yr456t','20150324 12:04:16 PM','20150324 12:24:16 PM',900001005;
 execute L_Insert_Login_Table 17,'Elizabeth_Miller','ElizM','nbb456','20160824 11:40:17 PM','20160824 11:45:17 PM',900001006;
 execute L_Insert_Login_Table 18,'Linda_Wilson','LinWil34','iunn389','20160924 12:18:17 PM','20160924 12:28:17 PM',900001007;
-execute L_Insert_Login_Table 19,'David_Moore','DMoore345','ope34n','20120713 12:14:3 PM','20120713 12:24:3 PM',900001008;
-execute L_Insert_Login_Table 20,'Richard_Taylor','RichardT23','ri23jkk','20151327 12:15:23 PM','20151327 12:25:23 PM',900001009;
+execute L_Insert_Login_Table 19,'David_Moore','DMoore345','ope34n','20120713 12:14:03 PM','20120713 12:24:03 PM',900001008;
+execute L_Insert_Login_Table 20,'Richard_Taylor','RichardT23','ri23jkk','20151027 12:15:23 PM','20151027 12:25:23 PM',900001009;
 
 go
 
@@ -973,7 +1104,11 @@ select * from Login_Table;
 
 go
 
---drop proc L_Insert_Update_Media_Check_Out;
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_Update_Media_Check_Out') = 1)
+	drop proc L_Insert_Update_Media_Check_Out;
+
+go
+
 create proc L_Insert_Update_Media_Check_Out @ID as int, @Member_ID as int, @Media_ID as int, @Check_Out_Date as date, @Check_Out_Due_Date as date
 as
 begin
@@ -1002,6 +1137,7 @@ begin
 		end;
 */
 
+	select @med_format = Media_Format from Media where Media_ID = @Media_ID;
 	if @med_format = 'Book' 
 		select @media_bdate = Book_Bought_Date from Book where Book_Media_ID = @Media_ID;
 	else if @med_format = 'eBook' 
@@ -1037,7 +1173,7 @@ begin
 		select Media_Hold_Queue_No, Media_Hold_Media_ID, Media_Hold_Member_ID from Media_Hold where Media_Hold_Media_ID = @Media_ID;
 	if (select ht_queue_no from @hold_table where ht_member_id = @Member_ID) <> null
 	begin
-		if(ht_queue_no != 1)
+		if((select ht_queue_no from @hold_table where ht_member_id = @Member_ID) != 1)
 		begin
 			select @med_stat as 'Media Status', @med_format as 'Format', @Media_ID as 'Media ID';
 			set @msg = 'Media is on hold by another member and cannot be renewed.';
@@ -1064,6 +1200,9 @@ begin
 	if @med_stat = 'Returned' or @med_stat = 'On shelf'
 	begin
 		--New checkout and Media table needs to be updated.
+		set @media_due_date = DATEADD(dd, 21, @Check_Out_Date);
+		insert into Media_Check_Out(Media_Check_Out_ID, Media_Check_Out_Member_ID, Media_Check_Out_Media_ID, Media_Check_Out_Date,
+		Media_Check_Out_Due_Date) values(@ID, @Member_ID, @Media_ID, @Check_Out_Date, @media_due_date);
 		update Media set Media_Status = 'Checked out' where Media_ID = @Media_ID;
 	end;
 	else if @med_stat = 'Lost' or @med_stat = 'Damaged'
@@ -1072,7 +1211,7 @@ begin
 		set @msg = 'Error in Data entered. Media is lost or damaged.';
 		Raiserror(@msg,16,1);		
 	end;
-	else if @med_stat = 'Due'
+	else if @med_stat = 'Due' or @med_stat = 'Checked out'
 	begin
 		select * into #chk_out_table from Media_Check_Out where Media_Check_Out_Media_ID = @Media_ID;	
 		if (select Media_Check_Out_Times_Renewed from #chk_out_table) = 2
@@ -1088,15 +1227,15 @@ begin
 			select @media_due_date = Media_Check_Out_Due_Date from Media_Check_Out where Media_Check_Out_Media_ID = @Media_ID;
 			set @media_due_date = DATEADD(dd, 21, @media_due_date);
 			update Media_Check_Out set Media_Check_Out_Due_Date = @media_due_date where Media_Check_Out_Media_ID = @Media_ID; 
+			update Media set Media_Status = 'Checked out' where Media_ID = @Media_ID;
 		end;
 		delete #chk_out_table;		
 	end;
 	else
 	begin
-		--set the due date to be 3 weeks from the check out date and it does not need to be passed
-		set @media_due_date = DATEADD(dd, 21, @Check_Out_Date);
-		insert into Media_Check_Out(Media_Check_Out_ID, Media_Check_Out_Member_ID, Media_Check_Out_Media_ID, Media_Check_Out_Date,
-		Media_Check_Out_Due_Date) values(@ID, @Member_ID, @Media_ID, @Check_Out_Date, @media_due_date);
+		select @med_stat as 'Media Status', @med_format as 'Format', @Media_ID as 'Media ID';
+		set @msg = 'Media status incorrect. Condition to be handled.';
+		Raiserror(@msg,16,1);		
 	end;
 
 end;
@@ -1224,6 +1363,11 @@ select * from Media_Check_Out;
 
 go
 
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Media_Check_In') = 1)
+	drop proc L_Media_Check_In;
+
+go
+
 /* This media condition is just 'Lost' or 'Damaged' when informed by the Member to the Library Staff 
 and not to be taken from the Library Media Table */
 create proc L_Media_Check_In @member_id as int, @media_id as int, @media_condition as varchar(30)
@@ -1235,7 +1379,8 @@ begin
 	select @dues_flag = #temp_checkout_table.Media_Check_Out_Member_Dues_Updated from #temp_checkout_table;
 	
 	select @mformat = Media_Format from Media where Media_ID = @media_id;
-	set @media_dues += (case(@mformat)
+
+	set @media_dues = (case(@mformat)
 		when 'Book' then (select Book_Details_Price from Book_Details where Book_Details_ISBN_No = (select Book_ISBN_No from Book where Book_Media_ID = @media_id))
 		when 'Journal' then (select Journal_Details_Price from Journal_Details where Journal_Details_ISSN_Number = (select Journal_ISSN_No from Journal where Journal_Media_ID = @media_id))
 		when 'Magazine' then (select Magazine_Details_Price from Magazine_Details where Magazine_Details_Internal_ID = (select Magazine_Internal_ID from Magazine where Magazine_Media_ID = @media_id))
@@ -1260,8 +1405,13 @@ begin
 			--Even though a media is returned when member fines are updated, $1 collection fee is charged. Media price is reversed.
 			update Library_Member set Library_Member_Dues -= (@media_dues - 1) where Library_Member_ID = @member_id;
 		end;
+		--For Digital Media the status is directly updated to on-shelf when returned.
+		if(@mformat LIKE '%Digital%')
+			update Media set Media_Status = 'On shelf' where Media_ID = @media_id;
+		else 
 		--Media condition is set 'Returned' in Check in function. It is set to 'On Shelf' when books are sorted and replaced on shelf
-		update Media set Media_Status = 'Returned' where Media_ID = @media_id;
+			update Media set Media_Status = 'Returned' where Media_ID = @media_id;
+
 	end;
 	
 	/* Delete the check out entry from the Media_Check_Out table */
@@ -1271,7 +1421,21 @@ end;
 
 go
 
---	drop proc L_Insert_Media_Hold;
+execute L_Media_Check_In 890001000,890001,'Returned';
+execute L_Media_Check_In 890001001,890003,'Returned';
+execute L_Media_Check_In 890001002,890005,'Returned';
+
+go
+
+select * from Media_Check_Out;
+
+go
+
+if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_Media_Hold') = 1)
+	drop proc L_Insert_Media_Hold;
+
+go
+
 create proc L_Insert_Media_Hold @mem_id as int, @med_id as int
 as
 begin
@@ -1334,4 +1498,3 @@ go
 select * from Media_Hold;
 
 go
-

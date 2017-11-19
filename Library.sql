@@ -60,7 +60,7 @@ go
 
 create table Book
 (
-	Book_Media_ID int not null,
+	Book_Media_ID int primary key,
 	Book_ISBN_No int not null,
 	Book_Bought_Date date not null default CURRENT_TIMESTAMP,
 	Book_Entry_Changed date not null default CURRENT_TIMESTAMP,
@@ -95,7 +95,7 @@ go
 
 create table eBook
 (
-	eBook_Media_ID int not null,
+	eBook_Media_ID int primary key,
 	eBook_ISBN_No int not null,
 	eBook_Bought_Date date not null default CURRENT_TIMESTAMP,
 	eBook_Entry_Changed date not null default CURRENT_TIMESTAMP, 
@@ -131,7 +131,7 @@ go
 
 create table Journal
 (
-	Journal_Media_ID int not null,
+	Journal_Media_ID int primary key,
 	Journal_ISSN_No int not null,
 	Journal_Bought_Date date not null default CURRENT_TIMESTAMP,
 	Journal_Entry_Changed date not null default CURRENT_TIMESTAMP, 
@@ -168,7 +168,7 @@ go
 
 create table eJournal
 (
-	eJournal_Media_ID int not null,
+	eJournal_Media_ID int primary key,
 	eJournal_ISSN_No int not null,
 	eJournal_Bought_Date date not null default CURRENT_TIMESTAMP, --The default value should be date
 	eJournal_Entry_Changed date not null default CURRENT_TIMESTAMP, 
@@ -201,7 +201,7 @@ go
 
 create table Magazine
 (
-	Magazine_Media_ID int not null,
+	Magazine_Media_ID int primary key,
 	Magazine_Internal_ID int not null,
 	Magazine_Bought_Date date not null default CURRENT_TIMESTAMP, --The default value should be date
 	Magazine_Entry_Changed date not null default CURRENT_TIMESTAMP, 
@@ -235,7 +235,7 @@ go
 
 create table Digital_Magazine
 (
-	Digital_Magazine_Media_ID int not null,
+	Digital_Magazine_Media_ID int primary key,
 	Digital_Magazine_Internal_ID int not null,
 	Digital_Magazine_Bought_Date date not null default CURRENT_TIMESTAMP, --The default value should be date
 	Digital_Magazine_Entry_Changed date not null default CURRENT_TIMESTAMP, 
@@ -273,7 +273,7 @@ go
 
 create table DVD
 (
-	DVD_Media_ID int not null,
+	DVD_Media_ID int primary key,
 	DVD_ISBN_No int not null,
 	DVD_Bought_Date date not null default CURRENT_TIMESTAMP, --The default value should be date
 	DVD_Entry_Changed date not null default CURRENT_TIMESTAMP, 
@@ -309,7 +309,7 @@ go
 
 create table CD
 (
-	CD_Media_ID int not null,
+	CD_Media_ID int primary key,
 	CD_Internal_ID int not null,
 	CD_Bought_Date date not null default CURRENT_TIMESTAMP, --The default value should be date
 	CD_Entry_Changed date not null default CURRENT_TIMESTAMP, 
