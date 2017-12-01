@@ -1,0 +1,1 @@
+sqlcmd -S DESKTOP-6NDUR2E\SQLEXPRESS -d Library_SQL_Project -E -i Library_Data_Consolidation.sql

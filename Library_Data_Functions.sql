@@ -1415,7 +1415,7 @@ begin
 	end;
 	
 	/* Delete the check out entry from the Media_Check_Out table */
-	delete from Media_Check_Out where Media_Check_Out_ID = @media_id;
+	delete from Media_Check_Out where Media_Check_Out_Media_ID = @media_id;
 
 end;
 
@@ -1430,6 +1430,10 @@ go
 select * from Media_Check_Out;
 
 go
+
+execute L_Insert_Update_Media_Check_Out	1,890001000,890001,'11/03/2017','';
+--execute L_Insert_Update_Media_Check_Out	2,890001001,890003,'9/1/2017','9/8/2017';
+--execute L_Insert_Update_Media_Check_Out	3,890001002,890005,'8/25/2017','9/1/2017';
 
 if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_Media_Hold') = 1)
 	drop proc L_Insert_Media_Hold;

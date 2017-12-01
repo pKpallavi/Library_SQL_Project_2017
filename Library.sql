@@ -329,6 +329,7 @@ create table Library_Member
 	Library_Member_Parent_ID int default '', --this refers to another row in Library Member table of Parent
 	Library_Member_First_Name varchar(30) default '',
 	Library_Member_Last_Name varchar(30) not null,
+	Library_Member_Email_Addr varchar(100) default '',
 	Library_Member_DOB date not null,
 	Library_Member_Address varchar(100) not null,
 	Library_Member_City varchar(20) default 'Mount Prospect',
@@ -415,27 +416,13 @@ go
 create table Supplier
 (
 	Supplier_ID int primary key,
-	Supplier_Name varchar(100),
-	Supplier_Address varchar(100),
+	Supplier_Name varchar(100) default '',
+	Supplier_Address varchar(100) default '',
 	Supplier_City varchar(20) default 'Schaumburg',
 	Supplier_State char(2) default 'IL',
 	Supplier_Zip_code int default '60173',
-	Supplier_Phone_No varchar(10),
-	Supplier_Payment_Due int
-);
-
-/* if exists( Select * from Supplier_Media_Info)
-	drop table Supplier_Media_Info;
-*/
-
-/* This table consists of entries of media supplied by the supplier */
-create table Supplier_Media_Info
-(
-	Supplier_Media_Info_Line_No int primary key,
-	Supplier_Media_Info_Media_ID int,
-	Supplier_Media_Info_Supplier_ID int,
-	CONSTRAINT FK_Supplier_Media_1 FOREIGN KEY(Supplier_Media_Info_Media_ID) REFERENCES Media(Media_ID), 
-	CONSTRAINT FK_Supplier_Media_2 FOREIGN KEY(Supplier_Media_Info_Supplier_ID) REFERENCES Supplier(Supplier_ID) 
+	Supplier_Phone_No varchar(10) default '',
+	Supplier_Payment_Due int default 0
 );
 
 /* if exists( Select * from Orders)
@@ -445,10 +432,10 @@ create table Supplier_Media_Info
 create table Orders
 (
 	Orders_ID int primary key,
-	Orders_Supplier_ID int,
+	Orders_Supplier_ID int default '',
 	Orders_Date_Ordered date not null default CURRENT_TIMESTAMP,
-	Orders_Date_Required date not null,
-	Orders_Status varchar(20), /* Accepted, Pending, Cancelled, Not available, Partially Delivered, Delivered, Payment Due, Paid */
+	Orders_Date_Required date not null default '',
+	Orders_Status varchar(20) default '', /* Accepted, Pending, Cancelled, Not available, Partially Delivered, Delivered, Payment Due, Paid */
 	Orders_Payment_Amount int default 0, /* Will be updated once order is delivered depending on the quantity or delivered items */
 	CONSTRAINT FK_Orders_Supplier FOREIGN KEY(Orders_Supplier_ID) REFERENCES Supplier(Supplier_ID) 
 );
@@ -460,12 +447,27 @@ create table Orders_Details
 (
 	Orders_Details_Line_No int primary key,
 	Orders_Details_Orders_ID int not null, 
-	Orders_Details_Media_ID int not null,
-	Orders_Details_Quantity int not null,
-	Orders_Details_Status varchar(20), /* Accepted, Pending, Cancelled, Not available, Partially Delivered, Delivered, Payment Due, Paid */
-	Orders_Details_Date_Delivered date,
+
+	Orders_Details_Item_ID int default '', --can be the ISBN or ISSN number or another unique number specified by publisher
+	Orders_Details_Item_Title varchar(100) not null,
+	Orders_Details_Publisher varchar(100) default '',
+	Orders_Details_Author_First_Name varchar(30) default '',
+	Orders_Details_Author_Last_Name varchar(30) not null,
+	Orders_Details_Language varchar(30) default '',
+	Orders_Details_Rating int default '',
+	Orders_Details_Published_Date date not null,
+	Orders_Details_End_Date date default '',
+	Orders_Details_Volume int default '',
+	Orders_Details_Issue int default '',
+	Orders_Details_Genre varchar(30) default '',
+	Orders_Details_VideoType varchar(15) default '',
+
+	Orders_Details_Price_Per_Unit int default '',
+	Orders_Details_Price_Total int default '',
+	Orders_Details_Quantity int default '',
+	Orders_Details_Status varchar(20) default '', /* Accepted, Pending, Cancelled, Not available, Partially Delivered, Delivered, Payment Due, Paid */
+	Orders_Details_Date_Delivered date default '',
 	CONSTRAINT FK_Orders_Details_Orders FOREIGN KEY(Orders_Details_Orders_ID) REFERENCES Orders(Orders_ID),
-	CONSTRAINT FK_Orders_Details_Media FOREIGN KEY(Orders_Details_Media_ID) REFERENCES Media(Media_ID)
 );
 
 
