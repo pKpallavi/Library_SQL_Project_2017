@@ -1,0 +1,6 @@
+12.0
+4
+1       SQLCHAR             0       12      "|"      1     CD_Media_ID                          ""
+2       SQLCHAR             0       12      "|"      2     CD_Internal_ID                       ""
+3       SQLCHAR             0       11      "|"      3     CD_Bought_Date                       ""
+4       SQLCHAR             0       11      "\r\n"   4     CD_Entry_Changed                     ""

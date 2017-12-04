@@ -1,0 +1,12 @@
+12.0
+10
+1       SQLCHAR             0       12      "|"      1     eBook_Details_ISBN_No                                              ""
+2       SQLCHAR             0       11      "|"      2     eBook_Details_Release_Date                                         ""
+3       SQLCHAR             0       100     "|"      3     eBook_Details_Title                                                SQL_Latin1_General_CP1_CI_AS
+4       SQLCHAR             0       30      "|"      4     eBook_Details_Author_First_Name                                    SQL_Latin1_General_CP1_CI_AS
+5       SQLCHAR             0       30      "|"      5     eBook_Details_Author_Last_Name                                     SQL_Latin1_General_CP1_CI_AS
+6       SQLCHAR             0       100     "|"      6     eBook_Details_File_Size                                            SQL_Latin1_General_CP1_CI_AS
+7       SQLCHAR             0       100     "|"      7     eBook_Details_File_Path                                            SQL_Latin1_General_CP1_CI_AS
+8       SQLCHAR             0       30      "|"      8     eBook_Details_Language                                             SQL_Latin1_General_CP1_CI_AS
+9       SQLCHAR             0       12      "|"      9     eBook_Details_Rating                                               ""
+10      SQLCHAR             0       11      "\r\n"   10    eBook_Details_Entry_Changed                                        ""

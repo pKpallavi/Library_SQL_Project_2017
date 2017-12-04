@@ -1,0 +1,9 @@
+12.0
+7
+1       SQLCHAR             0       12      "|"      1     Login_ID                                           ""
+2       SQLCHAR             0       35      "|"      2     Login_Name                                         SQL_Latin1_General_CP1_CI_AS
+3       SQLCHAR             0       15      "|"      3     Login_UserName                                     SQL_Latin1_General_CP1_CI_AS
+4       SQLCHAR             0       15      "|"      4     Login_Password                                     SQL_Latin1_General_CP1_CI_AS
+5       SQLCHAR             0       24      "|"      5     Login_DateTime                                     ""
+6       SQLCHAR             0       24      "|"      6     LogOut_DateTime                                    ""
+7       SQLCHAR             0       12      "\r\n"   7     Login_Library_Member_ID                            ""

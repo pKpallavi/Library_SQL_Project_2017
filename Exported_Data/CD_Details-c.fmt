@@ -1,0 +1,14 @@
+12.0
+12
+1       SQLCHAR             0       12      "|"      1     CD_Details_Internal_ID                                       ""
+2       SQLCHAR             0       100     "|"      2     CD_Details_Title                                             SQL_Latin1_General_CP1_CI_AS
+3       SQLCHAR             0       50      "|"      3     CD_Details_Genre                                             SQL_Latin1_General_CP1_CI_AS
+4       SQLCHAR             0       19      "|"      4     CD_Details_Length                                            ""
+5       SQLCHAR             0       11      "|"      5     CD_Details_Release_Date                                      ""
+6       SQLCHAR             0       30      "|"      6     CD_Details_Language                                          SQL_Latin1_General_CP1_CI_AS
+7       SQLCHAR             0       30      "|"      7     CD_Details_Author_First_Name                                 SQL_Latin1_General_CP1_CI_AS
+8       SQLCHAR             0       30      "|"      8     CD_Details_Author_Last_Name                                  SQL_Latin1_General_CP1_CI_AS
+9       SQLCHAR             0       50      "|"      9     CD_Details_Publisher                                         SQL_Latin1_General_CP1_CI_AS
+10      SQLCHAR             0       100     "|"      10    CD_Details_Summary                                           SQL_Latin1_General_CP1_CI_AS
+11      SQLCHAR             0       12      "|"      11    CD_Details_Price                                             ""
+12      SQLCHAR             0       11      "\r\n"   12    CD_Details_Entry_Changed                                     ""

@@ -1,0 +1,11 @@
+46000|Parents magazine|2015-12-01|20|12|Gruner & Jahr USA|Family|||2017-11-19
+46001|National parks : the magazine of the National Parks & Conservation Association|2000-10-10|28|10|National Parks and Conservation Association|Nature|||2017-11-19
+46002|Food network magazine |2001-08-08|40|8|Hyperion|Food|||2017-11-19
+46003|Time Magazine|2002-10-15|20|10|Time Home Entertainment|World|||2017-11-19
+46004|The National Geographic Magazine|2008-07-06|50|7|National Geographic|Nature|||2017-11-19
+46005|Bloomberg businessweek|2009-04-04|30|4|Bloomberg L.P.|Business|||2017-11-19
+46006|Forbes|2003-07-12|40|7|Forbes Inc|Business|||2017-11-19
+46007|Food & wine the guide to good taste|2007-06-16|27|6|International Review of Food & Wine Associates|Food|||2017-11-19
+46008|Natural history|2008-08-26|40|8|American Museum of Natural History|Nature|||2017-11-19
+46009|Motor trend|2004-05-16|20|5|Woron, Walter A.|Automobiles|||2017-11-19
+46010|Car and driver|2002-03-19|30|3|Ziff-Davis Pub. Co.|Automobiles|||2017-11-19

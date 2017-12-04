@@ -1,0 +1,11 @@
+12.0
+9
+1       SQLCHAR             0       12      "|"      1     Book_Details_ISBN_No                                             ""
+2       SQLCHAR             0       12      "|"      2     Book_Details_Published_Year                                      ""
+3       SQLCHAR             0       100     "|"      3     Book_Details_Title                                               SQL_Latin1_General_CP1_CI_AS
+4       SQLCHAR             0       30      "|"      4     Book_Details_Author_First_Name                                   SQL_Latin1_General_CP1_CI_AS
+5       SQLCHAR             0       30      "|"      5     Book_Details_Author_Last_Name                                    SQL_Latin1_General_CP1_CI_AS
+6       SQLCHAR             0       30      "|"      6     Book_Details_Language                                            SQL_Latin1_General_CP1_CI_AS
+7       SQLCHAR             0       12      "|"      7     Book_Details_Rating                                              ""
+8       SQLCHAR             0       12      "|"      8     Book_Details_Price                                               ""
+9       SQLCHAR             0       11      "\r\n"   9     Book_Details_Entry_Changed                                       ""

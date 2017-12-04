@@ -1,0 +1,14 @@
+6380|2009-07-18|2 States|Chetan|Bhagat|||English|4|2017-11-19
+6425|2004-11-02|Core Java Advanced Features|Gart|Connell|||English|3|2017-11-19
+6715|2017-05-22|Womans Ritual|Sudha|Murthy|||English|5|2017-11-19
+6829|2004-06-28|SQL Pocket Guide|Jonathan|Gennick|||English|4|2017-11-19
+7000|2011-02-22|My social media for seniors|Michael,|Miller|||English|4|2017-11-19
+7033|2010-10-01|Butterfly Effect: How Your Life Matters|Nelson|Thomas|||English|3|2017-11-19
+7382|1901-04-15|Till We Have Faces: A Myth Retold|C.S|Lewis|||English|3|2017-11-19
+7529|2004-02-03|Front-End Web Development: The Big Nerd Ranch Guide / Edition 1|Big Nerd Ranch Guides|Guides|||English|4|2017-11-19
+7896|2013-03-06|Java Programming|Tushar|Patel|||English|4|2017-11-19
+8000|2009-08-12|Computers for seniors : email, internet, photos, and more in 14 easy lessons|Chris|Ewin|||English|4|2017-11-19
+8010|2008-11-13|Zero belly breakfasts|David|Zinczenko|||English|4|2017-11-19
+8205|2015-06-29|5 Love Langugaes-The Secret To Love That Lasts|Gary|Chapman|||English|5|2017-11-19
+8275|2012-12-06|The Science Of Biology|Freeman|H & W Company|||English|4|2017-11-19
+9282|2014-09-10|Night Owl|M|Pierce|||English|5|2017-11-19

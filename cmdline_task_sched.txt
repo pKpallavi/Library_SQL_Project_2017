@@ -1,0 +1,3 @@
+schtasks /Create /S desktop-6ndur2e /ru purvi /TN LibraryTaskSubmit /XML "C:\Data\Library_SQL_Project_2017\LibraryTaskScheduler.xml"
+
+schtasks /Run /S desktop-6ndur2e /i /TN LibraryTaskSubmit /hresult

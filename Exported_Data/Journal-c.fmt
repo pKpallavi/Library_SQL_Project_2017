@@ -1,0 +1,6 @@
+12.0
+4
+1       SQLCHAR             0       12      "|"      1     Journal_Media_ID                               ""
+2       SQLCHAR             0       12      "|"      2     Journal_ISSN_No                                ""
+3       SQLCHAR             0       11      "|"      3     Journal_Bought_Date                            ""
+4       SQLCHAR             0       11      "\r\n"   4     Journal_Entry_Changed                          ""

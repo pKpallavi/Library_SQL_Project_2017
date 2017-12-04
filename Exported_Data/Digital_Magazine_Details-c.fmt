@@ -1,0 +1,12 @@
+12.0
+10
+1       SQLCHAR             0       12      "|"      1     Digital_Magazine_Details_Internal_ID                                         ""
+2       SQLCHAR             0       100     "|"      2     Digital_Magazine_Name                                                        SQL_Latin1_General_CP1_CI_AS
+3       SQLCHAR             0       11      "|"      3     Digital_Magazine_Published_Date                                              ""
+4       SQLCHAR             0       12      "|"      4     Digital_Magazine_Volume_Num                                                  ""
+5       SQLCHAR             0       12      "|"      5     Digital_Magazine_Issue_Num                                                   ""
+6       SQLCHAR             0       50      "|"      6     Digital_Magazine_Publisher                                                   SQL_Latin1_General_CP1_CI_AS
+7       SQLCHAR             0       30      "|"      7     Digital_Magazine_Genre                                                       SQL_Latin1_General_CP1_CI_AS
+8       SQLCHAR             0       100     "|"      8     Digital_Magazine_File_Size                                                   SQL_Latin1_General_CP1_CI_AS
+9       SQLCHAR             0       100     "|"      9     Digital_Magazine_File_Path                                                   SQL_Latin1_General_CP1_CI_AS
+10      SQLCHAR             0       11      "\r\n"   10    Digital_Magazine_Entry_Changed                                               ""

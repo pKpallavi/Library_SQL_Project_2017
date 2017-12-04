@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<!--
+Task scheduler created for Library Project from Microsoft Task scheduler example.
+-->
+<Task xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+    <RegistrationInfo>
+        <Date>2017-10-11T10:50:00-00:00</Date>
+        <Author>PallaviK</Author>
+        <Version>1.0.0</Version>
+        <Description>Library consolidation starts daily</Description>
+    </RegistrationInfo>
+    <Triggers>
+        <CalendarTrigger>
+            <StartBoundary>2017-10-11T10:50:00-00:00</StartBoundary>
+            <EndBoundary>2018-01-01T00:00:00-08:00</EndBoundary>
+            <ScheduleByDay>
+                <DaysInterval>1</DaysInterval>
+            </ScheduleByDay>
+        </CalendarTrigger>
+    </Triggers>
+    <Principals>
+        <Principal>
+            <UserId>piyushkumr@outlook.com</UserId>
+            <LogonType>InteractiveToken</LogonType>
+        </Principal>
+    </Principals>
+    <Settings>
+        <Enabled>true</Enabled>
+        <AllowStartOnDemand>true</AllowStartOnDemand>
+        <AllowHardTerminate>true</AllowHardTerminate>
+    </Settings>
+    <Actions>
+        <Exec>
+            <Command>C:\Data\Library_SQL_Project_2017\library_job.bat</Command>
+        </Exec>
+    </Actions>
+</Task>

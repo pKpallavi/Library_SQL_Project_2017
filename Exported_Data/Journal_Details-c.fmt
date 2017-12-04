@@ -1,0 +1,14 @@
+12.0
+12
+1       SQLCHAR             0       12      "|"      1     Journal_Details_ISSN_Number                                            ""
+2       SQLCHAR             0       100     "|"      2     Journal_Details_Title                                                  SQL_Latin1_General_CP1_CI_AS
+3       SQLCHAR             0       100     "|"      3     Journal_Details_Alternate_Title                                        SQL_Latin1_General_CP1_CI_AS
+4       SQLCHAR             0       100     "|"      4     Journal_Details_Source                                                 SQL_Latin1_General_CP1_CI_AS
+5       SQLCHAR             0       11      "|"      5     Journal_Details_Published_Date                                         ""
+6       SQLCHAR             0       11      "|"      6     Journal_Details_End_Date                                               ""
+7       SQLCHAR             0       12      "|"      7     Journal_Details_Volume                                                 ""
+8       SQLCHAR             0       12      "|"      8     Journal_Details_Issue                                                  ""
+9       SQLCHAR             0       30      "|"      9     Journal_Details_Author_Last_Name                                       SQL_Latin1_General_CP1_CI_AS
+10      SQLCHAR             0       30      "|"      10    Journal_Details_Author_First_Name                                      SQL_Latin1_General_CP1_CI_AS
+11      SQLCHAR             0       12      "|"      11    Journal_Details_Price                                                  ""
+12      SQLCHAR             0       11      "\r\n"   12    Journal_Details_Entry_Changed                                          ""

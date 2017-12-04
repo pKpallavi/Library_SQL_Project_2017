@@ -1,0 +1,13 @@
+66070|Consumer Price Index||US Bureau of Labor Statistics|2011-07-20|1900-01-01|31|11|Mark|Joyce|||2017-11-19
+66210|Development Outreach||World Bank|2012-08-22|1900-01-01|21|8|Vargaria|Roland|||2017-11-19
+67520|A Knowledge of Nature||Society for Nature|2014-07-20|1900-01-01|20|7|Join|Just|||2017-11-19
+67561|A History of Illinois||Society for Illinois study|2016-10-21|1900-01-01|20|10|Ampersand|Mark|||2017-11-19
+67808|The Science XYZ||Society for Science|2017-01-01|1900-01-01|78|1|Smith|Jason|||2017-11-19
+67821|Automotive Design and Production||AD P|2012-01-30|1900-01-01|14|10|Ford|Mustang|||2017-11-19
+68039|The Automobile Journal||Society for Mechanics|2015-10-10|1900-01-01|33|10|Motors|Tata|||2017-11-19
+68287|The Heritage Parks||American Society for Parks |2010-07-23|1900-01-01|22|3|King|Happy|||2017-11-19
+68666|The Rare Gems Catalogue||Unique Jewellers|2013-10-02|1900-01-01|31|10|Joe|Rank|||2017-11-19
+68885|The Education Journey||Society for Education|2013-06-22|1900-01-01|30|6|Deer|Hill|||2017-11-19
+69468|The Natural Science Journal||The Smithsonian Institute|2015-06-10|1900-01-01|24|6|Jam|Jello|||2017-11-19
+69552|The Plant Journal||John Wiley & Sons Ltd|2016-09-01|1900-01-01|91|5|Sweetlove|Lee|||2017-11-19
+69654|The Animals Journal||Society for Zoology|2015-08-22|1900-01-01|40|8|Doe|Jane|||2017-11-19

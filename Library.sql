@@ -1,9 +1,3 @@
-use tempdb;
-drop database Library_SQL_Project;
-create database Library_SQL_Project;
-
-use Library_SQL_Project;
-
 /* if exists( Select * from Library)
 	 drop table Library; */
 

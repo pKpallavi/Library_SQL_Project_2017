@@ -1,0 +1,11 @@
+12.0
+9
+1       SQLCHAR             0       12      "|"      1     Magazine_Details_Internal_ID                                       ""
+2       SQLCHAR             0       100     "|"      2     Magazine_Details_Name                                              SQL_Latin1_General_CP1_CI_AS
+3       SQLCHAR             0       11      "|"      3     Magazine_Details_Published_Date                                    ""
+4       SQLCHAR             0       12      "|"      4     Magazine_Details_Volume_Num                                        ""
+5       SQLCHAR             0       12      "|"      5     Magazine_Details_Issue_Num                                         ""
+6       SQLCHAR             0       50      "|"      6     Magazine_Details_Publisher                                         SQL_Latin1_General_CP1_CI_AS
+7       SQLCHAR             0       30      "|"      7     Magazine_Details_Genre                                             SQL_Latin1_General_CP1_CI_AS
+8       SQLCHAR             0       12      "|"      8     Magazine_Details_Price                                             ""
+9       SQLCHAR             0       11      "\r\n"   9     Magazine_Details_Entry_Changed                                     ""

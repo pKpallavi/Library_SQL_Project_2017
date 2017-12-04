@@ -1,0 +1,14 @@
+12.0
+12
+1       SQLCHAR             0       12      "|"      1     Library_Member_ID                                      ""
+2       SQLCHAR             0       12      "|"      2     Library_Member_Library_ID                              ""
+3       SQLCHAR             0       12      "|"      3     Library_Member_Parent_ID                               ""
+4       SQLCHAR             0       30      "|"      4     Library_Member_First_Name                              SQL_Latin1_General_CP1_CI_AS
+5       SQLCHAR             0       30      "|"      5     Library_Member_Last_Name                               SQL_Latin1_General_CP1_CI_AS
+6       SQLCHAR             0       11      "|"      6     Library_Member_DOB                                     ""
+7       SQLCHAR             0       100     "|"      7     Library_Member_Address                                 SQL_Latin1_General_CP1_CI_AS
+8       SQLCHAR             0       20      "|"      8     Library_Member_City                                    SQL_Latin1_General_CP1_CI_AS
+9       SQLCHAR             0       2       "|"      9     Library_Member_State                                   SQL_Latin1_General_CP1_CI_AS
+10      SQLCHAR             0       12      "|"      10    Library_Member_Zip_code                                ""
+11      SQLCHAR             0       12      "|"      11    Library_Member_Dues                                    ""
+12      SQLCHAR             0       11      "\r\n"   12    Library_Member_Since                                   ""

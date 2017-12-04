@@ -1,0 +1,15 @@
+12.0
+13
+1       SQLCHAR             0       12      "|"      1     eJournal_Details_ISSN_Number                                             ""
+2       SQLCHAR             0       100     "|"      2     eJournal_Details_Title                                                   SQL_Latin1_General_CP1_CI_AS
+3       SQLCHAR             0       100     "|"      3     eJournal_Details_Alternate_Title                                         SQL_Latin1_General_CP1_CI_AS
+4       SQLCHAR             0       100     "|"      4     eJournal_Details_Source                                                  SQL_Latin1_General_CP1_CI_AS
+5       SQLCHAR             0       11      "|"      5     eJournal_Details_Published_Date                                          ""
+6       SQLCHAR             0       11      "|"      6     eJournal_Details_End_Date                                                ""
+7       SQLCHAR             0       12      "|"      7     eJournal_Details_Volume                                                  ""
+8       SQLCHAR             0       12      "|"      8     eJournal_Details_Issue                                                   ""
+9       SQLCHAR             0       30      "|"      9     eJournal_Details_Author_Last_Name                                        SQL_Latin1_General_CP1_CI_AS
+10      SQLCHAR             0       30      "|"      10    eJournal_Details_Author_First_Name                                       SQL_Latin1_General_CP1_CI_AS
+11      SQLCHAR             0       100     "|"      11    eJournal_Details_File_Size                                               SQL_Latin1_General_CP1_CI_AS
+12      SQLCHAR             0       100     "|"      12    eJournal_Details_File_Path                                               SQL_Latin1_General_CP1_CI_AS
+13      SQLCHAR             0       11      "\r\n"   13    eJournal_Details_Entry_Changed                                           ""

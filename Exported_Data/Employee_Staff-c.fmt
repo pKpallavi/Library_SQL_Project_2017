@@ -1,0 +1,8 @@
+12.0
+6
+1       SQLCHAR             0       12      "|"      1     Employee_Staff_ID                                                    ""
+2       SQLCHAR             0       12      "|"      2     Employee_Staff_Library_Member_ID                                     ""
+3       SQLCHAR             0       30      "|"      3     Employee_Staff_Designation                                           SQL_Latin1_General_CP1_CI_AS
+4       SQLCHAR             0       12      "|"      4     Employee_Staff_SSN                                                   ""
+5       SQLCHAR             0       11      "|"      5     Employee_Staff_Joining_Date                                          ""
+6       SQLCHAR             0       30      "\r\n"   6     Employee_Staff_Hours_Worked                                          SQL_Latin1_General_CP1_CI_AS
