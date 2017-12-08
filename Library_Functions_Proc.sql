@@ -80,9 +80,9 @@ select eb.eBook_Media_ID, eb.eBook_ISBN_No, eb.eBook_Bought_Date, ebd.eBook_Deta
 
 select j.Journal_Media_ID, j.Journal_ISSN_No, j.Journal_Bought_Date, jd.Journal_Details_Title, jd.Journal_Details_Author_First_Name, jd.Journal_Details_Author_Last_Name from Journal_Details jd left outer join Journal j on j.Journal_ISSN_No = jd.Journal_Details_ISSN_Number;
 
-select ej.eJournal_Media_ID, ej.eJournal_ISSN_No, ej.eJournal_Bought_Date, ejd.eJournal_Details_Title, ejd.eJournal_Details_Author_First_Name, ejd.eJournal_Details_Author_Last_Name from eJournal ej right outer join eJournal_Details ejd on ej.eJournal_ISSN_No = ejd.eJournal_Details_ISSN_Number;
+select ej.eJournal_Media_ID, ej.eJournal_Bought_Date, ejd.eJournal_Details_ISSN_Number, ejd.eJournal_Details_Title, ejd.eJournal_Details_Author_First_Name, ejd.eJournal_Details_Author_Last_Name from eJournal ej right outer join eJournal_Details ejd on ej.eJournal_ISSN_No = ejd.eJournal_Details_ISSN_Number;
 
-select mg.Magazine_Media_ID, mg.Magazine_Internal_ID, mg.Magazine_Bought_Date, mgd.Magazine_Details_Name, mgd.Magazine_Details_Publisher, mgd.Magazine_Details_Volume_Num from Magazine mg right outer join Magazine_Details mgd on mg.Magazine_Internal_ID = mgd.Magazine_Details_Internal_ID where mg.Magazine_Internal_ID IS NULL;
+select mg.Magazine_Media_ID, mg.Magazine_Bought_Date, mgd.Magazine_Details_Internal_ID, mgd.Magazine_Details_Name, mgd.Magazine_Details_Publisher, mgd.Magazine_Details_Volume_Num from Magazine mg right outer join Magazine_Details mgd on mg.Magazine_Internal_ID = mgd.Magazine_Details_Internal_ID where mg.Magazine_Internal_ID IS NULL;
 
 go 
 
