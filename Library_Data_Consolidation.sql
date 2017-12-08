@@ -145,17 +145,17 @@ begin
 			if (@message1 <> '')
 			begin
 				set @file_path = 'C:\Data\Library_SQL_Project_2017\' + CAST(@curr_member_id as varchar(12)) + '.txt';
-				set @message1 += 'PRINT CHAR(13) + CHAR(10) + "Yours sincerely, " + CHAR(13) + CHAR(10) + "Librarian, " + CHAR(13) + CHAR(10)' + CHAR(13) + CHAR(10);
+				set @message1 += 'PRINT ''Yours sincerely, '' + CHAR(13) + CHAR(10) + ''Librarian, '' ' + CHAR(13) + CHAR(10);
 				select @tempchar100 = Library_Name from Library where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);
-				set @message1 += 'PRINT "' + @tempchar100 + ', "' +  ' + CHAR(13) + CHAR(10)' + CHAR(13) + CHAR(10);
+				set @message1 += 'PRINT ''' + @tempchar100 + ', ''' + CHAR(13) + CHAR(10);
 				select @tempchar100 = Library_Address from Library where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
-				set @message1 += 'PRINT "' + @tempchar100 + ', "' + ' + CHAR(13) + CHAR(10)' + CHAR(13) + CHAR(10);
+				set @message1 += 'PRINT ''' + @tempchar100 + ', ''' + CHAR(13) + CHAR(10);
 				select @tempchar100 = Library_City from Library where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
-				set @message1 += 'PRINT "' + @tempchar100 + ', "' + CHAR(13) + CHAR(10);
+				set @message1 += 'PRINT ''' + @tempchar100 + ', ''' ;
 				select @tempchar100 = Library_State from Library where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
-				set @message1 += 'PRINT "' + @tempchar100 + ', "' + CHAR(13) + CHAR(10);
+				set @message1 += '+ ''' + @tempchar100 + ', ''';
 				select @tempchar100 = Library_ZipCode from Library where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
-				set @message1 += 'PRINT "' + @tempchar100 + ' "' + ' + CHAR(13) + CHAR(10) + CHAR(13) + CHAR(10)' + CHAR(13) + CHAR(10);
+				set @message1 += '+ ''' + @tempchar100 + ' ''' + ' + CHAR(13) + CHAR(10) + CHAR(13) + CHAR(10)' + CHAR(13) + CHAR(10);
 
 				set @message2 = @message1;
 				set @member_no += 1;
@@ -170,17 +170,17 @@ begin
 			end;
 			set @curr_member_id = @memid;
 			set @item_per_member = 0;
-			set @message1 = 'PRINT CHAR(13) + CHAR(10) + "Dear ' + @member_first_name + ' ' + @member_last_name + ', "' +  ' + CHAR(13) + CHAR(10)' + CHAR(13) + CHAR(10);
+			set @message1 = 'PRINT CHAR(13) + CHAR(10) + ''Dear ' + @member_first_name + ' ' + @member_last_name + ', ''' + CHAR(13) + CHAR(10);
 				select @tempchar100 = Library_Member_Address from Library_Member where Library_Member_ID = @memid;
-				set @message1 += 'PRINT "' + @tempchar100 + ', "' +  ' + CHAR(13) + CHAR(10)' + CHAR(13) + CHAR(10);
+				set @message1 += 'PRINT ''' + @tempchar100 + ', ''' + CHAR(13) + CHAR(10);
 				select @tempchar100 = Library_Member_City from Library_Member where Library_Member_ID = @memid;
-				set @message1 += 'PRINT "' + @tempchar100 + ', "' + CHAR(13) + CHAR(10);
+				set @message1 += 'PRINT ''' + @tempchar100 + ', ''';
 				select @tempchar100 = Library_Member_State from Library_Member where Library_Member_ID = @memid;
-				set @message1 += 'PRINT "' + @tempchar100 + ', "' + CHAR(13) + CHAR(10);
+				set @message1 += '+ ''' + @tempchar100 + ', ''';
 				select @tempchar100 = Library_Member_Zip_code from Library_Member where Library_Member_ID = @memid;
-				set @message1 += 'PRINT "' + @tempchar100 + ' "' + ' + CHAR(13) + CHAR(10) + CHAR(13) + CHAR(10)' + CHAR(13) + CHAR(10);
-			set @message1 += 'PRINT "' + 'Following items from our library are due. "' + CHAR(13) + CHAR(10);
-			set @message1 += 'PRINT "' + 'Please renew or return them to the Library soon. Thank you."' +  ' + CHAR(13) + CHAR(10)' + CHAR(13) + CHAR(10);
+				set @message1 += '+ ''' + @tempchar100 + ' ''' + ' + CHAR(13) + CHAR(10)' + CHAR(13) + CHAR(10);
+			set @message1 += 'PRINT ''' + 'Following items from our library are due. ''' + CHAR(13) + CHAR(10);
+			set @message1 += 'PRINT ''' + 'Please renew or return them to the Library soon. Thank you.''' +  ' + CHAR(13) + CHAR(10)' + CHAR(13) + CHAR(10);
 		end;
 
 		select @mformat = Media_Format from Media where Media_ID = @mediaid;
@@ -193,15 +193,15 @@ begin
 		end
 		)
 		set @item_per_member += 1;
-		set @message1 += 'PRINT "' + CAST(@item_per_member as varchar(5)) + ' ' + CAST(@mediaid as varchar(8)) + ' ' + @tempchar100 + ' ' + CAST(@chk_out_due_date as varchar(10)) + ' "' +  ' + CHAR(13) + CHAR(10)' + CHAR(13) + CHAR(10);
+		set @message1 += 'PRINT ''' + CAST(@item_per_member as varchar(5)) + ' ' + CAST(@mediaid as varchar(8)) + ' ' + @tempchar100 + ' ' + CAST(@chk_out_due_date as varchar(10)) + ' ''' +  ' + CHAR(13) + CHAR(10)' + CHAR(13) + CHAR(10);
 	end;
 
 	if(@message2 <> '')
 	begin
---		PRINT ':SETVAR FilePath' + CAST(@member_no as varchar(12)) + ' "' + @file_path + '"' + CHAR(13) + CHAR(10);
---		PRINT ':SETVAR Message' + CAST(@member_no as varchar(12)) + ' "' + @message2 + '"' + CHAR(13) + CHAR(10);
+--		PRINT ':SETVAR FilePath' + CAST(@member_no as varchar(12)) + ' ''' + @file_path + '''' + CHAR(13) + CHAR(10);
+--		PRINT ':SETVAR Message' + CAST(@member_no as varchar(12)) + ' ''' + @message2 + '''' + CHAR(13) + CHAR(10);
 		PRINT ':OUT "' + @file_path + '"' + CHAR(13) + CHAR(10);
-		PRINT 'PRINT' + @message2 + CHAR(13) + CHAR(10);
+		PRINT @message2 + CHAR(13) + CHAR(10);
 		set @message2 = '';
 	end;
 	fetch next from media_notify_dues_loop into @memid, @chk_out_due_date, @mediaid, @mem_dues_updated;
@@ -210,20 +210,20 @@ end;
 if (@message1 <> '')
 begin
 	set @file_path = 'C:\Data\Library_SQL_Project_2017\' + CAST(@curr_member_id as varchar(12)) + '.txt';
-	set @message1 += 'PRINT CHAR(13) + CHAR(10) + "Yours sincerely, " + CHAR(13) + CHAR(10) + "Librarian, " + CHAR(13) + CHAR(10)' + CHAR(13) + CHAR(10);
+	set @message1 += 'PRINT ''Yours sincerely, '' + CHAR(13) + CHAR(10) + ''Librarian, '' ' + CHAR(13) + CHAR(10);
 	select @tempchar100 = Library_Name from Library where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);
-	set @message1 += 'PRINT "' + @tempchar100 + ', "' +  ' + CHAR(13) + CHAR(10)' + CHAR(13) + CHAR(10);
+	set @message1 += 'PRINT ''' + @tempchar100 + ', ''' + CHAR(13) + CHAR(10);
 	select @tempchar100 = Library_Address from Library where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
-	set @message1 += 'PRINT "' + @tempchar100 + ', "' + ' + CHAR(13) + CHAR(10)' + CHAR(13) + CHAR(10);
+	set @message1 += 'PRINT ''' + @tempchar100 + ', ''' + CHAR(13) + CHAR(10);
 	select @tempchar100 = Library_City from Library where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
-	set @message1 += 'PRINT "' + @tempchar100 + ', "' + CHAR(13) + CHAR(10);
+	set @message1 += 'PRINT ''' + @tempchar100 + ', ''' ;
 	select @tempchar100 = Library_State from Library where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
-	set @message1 += 'PRINT "' + @tempchar100 + ', "' + CHAR(13) + CHAR(10);
+	set @message1 += '+ ''' + @tempchar100 + ', ''';
 	select @tempchar100 = Library_ZipCode from Library where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
-	set @message1 += 'PRINT "' + @tempchar100 + ' "' + ' + CHAR(13) + CHAR(10) + CHAR(13) + CHAR(10)' + CHAR(13) + CHAR(10);
+	set @message1 += '+ ''' + @tempchar100 + ' ''' + ' + CHAR(13) + CHAR(10) + CHAR(13) + CHAR(10)' + CHAR(13) + CHAR(10);
 
---	PRINT ':SETVAR FilePath' + CAST(@member_no as varchar(12)) + ' "' + @file_path + '"' + CHAR(13) + CHAR(10);
---	PRINT ':SETVAR Message' + CAST(@member_no as varchar(12)) + ' "' + @message1 + '"' + CHAR(13) + CHAR(10);
+--	PRINT ':SETVAR FilePath' + CAST(@member_no as varchar(12)) + ' ''' + @file_path + '''' + CHAR(13) + CHAR(10);
+--	PRINT ':SETVAR Message' + CAST(@member_no as varchar(12)) + ' ''' + @message1 + '''' + CHAR(13) + CHAR(10);
 
 	PRINT ':OUT "' + @file_path + '"' + CHAR(13) + CHAR(10);
 	PRINT @message1 + CHAR(13) + CHAR(10);
