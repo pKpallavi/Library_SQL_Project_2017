@@ -23,8 +23,7 @@ SET NOCOUNT OFF
 BULK INSERT Library_SQL_Project_Imported.dbo.Library FROM "C:\Data\Library_SQL_Project_2017\Exported_Data\Library.txt"
    WITH (
       DATAFILETYPE = 'char',
-	  FORMATFILE = 'C:\Data\Library_SQL_Project_2017\Exported_Data\Library-c.fmt',
-	  FIELDTERMINATOR = '|'
+	  FORMATFILE = 'C:\Data\Library_SQL_Project_2017\Exported_Data\Library-c.fmt'
 );
 
 go

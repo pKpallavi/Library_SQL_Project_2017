@@ -10,7 +10,6 @@ use Library_SQL_Project;
 delete from Orders_Details;
 delete from Orders;
 delete from Supplier;
-delete from Supplier_Media_Info;
 delete from Media_Hold;
 delete from Media_Check_Out;
 delete from Login_Table;
@@ -1431,7 +1430,7 @@ select * from Media_Check_Out;
 
 go
 
-execute L_Insert_Update_Media_Check_Out	1,890001000,890001,'11/03/2017','';
+execute L_Insert_Update_Media_Check_Out	1,890001000,890001,'11/09/2017','';
 --execute L_Insert_Update_Media_Check_Out	2,890001001,890003,'9/1/2017','9/8/2017';
 --execute L_Insert_Update_Media_Check_Out	3,890001002,890005,'8/25/2017','9/1/2017';
 
