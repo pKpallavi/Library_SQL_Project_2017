@@ -84,6 +84,14 @@ select ej.eJournal_Media_ID, ej.eJournal_Bought_Date, ejd.eJournal_Details_ISSN_
 
 select mg.Magazine_Media_ID, mg.Magazine_Bought_Date, mgd.Magazine_Details_Internal_ID, mgd.Magazine_Details_Name, mgd.Magazine_Details_Publisher, mgd.Magazine_Details_Volume_Num from Magazine mg right outer join Magazine_Details mgd on mg.Magazine_Internal_ID = mgd.Magazine_Details_Internal_ID where mg.Magazine_Internal_ID IS NULL;
 
+select bk.Book_Media_ID, bk.Book_Bought_Date, bkd.Book_Details_ISBN_No, bkd.Book_Details_Title, bkd.Book_Details_Author_Last_Name, bkd.Book_Details_Published_Year from Book bk right outer join Book_Details bkd on bk.Book_ISBN_No = bkd.Book_Details_ISBN_No where bk.Book_ISBN_No IS NULL;
+
+select jrnl.Journal_Media_ID, jrnl.Journal_Bought_Date, jrnld.Journal_Details_ISSN_Number, jrnld.Journal_Details_Title, jrnld.Journal_Details_Source, jrnld.Journal_Details_Volume from Journal jrnl right outer join Journal_Details jrnld on jrnl.Journal_ISSN_No = jrnld.Journal_Details_ISSN_Number where jrnl.Journal_ISSN_No IS NULL;
+
+select cd.CD_Media_ID, cd.CD_Bought_Date, cdd.CD_Details_Internal_ID, cdd.CD_Details_Title, cdd.CD_Details_Publisher, cdd.CD_Details_Release_Date from CD cd right outer join CD_Details cdd on cd.CD_Internal_ID = cdd.CD_Details_Internal_ID where cd.CD_Internal_ID IS NULL;
+
+select dvd.DVD_Media_ID, dvd.DVD_Bought_Date, dvdd.DVD_Details_ISBN_No, dvdd.DVD_Details_Title, dvdd.DVD_Details_Publisher, dvdd.DVD_Details_Release_Date from DVD dvd right outer join DVD_Details dvdd on dvd.DVD_ISBN_No = dvdd.DVD_Details_ISBN_No where dvd.DVD_ISBN_No IS NULL;
+
 go 
 
 if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Update_Member_Dues') = 1)

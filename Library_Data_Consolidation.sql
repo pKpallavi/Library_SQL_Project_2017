@@ -112,6 +112,8 @@ close media_check_out_loop;
 deallocate media_check_out_loop;
 
 ---------------------------------------------------------------------------------------------------------------------
+:Setvar SQLCMDOUTPUTFILEPATH "C:\Data\Library_SQL_Project_2017\temp.sql" 
+:OUT $(SQLCMDOUTPUTFILEPATH)
 
 declare @message1 as varchar(1000), @member_first_name as varchar(30), @member_last_name as varchar(30), @item_per_member as int, @message2 as varchar(100);
 declare @tempchar100 as varchar(100), @file_path as varchar(100), @curr_member_id as int, @member_no as int;
@@ -123,9 +125,6 @@ set @curr_member_id = 0;
 set @member_no = 1;
 
 declare media_notify_dues_loop cursor for select Media_Check_Out_Member_ID, Media_Check_Out_Due_Date, Media_Check_Out_Media_ID, Media_Check_Out_Member_Dues_Updated from Media_Check_Out where(DATEDIFF(dd, Media_Check_Out_Due_Date, CONVERT(date, SYSDATETIME())) >= -2) Order by Media_Check_Out_Member_ID;
-
-:Setvar SQLCMDOUTPUTFILEPATH "C:\Data\Library_SQL_Project_2017\temp.sql" 
-:OUT $(SQLCMDOUTPUTFILEPATH)
 
 --Notify Member of due Media
 open media_notify_dues_loop;
@@ -259,4 +258,7 @@ deallocate media_notify_dues_loop;
 go
 
 :r "C:\Data\Library_SQL_Project_2017\temp.sql"
+
+go
+
 

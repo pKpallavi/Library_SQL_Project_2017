@@ -1542,3 +1542,68 @@ go
 select * from Media_Hold;
 
 go
+
+insert into Supplier(Supplier_ID, Supplier_Name, Supplier_Address, Supplier_City, Supplier_State, Supplier_Zip_code, Supplier_Phone_No) values(10, 'ABC Suppliers Inc', '258 Bartlett Ln', 'Bartlett', 'IL',60156 , '6308478990');
+insert into Supplier(Supplier_ID, Supplier_Name, Supplier_Address, Supplier_City, Supplier_State, Supplier_Zip_code, Supplier_Phone_No) values(20, 'Variety Suppliers Inc', '258 County Line Rd', 'Aurora', 'IL',60505 , '6308478990');
+insert into Supplier(Supplier_ID, Supplier_Name, Supplier_Address, Supplier_City, Supplier_State, Supplier_Zip_code, Supplier_Phone_No) values(30, 'XYX Publishers and Suppliers Inc', '258 Valley Lake Dr', 'Schaumburg', 'IL',60195 , '6308478990');
+insert into Supplier(Supplier_ID, Supplier_Name, Supplier_Address, Supplier_City, Supplier_State, Supplier_Zip_code, Supplier_Phone_No) values(40, 'Trendy Books and Journals Inc', '4581 Mandy Ln', 'Buffalo Grove', 'IL',60089 , '6308478990');
+insert into Supplier(Supplier_ID, Supplier_Name, Supplier_Address, Supplier_City, Supplier_State, Supplier_Zip_code, Supplier_Phone_No) values(50, 'Arbor Trading Inc', 'E 60th Street', 'Chicago', 'IL',60007 , '6308478990');
+
+go
+
+select * from Supplier;
+
+go
+
+insert into Orders(	Orders_ID, Orders_Supplier_ID, Orders_Date_Ordered, Orders_Date_Required,
+	Orders_Status, Orders_Payment_Amount) values(11, 10, '7/7/2016', '9/7/2016',	'Paid', 44);
+
+insert into Orders (Orders_ID, Orders_Supplier_ID, Orders_Date_Ordered, Orders_Date_Required,
+	Orders_Status, Orders_Payment_Amount) values(12, 20, '8/7/2017', '10/7/2017', 'Placed', 0);
+
+insert into Orders (Orders_ID, Orders_Supplier_ID, Orders_Date_Ordered, Orders_Date_Required,
+	Orders_Status, Orders_Payment_Amount) values(13, 30, '1/23/2016', '3/23/2017', 'Accepted', 0);
+
+insert into Orders (Orders_ID, Orders_Supplier_ID, Orders_Date_Ordered, Orders_Date_Required,
+	Orders_Status, Orders_Payment_Amount) values(14, 40, '5/21/2016', '7/21/2016', 'Delivered', 0);
+
+insert into Orders (Orders_ID, Orders_Supplier_ID, Orders_Date_Ordered, Orders_Date_Required,
+	Orders_Status, Orders_Payment_Amount) values(15, 50, '3/11/2017', '5/11/2017', 'Cancelled', 0);
+
+go
+
+select * from Orders;
+
+go
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(1, 11, 40011, 'Autoweek', 'Wren, Wick A.', '', '', '', CAST('' as int), '2009-09-26', '', 30, 8, 'Automobiles', '', 6, 12 , 2, 'Paid', '8/7/2016');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(2, 11, 40012, 'Food Science and Nutrition', 'Wiley Periodicals, Inc', '', '', '', CAST('' as int), '2008-05-26', '', 25, 5, 'Food', '', 6, 12 , 2, 'Paid', '8/7/2016');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(3, 11, 40013, 'Export Today''s Global Business', 'Ebsco Business Source Complete', '', '', '', CAST('' as int), '2012-07-29', '', 31, 3, 'Finance', '', 10, 20 , 2, 'Paid', '8/7/2016');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(4, 12, 1200, 'My social media for seniors', '', 'Michael,', 'Miller', 'English', CAST('' as int), '1/1/2010', '', CAST('' as int), CAST('' as int), '', '', 10, 20 , 2, 'Placed', '');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(5, 12, 2000, 'Computers for seniors : email, internet, photos, and more in 14 easy lessons', '', 'Chris,', 'Ewin', 'English', CAST('' as int), '1/1/2008', '', CAST('' as int), CAST('' as int), '', '', 10, 20 , 2, 'Placed', '');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(6, 12, 2487, 'Zero belly breakfasts', '', 'David,', 'Zinczenko', 'English', CAST('' as int), '1/1/1992', '', CAST('' as int), CAST('' as int), '', '', 10, 20 , 2, 'Placed', '');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(7, 13, 60070, 'Consumer Price Index', 'US Bureau of Labor Statistics', 'Mark,', 'Joyce', '', CAST('' as int), '2011-07-20', '', 31, 11, '', '', 4, 8, 2, 'Accepted', '');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(8, 13, 63210, 'Development Outreach', 'World Bank', 'Roland,', 'Vargaria', '', CAST('' as int), '2012-08-22', '', 21, 8, '', '', 4, 8, 2, 'Accepted', '');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(9, 13, 63821, 'Automotive Design and Production', 'AD P', 'Mustang,', 'Ford', '', CAST('' as int), '2012-01-30', '', 14, 10, '', '', 4, 8, 2, 'Accepted', '');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(10, 14, 63821, 'Automotive Design and Production', 'AD P', 'Mustang,', 'Ford', '', CAST('' as int), '2012-01-30', '', 14, 10, '', '', 4, 8, 2, 'Delivered', '');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(11, 14, 63210, 'Development Outreach', 'World Bank', 'Roland,', 'Vargaria', '', CAST('' as int), '2012-08-22', '', 21, 8, '', '', 4, 8, 2, 'Delivered', '');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(12, 15, 1200, 'My social media for seniors', '', 'Michael,', 'Miller', 'English', CAST('' as int), '1/1/2010', '', CAST('' as int), CAST('' as int), '', '', 10, 20 , 2, 'Cancelled', '');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(13, 15, 2000, 'Computers for seniors : email, internet, photos, and more in 14 easy lessons', '', 'Chris,', 'Ewin', 'English', CAST('' as int), '1/1/2008', '', CAST('' as int), CAST('' as int), '', '', 10, 20 , 2, 'Cancelled', '');
+
+go
+
+select * from Orders_Details;
+
+go
