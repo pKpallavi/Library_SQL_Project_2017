@@ -298,9 +298,10 @@ select @pub_year = Book_Details_Published_Year from Book_Details where Book_Deta
 select @lib_opened_year = Library.Library_Year_Opened from Library, Media where Library.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
 if Year(@Bought_Date) < @pub_year or Year(@Bought_Date) < @lib_opened_year
 begin
-	set @msg = 'Error in Book_Bought_Date value. Should be later than Published year and Library opening year';
-	--Library opening year can be a field in the database 
-	Raiserror(@msg,16,1);
+	--set @msg = 'Error in Book_Bought_Date value. Should be later than Published year and Library opening year';
+	--Raiserror(@msg,16,1);
+	PRINT 'Error in Book_Bought_Date value. Should be later than Published year and Library opening year';
+	return;
 end;
 insert into Book(Book_Media_ID, Book_ISBN_No, Book_Bought_Date) values(@Media_ID, @ISBN_No, @Bought_Date) 
 end;
@@ -385,9 +386,10 @@ select @pub_year = Year(eBook_Details_Release_Date) from eBook_Details where eBo
 select @lib_opened_year = Library.Library_Year_Opened from Library, Media where Library.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
 if Year(@Bought_Date) < @pub_year or Year(@Bought_Date) < @lib_opened_year
 begin
-	set @msg = 'Error in eBook_Bought_Date value. Should be later than Published year and Library opening year';
-	--Library opening year can be a field in the database 
-	Raiserror(@msg,16,1);
+	--set @msg = 'Error in eBook_Bought_Date value. Should be later than Published year and Library opening year';
+	--Raiserror(@msg,16,1);
+	print 'Error in eBook_Bought_Date value. Should be later than Published year and Library opening year';
+	RETURN;
 end;
 insert into eBook(eBook_Media_ID, eBook_ISBN_No, eBook_Bought_Date) values(@Media_ID, @ISBN_No, @Bought_Date) 
 end;
@@ -472,8 +474,10 @@ select @pub_year = Year(Journal_Details_Published_Date) from Journal_Details whe
 select @lib_opened_year = Library.Library_Year_Opened from Library, Media where Library.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
 if Year(@Bought_Date) < @pub_year or Year(@Bought_Date) < @lib_opened_year
 begin
-	set @msg = 'Error in Journal_Bought_Date value. Should be later than Published date and Library opening year';
-	Raiserror(@msg,16,1);
+	--set @msg = 'Error in Journal_Bought_Date value. Should be later than Published date and Library opening year';
+	--Raiserror(@msg,16,1);
+	PRINT 'Error in Journal_Bought_Date value. Should be later than Published date and Library opening year';
+	return;
 end;
 insert into Journal(Journal_Media_ID, Journal_ISSN_No, Journal_Bought_Date) values(@Media_ID, @ISSN_No, @Bought_Date) 
 end;
@@ -556,8 +560,10 @@ select @pub_year = Year(eJournal_Details_Published_Date) from eJournal_Details w
 select @lib_opened_year = Library.Library_Year_Opened from Library, Media where Library.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
 if Year(@Bought_Date) < @pub_year or Year(@Bought_Date) < @lib_opened_year
 begin
-	set @msg = 'Error in eJournal_Bought_Date value. Should be later than Published date and Library opening year';
-	Raiserror(@msg,16,1);
+	--set @msg = 'Error in eJournal_Bought_Date value. Should be later than Published date and Library opening year';
+	--Raiserror(@msg,16,1);
+	PRINT 'Error in eJournal_Bought_Date value. Should be later than Published date and Library opening year';
+	return;
 end;
 insert into eJournal(eJournal_Media_ID, eJournal_ISSN_No, eJournal_Bought_Date) values(@Media_ID, @ISSN_No, @Bought_Date) 
 end;
@@ -641,8 +647,10 @@ select @pub_year = Year(Magazine_Details_Published_Date) from Magazine_Details w
 select @lib_opened_year = Library.Library_Year_Opened from Library, Media where Library.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
 if Year(@Bought_Date) < @pub_year or Year(@Bought_Date) < @lib_opened_year
 begin
-	set @msg = 'Error in Magazine_Bought_Date value. Should be later than Published date and Library opening year';
-	Raiserror(@msg,16,1);
+	--set @msg = 'Error in Magazine_Bought_Date value. Should be later than Published date and Library opening year';
+	--Raiserror(@msg,16,1);
+	PRINT 'Error in Magazine_Bought_Date value. Should be later than Published date and Library opening year';
+	return;
 end;
 insert into Magazine(Magazine_Media_ID, Magazine_Internal_ID, Magazine_Bought_Date) values(@Media_ID, @Int_ID, @Bought_Date);
 end;
@@ -719,8 +727,10 @@ select @pub_year = Year(Digital_Magazine_Published_Date) from Digital_Magazine_D
 select @lib_opened_year = Library.Library_Year_Opened from Library, Media where Library.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
 if Year(@Bought_Date) < @pub_year or Year(@Bought_Date) < @lib_opened_year
 begin
-	set @msg = 'Error in Digital_Magazine_Bought_Date value. Should be later than Published date and Library opening year';
-	Raiserror(@msg,16,1);
+	--set @msg = 'Error in Digital_Magazine_Bought_Date value. Should be later than Published date and Library opening year';
+	--Raiserror(@msg,16,1);
+	PRINT 'Error in Digital_Magazine_Bought_Date value. Should be later than Published date and Library opening year';
+	return;
 end;
 insert into Digital_Magazine(Digital_Magazine_Media_ID, Digital_Magazine_Internal_ID, Digital_Magazine_Bought_Date) values(@Media_ID, @Int_ID, @Bought_Date);
 end;
@@ -800,8 +810,10 @@ select @pub_year = Year(DVD_Details_Release_Date) from DVD_Details where DVD_Det
 select @lib_opened_year = Library.Library_Year_Opened from Library, Media where Library.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
 if Year(@Bought_Date) < @pub_year or Year(@Bought_Date) < @lib_opened_year
 begin
-	set @msg = 'Error in DVD_Bought_Date value. Should be later than Published date and Library opening year';
-	Raiserror(@msg,16,1);
+	--set @msg = 'Error in DVD_Bought_Date value. Should be later than Published date and Library opening year';
+	--Raiserror(@msg,16,1);
+	PRINT 'Error in DVD_Bought_Date value. Should be later than Published date and Library opening year';
+	return;
 end;
 insert into DVD(DVD_Media_ID, DVD_ISBN_No, DVD_Bought_Date) values(@Media_ID, @ISBN_No, @Bought_Date);
 end;
@@ -876,8 +888,10 @@ select @pub_year = Year(CD_Details_Release_Date) from CD_Details where CD_Detail
 select @lib_opened_year = Library.Library_Year_Opened from Library, Media where Library.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
 if Year(@Bought_Date) < @pub_year or Year(@Bought_Date) < @lib_opened_year
 begin
-	set @msg = 'Error in CD_Bought_Date value. Should be later than Release date and Library opening year';
-	Raiserror(@msg,16,1);
+	--set @msg = 'Error in CD_Bought_Date value. Should be later than Release date and Library opening year';
+	--Raiserror(@msg,16,1);
+	PRINT 'Error in CD_Bought_Date value. Should be later than Release date and Library opening year';
+	return;
 end;
 insert into CD(CD_Media_ID, CD_Internal_ID, CD_Bought_Date) values(@Media_ID, @Int_ID, @Bought_Date);
 end;
@@ -938,15 +952,19 @@ else
     set @date_diff = DATEDIFF(YEAR, @DOB, @curr_date) - 1
 if (@date_diff < 18 AND @Parent_ID = Null)
 begin
-	set @msg = 'Error in data entered value. Child under 18 years should have Parent ID entered';
-	Raiserror(@msg,16,1);
+	--set @msg = 'Error in data entered value. Child under 18 years should have Parent ID entered';
+	--Raiserror(@msg,16,1);
+	PRINT 'Error in data entered value. Child under 18 years should have Parent ID entered';
+	return;
 end;
 
 --Check for zip code to be among enrolled library or neighboring libraries.
 if (@Zip_code NOT IN (Select Library_ZipCode from Library))
 begin
-	set @msg = 'Error in data entered value. Zip Code should be among the list of neighboring libraries';
-	Raiserror(@msg,16,1);
+	--set @msg = 'Error in data entered value. Zip Code should be among the list of neighboring libraries';
+	--Raiserror(@msg,16,1);
+	PRINT 'Error in data entered value. Zip Code should be among the list of neighboring libraries';
+	return;
 end;
 
 insert into dbo.Library_Member(Library_Member_ID, Library_Member_Library_ID, Library_Member_Parent_ID, Library_Member_First_Name, Library_Member_Last_Name, Library_Member_DOB, Library_Member_Address,Library_Member_City,Library_Member_State, Library_Member_Zip_code) 
@@ -1016,15 +1034,19 @@ else
     set @date_diff = DATEDIFF(YEAR, @DOB, @curr_date) - 1
 if (@date_diff < 18 AND @Parent_ID = Null)
 begin
-	set @msg = 'Error in data entered value. Child under 18 years should have Parent ID entered';
-	Raiserror(@msg,16,1);
+	--set @msg = 'Error in data entered value. Child under 18 years should have Parent ID entered';
+	--Raiserror(@msg,16,1);
+	PRINT 'Error in data entered value. Child under 18 years should have Parent ID entered';
+	return;
 end;
 
 --Check for zip code to be among enrolled library or neighboring libraries.
 if (@Zip_code NOT IN (Select Library_ZipCode from Library))
 begin
-	set @msg = 'Error in data entered value. Zip Code should be among the list of neighboring libraries';
-	Raiserror(@msg,16,1);
+	--set @msg = 'Error in data entered value. Zip Code should be among the list of neighboring libraries';
+	--Raiserror(@msg,16,1);
+	PRINT 'Error in data entered value. Zip Code should be among the list of neighboring libraries';
+	return;
 end;
 
 update dbo.Library_Member set Library_Member_Parent_ID = @Parent_ID where Library_Member_ID = @Mem_ID;
@@ -1108,7 +1130,7 @@ if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROC
 
 go
 
-create proc L_Insert_Update_Media_Check_Out @ID as int, @Member_ID as int, @Media_ID as int, @Check_Out_Date as date, @Check_Out_Due_Date as date
+create proc L_Insert_Update_Media_Check_Out @ID as int, @Member_ID as int, @Media_ID as int, @Check_Out_Date as date
 as
 begin
 	declare @med_stat as varchar(30), @med_format as varchar(30), @msg as varchar(100), @media_bdate as date;
@@ -1157,14 +1179,18 @@ begin
 	if @media_bdate = ''
 	begin
 		select @Media_ID as 'Media ID', @med_format as 'Format', @media_bdate as 'bought date', @Check_Out_Date as 'check out date';
-		set @msg = 'Error in Data entered. Media not in the database.';
-		Raiserror(@msg,16,1);
+		--set @msg = 'Error in Data entered. Media not in the database.';
+		--Raiserror(@msg,16,1);
+		PRINT 'Error in Data entered. Media not in the database.';
+		return;
 	end;
 	if @media_bdate > @Check_Out_Date
 	begin
 		select @Media_ID as 'Media ID', @med_format as 'Format', @media_bdate as 'bought date', @Check_Out_Date as 'check out date';
-		set @msg = 'Error in Data entered. Check out date is incorrect';
-		Raiserror(@msg,16,1);
+		--set @msg = 'Error in Data entered. Check out date is incorrect';
+		--Raiserror(@msg,16,1);
+		PRINT 'Error in Data entered. Check out date is incorrect';
+		return;
 	end;
 
 	/* Check for holds before checking out */
@@ -1175,8 +1201,10 @@ begin
 		if((select ht_queue_no from @hold_table where ht_member_id = @Member_ID) != 1)
 		begin
 			select @med_stat as 'Media Status', @med_format as 'Format', @Media_ID as 'Media ID';
-			set @msg = 'Media is on hold by another member and cannot be renewed.';
-			Raiserror(@msg,16,1);
+			--set @msg = 'Media is on hold by another member and cannot be renewed.';
+			--Raiserror(@msg,16,1);
+			PRINT 'Media is on hold by another member and cannot be renewed.';
+			return;
 		end;
 		else
 		begin
@@ -1190,8 +1218,10 @@ begin
 		if(select COUNT(*) from @hold_table) != 0
 		begin
 			select @med_stat as 'Media Status', @med_format as 'Format', @Media_ID as 'Media ID';
-			set @msg = 'Media is on hold by another member and cannot be renewed.';
-			Raiserror(@msg,16,1);
+			--set @msg = 'Media is on hold by another member and cannot be renewed.';
+			--Raiserror(@msg,16,1);
+			PRINT 'Media is on hold by another member and cannot be renewed.';
+			return;
 		end;
 	end;
 
@@ -1207,8 +1237,10 @@ begin
 	else if @med_stat = 'Lost' or @med_stat = 'Damaged'
 	begin
 		select @med_stat as 'Media Status', @med_format as 'Format', @Media_ID as 'Media ID';
-		set @msg = 'Error in Data entered. Media is lost or damaged.';
-		Raiserror(@msg,16,1);		
+		--set @msg = 'Error in Data entered. Media is lost or damaged.';
+		--Raiserror(@msg,16,1);
+		PRINT 'Error in Data entered. Media is lost or damaged.';
+		return;		
 	end;
 	else if @med_stat = 'Due' or @med_stat = 'Checked out'
 	begin
@@ -1216,8 +1248,11 @@ begin
 		if (select Media_Check_Out_Times_Renewed from #chk_out_table) = 2
 		begin
 			select @med_stat as 'Media Status', @med_format as 'Format', @Media_ID as 'Media ID';
-			set @msg = 'Media renewed 2 times and cannot be renewed further.';
-			Raiserror(@msg,16,1);		
+			--set @msg = 'Media renewed 2 times and cannot be renewed further.';
+			--Raiserror(@msg,16,1);		
+			PRINT 'Media renewed 2 times and cannot be renewed further.';
+			delete #chk_out_table;	
+			return;
 		end;
 		else
 		begin 
@@ -1233,128 +1268,130 @@ begin
 	else
 	begin
 		select @med_stat as 'Media Status', @med_format as 'Format', @Media_ID as 'Media ID';
-		set @msg = 'Media status incorrect. Condition to be handled.';
-		Raiserror(@msg,16,1);		
+		--set @msg = 'Media status incorrect. Condition to be handled.';
+		--Raiserror(@msg,16,1);		
+		PRINT 'Media status incorrect. Condition to be handled.';
+		return;
 	end;
 
 end;
 
 go
 
-execute L_Insert_Update_Media_Check_Out	1,890001000,890001,'9/1/2017','9/8/2017';
-execute L_Insert_Update_Media_Check_Out	2,890001001,890003,'9/1/2017','9/8/2017';
-execute L_Insert_Update_Media_Check_Out	3,890001002,890005,'8/25/2017','9/1/2017';
---execute L_Insert_Update_Media_Check_Out	4,890001003,890006,'8/23/2016','8/30/2016';
---execute L_Insert_Update_Media_Check_Out	5,890001004,890007,'3/24/2016','3/31/2016';
---execute L_Insert_Update_Media_Check_Out	6,890001005,890008,'8/18/2017','8/25/2017';
-execute L_Insert_Update_Media_Check_Out	7,890001006,890009,'8/29/2017','9/5/2017';
-execute L_Insert_Update_Media_Check_Out	8,890001007,890011,'9/1/2017','9/8/2017';
-execute L_Insert_Update_Media_Check_Out	9,890001008,900003,'9/1/2017','9/8/2017';
-execute L_Insert_Update_Media_Check_Out	10,890001009,900005,'8/25/2017','9/1/2017';
---execute L_Insert_Update_Media_Check_Out	11,900001000,900006,'9/12/2015','9/19/2015';
---execute L_Insert_Update_Media_Check_Out	12,900001001,900007,'2/16/2014','2/23/2014';
---execute L_Insert_Update_Media_Check_Out	13,900001002,900008,'8/18/2017','8/25/2017';
-execute L_Insert_Update_Media_Check_Out	14,900001003,900010,'9/1/2017','9/8/2017';
-execute L_Insert_Update_Media_Check_Out	15,900001004,900011,'9/1/2017','9/8/2017';
-execute L_Insert_Update_Media_Check_Out	16,900001005,890200,'9/1/2017','9/8/2017';
-execute L_Insert_Update_Media_Check_Out	17,900001006,890201,'9/1/2017','9/8/2017';
-execute L_Insert_Update_Media_Check_Out	18,900001007,890203,'9/1/2017','9/8/2017';
-execute L_Insert_Update_Media_Check_Out	19,900001008,890205,'8/25/2017','9/1/2017';
-execute L_Insert_Update_Media_Check_Out	20,900001009,890206,'7/5/2017','7/12/2017';
-execute L_Insert_Update_Media_Check_Out	21,890001000,890207,'7/5/2017','7/12/2017';
---execute L_Insert_Update_Media_Check_Out	22,890001001,890208,'8/17/2017','8/24/2017';
-execute L_Insert_Update_Media_Check_Out	23,890001002,890209,'8/25/2017','9/1/2017';
-execute L_Insert_Update_Media_Check_Out	24,890001003,900200,'8/29/2017','9/5/2017';
-execute L_Insert_Update_Media_Check_Out	25,890001004,900203,'8/25/2017','9/1/2017';
-execute L_Insert_Update_Media_Check_Out	26,890001005,900205,'8/29/2017','9/5/2017';
-execute L_Insert_Update_Media_Check_Out	27,890001006,900206,'3/2/2017','3/9/2017';
-execute L_Insert_Update_Media_Check_Out	28,890001007,900207,'3/2/2017','3/9/2017';
---execute L_Insert_Update_Media_Check_Out	29,890001008,900208,'8/16/2017','8/23/2017';
-execute L_Insert_Update_Media_Check_Out	30,890001009,900210,'8/29/2017','9/5/2017';
-execute L_Insert_Update_Media_Check_Out	31,900001000,891200,'8/25/2017','9/1/2017';
-execute L_Insert_Update_Media_Check_Out	32,900001001,891201,'8/29/2017','9/5/2017';
-execute L_Insert_Update_Media_Check_Out	33,900001002,891203,'8/25/2017','9/1/2017';
-execute L_Insert_Update_Media_Check_Out	34,900001003,891205,'8/25/2017','9/1/2017';
---execute L_Insert_Update_Media_Check_Out	35,900001004,891206,'4/25/2014','5/2/2014';
---execute L_Insert_Update_Media_Check_Out	36,900001005,891207,'4/25/2016','5/2/2016';
---execute L_Insert_Update_Media_Check_Out	37,900001006,891208,'8/15/2017','8/22/2017';
-execute L_Insert_Update_Media_Check_Out	38,900001007,891209,'8/29/2017','9/5/2017';
-execute L_Insert_Update_Media_Check_Out	39,900001008,901200,'8/29/2017','9/5/2017';
-execute L_Insert_Update_Media_Check_Out	40,900001009,901203,'8/25/2017','9/1/2017';
-execute L_Insert_Update_Media_Check_Out	41,890001000,901205,'8/25/2017','9/1/2017';
---execute L_Insert_Update_Media_Check_Out	42,890001001,901206,'4/3/2017','4/10/2017';
---execute L_Insert_Update_Media_Check_Out	43,890001002,901207,'4/3/2017','4/10/2017';
---execute L_Insert_Update_Media_Check_Out	44,890001003,901208,'8/15/2017','8/22/2017';
-execute L_Insert_Update_Media_Check_Out	45,890001004,891400,'8/25/2017','9/1/2017';
-execute L_Insert_Update_Media_Check_Out	46,890001005,891401,'8/29/2017','9/5/2017';
-execute L_Insert_Update_Media_Check_Out	47,890001006,891403,'8/25/2017','9/1/2017';
-execute L_Insert_Update_Media_Check_Out	48,890001007,891405,'8/25/2017','9/1/2017';
-execute L_Insert_Update_Media_Check_Out	49,890001008,891406,'9/2/2014','9/9/2014';
-execute L_Insert_Update_Media_Check_Out	50,890001009,891407,'9/2/2015','9/9/2015';
---execute L_Insert_Update_Media_Check_Out	51,900001000,891408,'8/15/2017','8/22/2017';
-execute L_Insert_Update_Media_Check_Out	52,900001001,891409,'8/29/2017','9/5/2017';
-execute L_Insert_Update_Media_Check_Out	53,900001002,901400,'8/29/2017','9/5/2017';
-execute L_Insert_Update_Media_Check_Out	54,900001003,901403,'8/25/2017','9/1/2017';
-execute L_Insert_Update_Media_Check_Out	55,900001004,901405,'8/25/2017','9/1/2017';
-execute L_Insert_Update_Media_Check_Out	56,900001005,901406,'11/2/2014','11/9/2014';
-execute L_Insert_Update_Media_Check_Out	57,900001006,901407,'11/2/2015','11/9/2015';
---execute L_Insert_Update_Media_Check_Out	58,900001007,901408,'8/10/2017','8/17/2017';
-execute L_Insert_Update_Media_Check_Out	59,900001008,890800,'8/25/2017','9/1/2017';
-execute L_Insert_Update_Media_Check_Out	60,900001009,890801,'8/29/2017','9/5/2017';
-execute L_Insert_Update_Media_Check_Out	61,890001000,890803,'8/25/2017','9/1/2017';
-execute L_Insert_Update_Media_Check_Out	62,890001001,890805,'8/25/2017','9/1/2017';
---execute L_Insert_Update_Media_Check_Out	63,890001002,890806,'2/2/2012','2/9/2012';
---execute L_Insert_Update_Media_Check_Out	64,890001003,890807,'2/2/2017','2/9/2017';
---execute L_Insert_Update_Media_Check_Out	65,890001004,890808,'8/10/2017','8/17/2017';
-execute L_Insert_Update_Media_Check_Out	66,890001005,890809,'8/30/2017','9/6/2017';
-execute L_Insert_Update_Media_Check_Out	67,890001006,890810,'8/30/2017','9/6/2017';
-execute L_Insert_Update_Media_Check_Out	68,890001007,900802,'8/25/2017','9/1/2017';
-execute L_Insert_Update_Media_Check_Out	69,890001008,900804,'8/25/2017','9/1/2017';
---execute L_Insert_Update_Media_Check_Out	70,890001009,900805,'3/30/2015','4/6/2015';
---execute L_Insert_Update_Media_Check_Out	71,900001000,900806,'3/30/2015','4/6/2015';
---execute L_Insert_Update_Media_Check_Out	72,900001001,900807,'8/10/2017','8/17/2017';
---execute L_Insert_Update_Media_Check_Out	73,900001002,891000,'8/10/2017','8/17/2017';
-execute L_Insert_Update_Media_Check_Out	74,900001003,891001,'8/30/2017','9/6/2017';
---execute L_Insert_Update_Media_Check_Out	75,900001004,891003,'8/10/2017','8/17/2017';
-execute L_Insert_Update_Media_Check_Out	76,900001005,891005,'8/25/2017','9/1/2017';
-execute L_Insert_Update_Media_Check_Out	77,900001006,891006,'5/2/2014','5/9/2014';
-execute L_Insert_Update_Media_Check_Out	78,900001007,891007,'5/2/2014','5/9/2014';
---execute L_Insert_Update_Media_Check_Out	79,900001008,891008,'8/10/2017','8/17/2017';
-execute L_Insert_Update_Media_Check_Out	80,900001009,891009,'8/30/2017','9/6/2017';
-execute L_Insert_Update_Media_Check_Out	81,890001000,891010,'8/30/2017','9/6/2017';
---execute L_Insert_Update_Media_Check_Out	82,890001001,901002,'8/10/2017','8/17/2017';
-execute L_Insert_Update_Media_Check_Out	83,890001002,901004,'8/25/2017','9/1/2017';
-execute L_Insert_Update_Media_Check_Out	84,890001003,901005,'3/2/2014','3/9/2014';
-execute L_Insert_Update_Media_Check_Out	85,890001004,901006,'3/2/2014','3/9/2014';
---execute L_Insert_Update_Media_Check_Out	86,890001005,901007,'8/10/2017','8/17/2017';
---execute L_Insert_Update_Media_Check_Out	87,890001006,890402,'8/10/2017','8/17/2017';
-execute L_Insert_Update_Media_Check_Out	88,890001007,890404,'8/25/2017','9/1/2017';
---execute L_Insert_Update_Media_Check_Out	89,890001008,890405,'2/2/2012','2/9/2012';
---execute L_Insert_Update_Media_Check_Out	90,890001009,890406,'2/2/2012','2/9/2012';
---execute L_Insert_Update_Media_Check_Out	91,900001000,890407,'8/10/2017','8/17/2017';
-execute L_Insert_Update_Media_Check_Out	92,890001000,890408,'8/30/2017','9/6/2017';
-execute L_Insert_Update_Media_Check_Out	93,890001001,890409,'8/30/2017','9/6/2017';
-execute L_Insert_Update_Media_Check_Out	94,890001002,900400,'8/30/2017','9/6/2017';
---execute L_Insert_Update_Media_Check_Out	95,890001003,900402,'8/10/2017','8/17/2017';
-execute L_Insert_Update_Media_Check_Out	96,890001004,900404,'8/25/2017','9/1/2017';
---execute L_Insert_Update_Media_Check_Out	97,890001005,900405,'4/5/2012','4/12/2012';
---execute L_Insert_Update_Media_Check_Out	98,890001006,900406,'4/5/2012','4/12/2012';
---execute L_Insert_Update_Media_Check_Out	99,890001007,900407,'8/10/2017','8/17/2017';
-execute L_Insert_Update_Media_Check_Out	100,890001008,900408,'8/30/2017','9/6/2017';
-execute L_Insert_Update_Media_Check_Out	101,890001009,900409,'8/30/2017','9/6/2017';
---execute L_Insert_Update_Media_Check_Out	102,900001000,890600,'8/10/2017','8/17/2017';
-execute L_Insert_Update_Media_Check_Out	103,900001001,890601,'8/30/2017','9/6/2017';
---execute L_Insert_Update_Media_Check_Out	104,900001002,890603,'8/10/2017','8/17/2017';
-execute L_Insert_Update_Media_Check_Out	105,900001003,890605,'8/25/2017','9/1/2017';
---execute L_Insert_Update_Media_Check_Out	106,900001004,890606,'7/7/2010','7/14/2010';
---execute L_Insert_Update_Media_Check_Out	107,900001005,890607,'7/7/2010','7/14/2010';
---execute L_Insert_Update_Media_Check_Out	108,900001006,890608,'8/10/2017','8/17/2017';
-execute L_Insert_Update_Media_Check_Out	109,900001007,890609,'8/30/2017','9/6/2017';
---execute L_Insert_Update_Media_Check_Out	110,900001008,900602,'8/10/2017','8/17/2017';
-execute L_Insert_Update_Media_Check_Out	111,900001009,900604,'8/25/2017','9/1/2017';
---execute L_Insert_Update_Media_Check_Out	112,890001000,900605,'3/3/2014','3/10/2014';
---execute L_Insert_Update_Media_Check_Out	113,890001001,900606,'3/3/2014','3/10/2014';
---execute L_Insert_Update_Media_Check_Out	114,890001002,900607,'8/10/2017','8/17/2017';
+execute L_Insert_Update_Media_Check_Out	1,890001000,890001,'9/1/2017';
+execute L_Insert_Update_Media_Check_Out	2,890001001,890003,'9/1/2017';
+execute L_Insert_Update_Media_Check_Out	3,890001002,890005,'8/25/2017';
+--execute L_Insert_Update_Media_Check_Out	4,890001003,890006,'8/23/2016';
+--execute L_Insert_Update_Media_Check_Out	5,890001004,890007,'3/24/2016';
+--execute L_Insert_Update_Media_Check_Out	6,890001005,890008,'8/18/2017';
+execute L_Insert_Update_Media_Check_Out	7,890001006,890009,'8/29/2017';
+execute L_Insert_Update_Media_Check_Out	8,890001007,890011,'9/1/2017';
+execute L_Insert_Update_Media_Check_Out	9,890001008,900003,'9/1/2017';
+execute L_Insert_Update_Media_Check_Out	10,890001009,900005,'8/25/2017';
+--execute L_Insert_Update_Media_Check_Out	11,900001000,900006,'9/12/2015';
+--execute L_Insert_Update_Media_Check_Out	12,900001001,900007,'2/16/2014';
+--execute L_Insert_Update_Media_Check_Out	13,900001002,900008,'8/18/2017';
+execute L_Insert_Update_Media_Check_Out	14,900001003,900010,'9/1/2017';
+execute L_Insert_Update_Media_Check_Out	15,900001004,900011,'9/1/2017';
+execute L_Insert_Update_Media_Check_Out	16,900001005,890200,'9/1/2017';
+execute L_Insert_Update_Media_Check_Out	17,900001006,890201,'9/1/2017';
+execute L_Insert_Update_Media_Check_Out	18,900001007,890203,'9/1/2017';
+execute L_Insert_Update_Media_Check_Out	19,900001008,890205,'8/25/2017';
+execute L_Insert_Update_Media_Check_Out	20,900001009,890206,'7/5/2017';
+execute L_Insert_Update_Media_Check_Out	21,890001000,890207,'7/5/2017';
+--execute L_Insert_Update_Media_Check_Out	22,890001001,890208,'8/17/2017';
+execute L_Insert_Update_Media_Check_Out	23,890001002,890209,'8/25/2017';
+execute L_Insert_Update_Media_Check_Out	24,890001003,900200,'8/29/2017';
+execute L_Insert_Update_Media_Check_Out	25,890001004,900203,'8/25/2017';
+execute L_Insert_Update_Media_Check_Out	26,890001005,900205,'8/29/2017';
+execute L_Insert_Update_Media_Check_Out	27,890001006,900206,'3/2/2017';
+execute L_Insert_Update_Media_Check_Out	28,890001007,900207,'3/2/2017';
+--execute L_Insert_Update_Media_Check_Out	29,890001008,900208,'8/16/2017';
+execute L_Insert_Update_Media_Check_Out	30,890001009,900210,'8/29/2017';
+execute L_Insert_Update_Media_Check_Out	31,900001000,891200,'8/25/2017';
+execute L_Insert_Update_Media_Check_Out	32,900001001,891201,'8/29/2017';
+execute L_Insert_Update_Media_Check_Out	33,900001002,891203,'8/25/2017';
+execute L_Insert_Update_Media_Check_Out	34,900001003,891205,'8/25/2017';
+--execute L_Insert_Update_Media_Check_Out	35,900001004,891206,'4/25/2014';
+--execute L_Insert_Update_Media_Check_Out	36,900001005,891207,'4/25/2016';
+--execute L_Insert_Update_Media_Check_Out	37,900001006,891208,'8/15/2017';
+execute L_Insert_Update_Media_Check_Out	38,900001007,891209,'8/29/2017';
+execute L_Insert_Update_Media_Check_Out	39,900001008,901200,'8/29/2017';
+execute L_Insert_Update_Media_Check_Out	40,900001009,901203,'8/25/2017';
+execute L_Insert_Update_Media_Check_Out	41,890001000,901205,'8/25/2017';
+--execute L_Insert_Update_Media_Check_Out	42,890001001,901206,'4/3/2017';
+--execute L_Insert_Update_Media_Check_Out	43,890001002,901207,'4/3/2017';
+--execute L_Insert_Update_Media_Check_Out	44,890001003,901208,'8/15/2017';
+execute L_Insert_Update_Media_Check_Out	45,890001004,891400,'8/25/2017';
+execute L_Insert_Update_Media_Check_Out	46,890001005,891401,'8/29/2017';
+execute L_Insert_Update_Media_Check_Out	47,890001006,891403,'8/25/2017';
+execute L_Insert_Update_Media_Check_Out	48,890001007,891405,'8/25/2017';
+execute L_Insert_Update_Media_Check_Out	49,890001008,891406,'9/2/2014';
+execute L_Insert_Update_Media_Check_Out	50,890001009,891407,'9/2/2015';
+--execute L_Insert_Update_Media_Check_Out	51,900001000,891408,'8/15/2017';
+execute L_Insert_Update_Media_Check_Out	52,900001001,891409,'8/29/2017';
+execute L_Insert_Update_Media_Check_Out	53,900001002,901400,'8/29/2017';
+execute L_Insert_Update_Media_Check_Out	54,900001003,901403,'8/25/2017';
+execute L_Insert_Update_Media_Check_Out	55,900001004,901405,'8/25/2017';
+execute L_Insert_Update_Media_Check_Out	56,900001005,901406,'11/2/2014';
+execute L_Insert_Update_Media_Check_Out	57,900001006,901407,'11/2/2015';
+--execute L_Insert_Update_Media_Check_Out	58,900001007,901408,'8/10/2017';
+execute L_Insert_Update_Media_Check_Out	59,900001008,890800,'8/25/2017';
+execute L_Insert_Update_Media_Check_Out	60,900001009,890801,'8/29/2017';
+execute L_Insert_Update_Media_Check_Out	61,890001000,890803,'8/25/2017';
+execute L_Insert_Update_Media_Check_Out	62,890001001,890805,'8/25/2017';
+--execute L_Insert_Update_Media_Check_Out	63,890001002,890806,'2/2/2012';
+--execute L_Insert_Update_Media_Check_Out	64,890001003,890807,'2/2/2017';
+--execute L_Insert_Update_Media_Check_Out	65,890001004,890808,'8/10/2017';
+execute L_Insert_Update_Media_Check_Out	66,890001005,890809,'8/30/2017';
+execute L_Insert_Update_Media_Check_Out	67,890001006,890810,'8/30/2017';
+execute L_Insert_Update_Media_Check_Out	68,890001007,900802,'8/25/2017';
+execute L_Insert_Update_Media_Check_Out	69,890001008,900804,'8/25/2017';
+--execute L_Insert_Update_Media_Check_Out	70,890001009,900805,'3/30/2015';
+--execute L_Insert_Update_Media_Check_Out	71,900001000,900806,'3/30/2015';
+--execute L_Insert_Update_Media_Check_Out	72,900001001,900807,'8/10/2017';
+--execute L_Insert_Update_Media_Check_Out	73,900001002,891000,'8/10/2017';
+execute L_Insert_Update_Media_Check_Out	74,900001003,891001,'8/30/2017';
+--execute L_Insert_Update_Media_Check_Out	75,900001004,891003,'8/10/2017';
+execute L_Insert_Update_Media_Check_Out	76,900001005,891005,'8/25/2017';
+execute L_Insert_Update_Media_Check_Out	77,900001006,891006,'5/2/2014';
+execute L_Insert_Update_Media_Check_Out	78,900001007,891007,'5/2/2014';
+--execute L_Insert_Update_Media_Check_Out	79,900001008,891008,'8/10/2017';
+execute L_Insert_Update_Media_Check_Out	80,900001009,891009,'8/30/2017';
+execute L_Insert_Update_Media_Check_Out	81,890001000,891010,'8/30/2017';
+--execute L_Insert_Update_Media_Check_Out	82,890001001,901002,'8/10/2017';
+execute L_Insert_Update_Media_Check_Out	83,890001002,901004,'8/25/2017';
+execute L_Insert_Update_Media_Check_Out	84,890001003,901005,'3/2/2014';
+execute L_Insert_Update_Media_Check_Out	85,890001004,901006,'3/2/2014';
+--execute L_Insert_Update_Media_Check_Out	86,890001005,901007,'8/10/2017';
+--execute L_Insert_Update_Media_Check_Out	87,890001006,890402,'8/10/2017';
+execute L_Insert_Update_Media_Check_Out	88,890001007,890404,'8/25/2017';
+--execute L_Insert_Update_Media_Check_Out	89,890001008,890405,'2/2/2012';
+--execute L_Insert_Update_Media_Check_Out	90,890001009,890406,'2/2/2012';
+--execute L_Insert_Update_Media_Check_Out	91,900001000,890407,'8/10/2017';
+execute L_Insert_Update_Media_Check_Out	92,890001000,890408,'8/30/2017';
+execute L_Insert_Update_Media_Check_Out	93,890001001,890409,'8/30/2017';
+execute L_Insert_Update_Media_Check_Out	94,890001002,900400,'8/30/2017';
+--execute L_Insert_Update_Media_Check_Out	95,890001003,900402,'8/10/2017';
+execute L_Insert_Update_Media_Check_Out	96,890001004,900404,'8/25/2017';
+--execute L_Insert_Update_Media_Check_Out	97,890001005,900405,'4/5/2012';
+--execute L_Insert_Update_Media_Check_Out	98,890001006,900406,'4/5/2012';
+--execute L_Insert_Update_Media_Check_Out	99,890001007,900407,'8/10/2017';
+execute L_Insert_Update_Media_Check_Out	100,890001008,900408,'8/30/2017';
+execute L_Insert_Update_Media_Check_Out	101,890001009,900409,'8/30/2017';
+--execute L_Insert_Update_Media_Check_Out	102,900001000,890600,'8/10/2017';
+execute L_Insert_Update_Media_Check_Out	103,900001001,890601,'8/30/2017';
+--execute L_Insert_Update_Media_Check_Out	104,900001002,890603,'8/10/2017';
+execute L_Insert_Update_Media_Check_Out	105,900001003,890605,'8/25/2017';
+--execute L_Insert_Update_Media_Check_Out	106,900001004,890606,'7/7/2010';
+--execute L_Insert_Update_Media_Check_Out	107,900001005,890607,'7/7/2010';
+--execute L_Insert_Update_Media_Check_Out	108,900001006,890608,'8/10/2017';
+execute L_Insert_Update_Media_Check_Out	109,900001007,890609,'8/30/2017';
+--execute L_Insert_Update_Media_Check_Out	110,900001008,900602,'8/10/2017';
+execute L_Insert_Update_Media_Check_Out	111,900001009,900604,'8/25/2017';
+--execute L_Insert_Update_Media_Check_Out	112,890001000,900605,'3/3/2014';
+--execute L_Insert_Update_Media_Check_Out	113,890001001,900606,'3/3/2014';
+--execute L_Insert_Update_Media_Check_Out	114,890001002,900607,'8/10/2017';
 
 go
 
@@ -1430,9 +1467,9 @@ select * from Media_Check_Out;
 
 go
 
-execute L_Insert_Update_Media_Check_Out	1,890001000,890001,'11/09/2017','';
---execute L_Insert_Update_Media_Check_Out	2,890001001,890003,'9/1/2017','9/8/2017';
---execute L_Insert_Update_Media_Check_Out	3,890001002,890005,'8/25/2017','9/1/2017';
+execute L_Insert_Update_Media_Check_Out	1,890001000,890001,'11/09/2017';
+--execute L_Insert_Update_Media_Check_Out	2,890001001,890003;
+--execute L_Insert_Update_Media_Check_Out	3,890001002,890005;
 
 if ((select COUNT(*) from information_schema.ROUTINES where ROUTINE_TYPE = 'PROCEDURE' and ROUTINE_CATALOG = 'Library_SQL_Project' and ROUTINE_NAME = 'L_Insert_Media_Hold') = 1)
 	drop proc L_Insert_Media_Hold;
@@ -1447,8 +1484,10 @@ begin
 	if @med_stat = 'Lost' or @med_stat = 'Damaged'
 	begin
 		select @med_stat as 'Media Status', @med_format as 'Format', @med_id as 'Media ID';
-		set @msg = 'Error in Data entered. Media status does not match as checked out.';
-		Raiserror(@msg,16,1);
+		--set @msg = 'Error in Data entered. Media status does not match as checked out.';
+		--Raiserror(@msg,16,1);
+		PRINT 'Error in Data entered. Media status does not match as checked out.';
+		return;
 	end;
 
 	select @med_hold_cnt = Count(Media_Hold_Media_ID) from Media_Hold where Media_Hold_Media_ID = @med_id;
@@ -1460,8 +1499,10 @@ begin
 	else
 		begin
 			select @med_hold_cnt as 'Media Hold count', @med_format as 'Format', @med_id as 'Media ID';
-			set @msg = 'Maximum hold for the same media cannot be more than 3';
-			Raiserror(@msg,16,1);
+			--set @msg = 'Maximum hold for the same media cannot be more than 3';
+			--Raiserror(@msg,16,1);
+			PRINT 'Maximum hold for the same media cannot be more than 3';
+			return;
 		end;	
 end;
 
@@ -1499,5 +1540,70 @@ execute L_Insert_Media_Hold	900001008,900602;
 go
 
 select * from Media_Hold;
+
+go
+
+insert into Supplier(Supplier_ID, Supplier_Name, Supplier_Address, Supplier_City, Supplier_State, Supplier_Zip_code, Supplier_Phone_No) values(10, 'ABC Suppliers Inc', '258 Bartlett Ln', 'Bartlett', 'IL',60156 , '6308478990');
+insert into Supplier(Supplier_ID, Supplier_Name, Supplier_Address, Supplier_City, Supplier_State, Supplier_Zip_code, Supplier_Phone_No) values(20, 'Variety Suppliers Inc', '258 County Line Rd', 'Aurora', 'IL',60505 , '6308478990');
+insert into Supplier(Supplier_ID, Supplier_Name, Supplier_Address, Supplier_City, Supplier_State, Supplier_Zip_code, Supplier_Phone_No) values(30, 'XYX Publishers and Suppliers Inc', '258 Valley Lake Dr', 'Schaumburg', 'IL',60195 , '6308478990');
+insert into Supplier(Supplier_ID, Supplier_Name, Supplier_Address, Supplier_City, Supplier_State, Supplier_Zip_code, Supplier_Phone_No) values(40, 'Trendy Books and Journals Inc', '4581 Mandy Ln', 'Buffalo Grove', 'IL',60089 , '6308478990');
+insert into Supplier(Supplier_ID, Supplier_Name, Supplier_Address, Supplier_City, Supplier_State, Supplier_Zip_code, Supplier_Phone_No) values(50, 'Arbor Trading Inc', 'E 60th Street', 'Chicago', 'IL',60007 , '6308478990');
+
+go
+
+select * from Supplier;
+
+go
+
+insert into Orders(	Orders_ID, Orders_Supplier_ID, Orders_Date_Ordered, Orders_Date_Required,
+	Orders_Status, Orders_Payment_Amount) values(11, 10, '7/7/2016', '9/7/2016',	'Paid', 44);
+
+insert into Orders (Orders_ID, Orders_Supplier_ID, Orders_Date_Ordered, Orders_Date_Required,
+	Orders_Status, Orders_Payment_Amount) values(12, 20, '8/7/2017', '10/7/2017', 'Placed', 0);
+
+insert into Orders (Orders_ID, Orders_Supplier_ID, Orders_Date_Ordered, Orders_Date_Required,
+	Orders_Status, Orders_Payment_Amount) values(13, 30, '1/23/2016', '3/23/2017', 'Accepted', 0);
+
+insert into Orders (Orders_ID, Orders_Supplier_ID, Orders_Date_Ordered, Orders_Date_Required,
+	Orders_Status, Orders_Payment_Amount) values(14, 40, '5/21/2016', '7/21/2016', 'Delivered', 0);
+
+insert into Orders (Orders_ID, Orders_Supplier_ID, Orders_Date_Ordered, Orders_Date_Required,
+	Orders_Status, Orders_Payment_Amount) values(15, 50, '3/11/2017', '5/11/2017', 'Cancelled', 0);
+
+go
+
+select * from Orders;
+
+go
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(1, 11, 40011, 'Autoweek', 'Wren, Wick A.', '', '', '', CAST('' as int), '2009-09-26', '', 30, 8, 'Automobiles', '', 6, 12 , 2, 'Paid', '8/7/2016');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(2, 11, 40012, 'Food Science and Nutrition', 'Wiley Periodicals, Inc', '', '', '', CAST('' as int), '2008-05-26', '', 25, 5, 'Food', '', 6, 12 , 2, 'Paid', '8/7/2016');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(3, 11, 40013, 'Export Today''s Global Business', 'Ebsco Business Source Complete', '', '', '', CAST('' as int), '2012-07-29', '', 31, 3, 'Finance', '', 10, 20 , 2, 'Paid', '8/7/2016');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(4, 12, 1200, 'My social media for seniors', '', 'Michael,', 'Miller', 'English', CAST('' as int), '1/1/2010', '', CAST('' as int), CAST('' as int), '', '', 10, 20 , 2, 'Placed', '');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(5, 12, 2000, 'Computers for seniors : email, internet, photos, and more in 14 easy lessons', '', 'Chris,', 'Ewin', 'English', CAST('' as int), '1/1/2008', '', CAST('' as int), CAST('' as int), '', '', 10, 20 , 2, 'Placed', '');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(6, 12, 2487, 'Zero belly breakfasts', '', 'David,', 'Zinczenko', 'English', CAST('' as int), '1/1/1992', '', CAST('' as int), CAST('' as int), '', '', 10, 20 , 2, 'Placed', '');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(7, 13, 60070, 'Consumer Price Index', 'US Bureau of Labor Statistics', 'Mark,', 'Joyce', '', CAST('' as int), '2011-07-20', '', 31, 11, '', '', 4, 8, 2, 'Accepted', '');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(8, 13, 63210, 'Development Outreach', 'World Bank', 'Roland,', 'Vargaria', '', CAST('' as int), '2012-08-22', '', 21, 8, '', '', 4, 8, 2, 'Accepted', '');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(9, 13, 63821, 'Automotive Design and Production', 'AD P', 'Mustang,', 'Ford', '', CAST('' as int), '2012-01-30', '', 14, 10, '', '', 4, 8, 2, 'Accepted', '');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(10, 14, 63821, 'Automotive Design and Production', 'AD P', 'Mustang,', 'Ford', '', CAST('' as int), '2012-01-30', '', 14, 10, '', '', 4, 8, 2, 'Delivered', '');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(11, 14, 63210, 'Development Outreach', 'World Bank', 'Roland,', 'Vargaria', '', CAST('' as int), '2012-08-22', '', 21, 8, '', '', 4, 8, 2, 'Delivered', '');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(12, 15, 1200, 'My social media for seniors', '', 'Michael,', 'Miller', 'English', CAST('' as int), '1/1/2010', '', CAST('' as int), CAST('' as int), '', '', 10, 20 , 2, 'Cancelled', '');
+
+insert into Orders_Details(Orders_Details_Line_No, Orders_Details_Orders_ID, Orders_Details_Item_ID, Orders_Details_Item_Title, Orders_Details_Publisher, Orders_Details_Author_First_Name,	Orders_Details_Author_Last_Name, Orders_Details_Language, Orders_Details_Rating, Orders_Details_Published_Date, Orders_Details_End_Date, Orders_Details_Volume, Orders_Details_Issue, Orders_Details_Genre,	Orders_Details_VideoType, Orders_Details_Price_Per_Unit, Orders_Details_Price_Total, Orders_Details_Quantity,	Orders_Details_Status, Orders_Details_Date_Delivered) values(13, 15, 2000, 'Computers for seniors : email, internet, photos, and more in 14 easy lessons', '', 'Chris,', 'Ewin', 'English', CAST('' as int), '1/1/2008', '', CAST('' as int), CAST('' as int), '', '', 10, 20 , 2, 'Cancelled', '');
+
+go
+
+select * from Orders_Details;
 
 go
