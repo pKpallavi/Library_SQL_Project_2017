@@ -3,7 +3,7 @@ go
 
 SET NOCOUNT ON
 
-:Out "C:\Data\Library_SQL_Project_2017\Library_SQL_Project_Letter.txt"
+:Out "C:\Data\Library_SQL_Project_2017\Library_SQL_Project_Job_Output.txt"
 
 go
 

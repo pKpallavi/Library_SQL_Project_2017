@@ -1,25 +1,20 @@
-1.Run compmgmt.msc to open console for Computer Management with various management options like System Tools, Storage and Services.
+1.Created C:\Data\Library_SQL_Project_2017\Library_Data_Consolidation.sql with sql commands to execute the regular job.
+
+2.Created the library_job.bat file which has the sqlcmd with server connection, database details and input sql filename.
+
+4.Created Task_Scheduler.xml
+-xmlns keyword is important for the Task tag
+-specify full path to the batch file
+
+5.Use the commands in Task_Scheduler.txt to create and run the tasks.
+
+6.Run compmgmt.msc to open console for Computer Management with various management options like System Tools, Storage and Services.
 System tools has the option of Task Scheduling. Click to edit the existing tasks if needed.
 
-2.Created C:\Data\Library_SQL_Project_2017\Library_Data_Consolidation.sql
-
-3.Created the batch file which has the sqlcmd with server connection, database details and input sql filename
-
-4.Created LibraryTaskScheduler.xml
-xmlns keyword is important for the Task tag
-specify full path to the batch file
-
-5.Use the below commands to create and run the tasks
-
-6.schtasks /Create /S desktop-6ndur2e /ru purvi /TN LibraryTask /XML "C:\Data\Library_SQL_Project_2017\LibraryTaskScheduler.xml"
-
-7.schtasks /Run /S desktop-6ndur2e /i /TN LibraryTask /hresult
-
-8.change the startin option in the actions tab to the folder of the batch file.
+7.Change the Startin option in the actions tab to the folder of the batch file.
 
 Additional Steps to verify:
 --------------------------
-
 1) Make sure that the task is set to "configure for Windows Vista or Windows 2008" on the first page of the task properties (under the "general" tab)
 
 2) Make sure that the task is set to "start in" the folder that contains the batch file: open the task properties, click on the "actions" tab, click on the action and then the "edit" button at the bottom.  In the "Edit Action" Window there is a field for "start in (optional)" that you set to the path to the batch file.

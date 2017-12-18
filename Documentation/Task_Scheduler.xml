@@ -31,7 +31,7 @@ Task scheduler created for Library Project from Microsoft Task scheduler example
     </Settings>
     <Actions>
         <Exec>
-            <Command>C:\Data\Library_SQL_Project_2017\library_job.bat</Command>
+            <Command>C:\Data\Library_SQL_Project_2017\Documentation\library_job.bat</Command>
         </Exec>
     </Actions>
 </Task>
