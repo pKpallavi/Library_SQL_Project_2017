@@ -389,6 +389,20 @@ create table Media_Check_Out
 go
 
 /* Check in transaction will delete row entries in Media_Check_Out & update status of Media_Status field in Media table and member fines if any */
+create table Media_Check_Out_Archive
+(
+	Media_Check_Out_ID int primary key,
+	Media_Check_Out_Member_ID int not null,
+	Media_Check_Out_Media_ID int not null,
+	Media_Check_Out_Date date not null,
+	Media_Check_Out_Due_Date date not null,
+	Media_Check_Out_Times_Renewed int default 0,
+	Media_Check_Out_Member_Dues_Updated varchar(3) default 'No' CHECK(Media_Check_Out_Member_Dues_Updated in ('Yes', 'No')),
+	CONSTRAINT FK_Media_Check_Out_Table_3 FOREIGN KEY(Media_Check_Out_Member_ID) REFERENCES Library_Member(Library_Member_ID),
+	CONSTRAINT FK_Media_Check_Out_Table_4 FOREIGN KEY(Media_Check_Out_Media_ID) REFERENCES Media(Media_ID)
+);
+
+go
 
 /* if exists( Select * from Media_Hold)
 	drop table Media_Hold; */

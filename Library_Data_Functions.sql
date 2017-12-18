@@ -1450,6 +1450,9 @@ begin
 
 	end;
 	
+	/* Archive the entry in the checkout table to another table */
+	insert into Media_Check_Out_Archive select * from Media_Check_Out where Media_Check_Out_Media_ID = @media_id;
+
 	/* Delete the check out entry from the Media_Check_Out table */
 	delete from Media_Check_Out where Media_Check_Out_Media_ID = @media_id;
 
@@ -1464,6 +1467,10 @@ execute L_Media_Check_In 890001002,890005,'Returned';
 go
 
 select * from Media_Check_Out;
+
+go
+
+select * from Media_Check_Out_Archive;
 
 go
 

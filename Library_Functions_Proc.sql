@@ -150,3 +150,43 @@ end;
 
 go
 
+/* Query to calculate the total number of Physical Media and Digital Media. To be used in Circulation Stats */
+SELECT
+  COUNT(Media.Media_ID) as 'Total', 'Physical Media' as 'Item Format'
+FROM
+  Media
+WHERE 
+  (Media.Media_Format = 'Book' OR Media.Media_Format = 'Journal' OR Media.Media_Format = 'DVD' OR  Media.Media_Format = 'CD' OR  Media.Media_Format = 'Magazine')
+UNION
+SELECT
+  COUNT(Media.Media_ID) as 'Total', 'Digital Media' as 'Item Format'
+FROM
+  Media
+WHERE 
+  (Media.Media_Format = 'eBook' OR Media.Media_Format = 'eJournal' OR Media.Media_Format = 'Digital Magazine')
+
+ go
+
+ /* Query to calculate the total number of items bought this year */
+create proc L_Count_Media 
+as
+begin
+declare @total_media_bought int
+set @total_media_bought = 0;
+select @total_media_bought += COUNT(Book.Book_Media_ID) from Book where YEAR(Book.Book_Bought_Date) = YEAR(CURRENT_TIMESTAMP);
+select @total_media_bought += COUNT(eBook.eBook_Media_ID) from eBook where YEAR(eBook.eBook_Bought_Date) = YEAR(CURRENT_TIMESTAMP);
+select @total_media_bought += COUNT(Magazine.Magazine_Media_ID) from Magazine where YEAR(Magazine.Magazine_Bought_Date) = YEAR(CURRENT_TIMESTAMP); 
+select @total_media_bought += COUNT(Digital_Magazine.Digital_Magazine_Media_ID) from Digital_Magazine where YEAR(Digital_Magazine.Digital_Magazine_Bought_Date) = YEAR(CURRENT_TIMESTAMP);
+select @total_media_bought += COUNT(DVD.DVD_Media_ID) from DVD where YEAR(DVD.DVD_Bought_Date) = YEAR(CURRENT_TIMESTAMP); 
+select @total_media_bought += COUNT(CD.CD_Media_ID) from CD where YEAR(CD.CD_Bought_Date) = YEAR(CURRENT_TIMESTAMP); 
+select @total_media_bought += COUNT(Journal.Journal_Media_ID) from Journal where YEAR(Journal.Journal_Bought_Date) = YEAR(CURRENT_TIMESTAMP);
+select @total_media_bought += COUNT(eJournal.eJournal_Media_ID) from eJournal where YEAR(eJournal.eJournal_Bought_Date) = YEAR(CURRENT_TIMESTAMP); 
+print ('Total number of Items brought in ' + CAST(YEAR(CURRENT_TIMESTAMP) as varchar(15)) + ' = ' + CAST(@total_media_bought as varchar(20)));
+end;
+
+go
+
+ /* Query to calculate the total number of items bought this year */
+select count(Library_Member_ID) as Total_Library_Members from Library_Member;
+
+go
