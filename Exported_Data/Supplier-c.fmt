@@ -1,0 +1,10 @@
+12.0
+8
+1       SQLCHAR             0       12      "|"      1     Supplier_ID                                  ""
+2       SQLCHAR             0       100     "|"      2     Supplier_Name                                SQL_Latin1_General_CP1_CI_AS
+3       SQLCHAR             0       100     "|"      3     Supplier_Address                             SQL_Latin1_General_CP1_CI_AS
+4       SQLCHAR             0       20      "|"      4     Supplier_City                                SQL_Latin1_General_CP1_CI_AS
+5       SQLCHAR             0       2       "|"      5     Supplier_State                               SQL_Latin1_General_CP1_CI_AS
+6       SQLCHAR             0       12      "|"      6     Supplier_Zip_code                            ""
+7       SQLCHAR             0       10      "|"      7     Supplier_Phone_No                            SQL_Latin1_General_CP1_CI_AS
+8       SQLCHAR             0       12      "\r\n"   8     Supplier_Payment_Due                         ""

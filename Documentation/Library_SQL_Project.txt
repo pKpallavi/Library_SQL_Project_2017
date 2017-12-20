@@ -1,0 +1,16 @@
+Library_SQL_Project is created using Microsoft SQL Server Management Studio 2017. 
+Following Documents are associated with this project.
+1. Concept_and_Data_Diagram.docx has the concept diagram, data flow diagram and workflow diagram for the project.
+2. Interview Notes.docx has the transcript of interviewed questions and answers from Library staff for the purpose of designing this project and finding the requirements.
+3. Normalization_Documentation.docx has the details of how tables created in the database were converted to 3rd normalization form.
+4. Library_SQL_Project_ER_Diagram.pdf has the ER diagram for this project. 
+5. There are documents for exporting-importing data using the export-import wizard or using sqlcmd.
+a. Export_Import_Database_Using_Export_Import_Wizard.docx is a help document for exporting-importing data using the export-import wizard.
+b. Following are the help documents to export-import data using the MS SQL Server utilities sqlcmd and bcp.
+-Export_Import_Help_using_sqlcmd.txt
+-Export_Data_using_sqlcmd.txt
+-Import_Data_Help_bcp_cmd.txt
+6. Key Summary.txt has the range of ISBN and Media ID numbers used for the items. It also has the range of numbers used for Library ID. 
+7. Task_Scheduling_Help.txt is a help file used for Task Scheduling description.Task_Scheduling_Commands.txt, library_job.bat, Task_Scheduler.xml are additional files needed for task scheduling. 
+8. SSRS_Reports folder has some reports created and saved in word document format using the MS SQL Server Report Builder. This folder also has SSRS_Help_Preparing_Reports.docx word document for preparing the reports using MS SQL Server Reporting Services and Report Builder. 
+

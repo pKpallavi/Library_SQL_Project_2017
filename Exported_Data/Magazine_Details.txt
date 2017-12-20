@@ -1,14 +1,14 @@
-40000|Parents magazine|2016-12-01|20|12|Gruner & Jahr USA|Family|10|2017-11-19
-40001|National parks : the magazine of the National Parks & Conservation Association|2000-10-10|28|10|National Parks and Conservation Association|Nature|7|2017-11-19
-40002|Food network magazine |2001-08-08|40|8|Hyperion|Food|8|2017-11-19
-40003|Time Magazine|2002-10-15|20|10|Time Home Entertainment|World|8|2017-11-19
-40004|The National Geographic Magazine|2008-07-06|50|7|National Geographic|Nature|8|2017-11-19
-40005|Bloomberg businessweek|2009-04-04|30|4|Bloomberg L.P.|Business|6|2017-11-19
-40006|Forbes|2003-07-12|40|7|Forbes Inc|Business|7|2017-11-19
-40007|Food & wine the guide to good taste|2007-06-16|27|6|International Review of Food & Wine Associates|Food|6|2017-11-19
-40008|Natural history|2008-08-26|40|8|American Museum of Natural History|Nature|6|2017-11-19
-40009|Motor trend|2004-05-16|20|5|Woron, Walter A.|Automobiles|6|2017-11-19
-40010|Car and driver|2002-03-19|30|3|Ziff-Davis Pub. Co.|Automobiles|7|2017-11-19
-40011|Autoweek|2009-09-26|30|8|Wren, Wick A.|Automobiles|6|2017-11-19
-40012|Food Science and Nutrition|2008-05-26|25|5|Wiley Periodicals, Inc|Food|6|2017-11-19
-40013|Export Today's Global Business|2012-07-29|31|3|Ebsco Business Source Complete|Finance|10|2017-11-19
+40000|Parents magazine|2016-12-01|20|12|Gruner & Jahr USA|Family|10|2017-12-18
+40001|National parks : the magazine of the National Parks & Conservation Association|2000-10-10|28|10|National Parks and Conservation Association|Nature|7|2017-12-18
+40002|Food network magazine |2001-08-08|40|8|Hyperion|Food|8|2017-12-18
+40003|Time Magazine|2002-10-15|20|10|Time Home Entertainment|World|8|2017-12-18
+40004|The National Geographic Magazine|2008-07-06|50|7|National Geographic|Nature|8|2017-12-18
+40005|Bloomberg businessweek|2009-04-04|30|4|Bloomberg L.P.|Business|6|2017-12-18
+40006|Forbes|2003-07-12|40|7|Forbes Inc|Business|7|2017-12-18
+40007|Food & wine the guide to good taste|2007-06-16|27|6|International Review of Food & Wine Associates|Food|6|2017-12-18
+40008|Natural history|2008-08-26|40|8|American Museum of Natural History|Nature|6|2017-12-18
+40009|Motor trend|2004-05-16|20|5|Woron, Walter A.|Automobiles|6|2017-12-18
+40010|Car and driver|2002-03-19|30|3|Ziff-Davis Pub. Co.|Automobiles|7|2017-12-18
+40011|Autoweek|2009-09-26|30|8|Wren, Wick A.|Automobiles|6|2017-12-18
+40012|Food Science and Nutrition|2008-05-26|25|5|Wiley Periodicals, Inc|Food|6|2017-12-18
+40013|Export Today's Global Business|2012-07-29|31|3|Ebsco Business Source Complete|Finance|10|2017-12-18

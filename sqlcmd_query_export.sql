@@ -14,9 +14,9 @@ go
 --:SETVAR SQLCMDCOLSEP ","
 --:SETVAR SQLCMDHEADERS "-1"
 
-:Out "C:\Data\Library_SQL_Project_2017\Exported_Data\Library.txt"
+:Out "C:\Data\Library_SQL_Project_2017\Exported_Data\Library_Details.txt"
 
-select * from Library;
+select * from Library_Details;
 
 go
 
@@ -146,9 +146,33 @@ select * from Media_Check_Out;
 
 go
 
+:Out "C:\Data\Library_SQL_Project_2017\Exported_Data\Media_Check_Out_Archive.txt"
+
+select * from Media_Check_Out_Archive;
+
+go
+
 :Out "C:\Data\Library_SQL_Project_2017\Exported_Data\Media_Hold.txt"
 
 select * from Media_Hold;
+
+go
+
+:Out "C:\Data\Library_SQL_Project_2017\Exported_Data\Supplier.txt"
+
+select * from Supplier;
+
+go
+
+:Out "C:\Data\Library_SQL_Project_2017\Exported_Data\Orders.txt"
+
+select * from Orders;
+
+go
+
+:Out "C:\Data\Library_SQL_Project_2017\Exported_Data\Orders_Details.txt"
+
+select * from Orders_Details;
 
 go
 

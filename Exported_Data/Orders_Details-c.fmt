@@ -1,0 +1,22 @@
+12.0
+20
+1       SQLCHAR             0       12      "|"      1     Orders_Details_Line_No                                               ""
+2       SQLCHAR             0       12      "|"      2     Orders_Details_Orders_ID                                             ""
+3       SQLCHAR             0       12      "|"      3     Orders_Details_Item_ID                                               ""
+4       SQLCHAR             0       100     "|"      4     Orders_Details_Item_Title                                            SQL_Latin1_General_CP1_CI_AS
+5       SQLCHAR             0       100     "|"      5     Orders_Details_Publisher                                             SQL_Latin1_General_CP1_CI_AS
+6       SQLCHAR             0       30      "|"      6     Orders_Details_Author_First_Name                                     SQL_Latin1_General_CP1_CI_AS
+7       SQLCHAR             0       30      "|"      7     Orders_Details_Author_Last_Name                                      SQL_Latin1_General_CP1_CI_AS
+8       SQLCHAR             0       30      "|"      8     Orders_Details_Language                                              SQL_Latin1_General_CP1_CI_AS
+9       SQLCHAR             0       12      "|"      9     Orders_Details_Rating                                                ""
+10      SQLCHAR             0       11      "|"      10    Orders_Details_Published_Date                                        ""
+11      SQLCHAR             0       11      "|"      11    Orders_Details_End_Date                                              ""
+12      SQLCHAR             0       12      "|"      12    Orders_Details_Volume                                                ""
+13      SQLCHAR             0       12      "|"      13    Orders_Details_Issue                                                 ""
+14      SQLCHAR             0       30      "|"      14    Orders_Details_Genre                                                 SQL_Latin1_General_CP1_CI_AS
+15      SQLCHAR             0       15      "|"      15    Orders_Details_VideoType                                             SQL_Latin1_General_CP1_CI_AS
+16      SQLCHAR             0       12      "|"      16    Orders_Details_Price_Per_Unit                                        ""
+17      SQLCHAR             0       12      "|"      17    Orders_Details_Price_Total                                           ""
+18      SQLCHAR             0       12      "|"      18    Orders_Details_Quantity                                              ""
+19      SQLCHAR             0       20      "|"      19    Orders_Details_Status                                                SQL_Latin1_General_CP1_CI_AS
+20      SQLCHAR             0       11      "\r\n"   20    Orders_Details_Date_Delivered                                        ""

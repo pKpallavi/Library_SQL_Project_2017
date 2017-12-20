@@ -1,7 +1,9 @@
 USE Library_SQL_Project;
 
+go
+
 --Displays details of Tables
-exec Library_SQL_Project.sys.sp_help Library;
+exec Library_SQL_Project.sys.sp_help Library_Details;
 exec Library_SQL_Project.sys.sp_help Media;
 exec Library_SQL_Project.sys.sp_help Book_Details;
 exec Library_SQL_Project.sys.sp_help Book;
@@ -23,20 +25,31 @@ exec Library_SQL_Project.sys.sp_help Library_Member;
 exec Library_SQL_Project.sys.sp_help Employee_Staff;
 exec Library_SQL_Project.sys.sp_help Login_Table;
 exec Library_SQL_Project.sys.sp_help Media_Check_Out;
+exec Library_SQL_Project.sys.sp_help Media_Check_Out_Archive;
 exec Library_SQL_Project.sys.sp_help Media_Hold;
 exec Library_SQL_Project.sys.sp_help Supplier;
-exec Library_SQL_Project.sys.sp_help Supplier_Media_Info;
 exec Library_SQL_Project.sys.sp_help Orders;
 exec Library_SQL_Project.sys.sp_help Orders_Details;
+
+go
 
 --
 exec sys.sp_tables;
 
+go
+
 --
 select * from sys.tables;
 
+go
+
 --Shows the functional dependency of this procedure on other objects
 exec sp_depends L_Search_Media;
+exec sp_depends L_Trigger_Media_Count;
+exec sp_depends L_Update_Member_Dues;
+exec sp_depends L_Delete_Media;
+exec sp_depends L_Count_Media;
+
 exec sp_depends L_Insert_Media_Table;
 exec sp_depends L_Insert_Book_Details_Table;
 exec sp_depends L_Insert_Book_Table;
@@ -62,15 +75,17 @@ exec sp_depends L_Insert_Update_Media_Check_Out;
 exec sp_depends L_Media_Check_In;
 exec sp_depends L_Insert_Media_Hold;
 
-SELECT TABLE_CATALOG, TABLE_SCHEMA, TABLE_NAME, COLUMN_NAME, COLUMN_DEFAULT  
-FROM Library_SQL_Project.INFORMATION_SCHEMA.COLUMNS;  
-GO  
+go
 
 select * from sys.check_constraints;
 select * from Library_SQL_Project.sys.all_columns order by name;
 
+go
+
 select * from Library_SQL_Project.INFORMATION_SCHEMA.ROUTINES;
 select * from INFORMATION_SCHEMA.ROUTINES where ROUTINE_TYPE = 'Procedure';
+
+go
 
 --Get stored procedures and functions
 select name, type from dbo.sysobjects where type in (
@@ -79,3 +94,5 @@ select name, type from dbo.sysobjects where type in (
 	'IF', --inline table-valued functions
 	'TF'  --table-valued functions
 )order by type, name;
+
+go

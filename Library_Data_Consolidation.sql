@@ -3,7 +3,7 @@ go
 
 SET NOCOUNT ON
 
-:Out "C:\Data\Library_SQL_Project_2017\Library_SQL_Project_Letter.txt"
+:Out "C:\Data\Library_SQL_Project_2017\Library_SQL_Project_Job_Output.txt"
 
 go
 
@@ -145,15 +145,15 @@ begin
 			begin
 				set @file_path = 'C:\Data\Library_SQL_Project_2017\' + CAST(@curr_member_id as varchar(12)) + '.txt';
 				set @message1 += 'PRINT ''Yours sincerely, '' + CHAR(13) + CHAR(10) + ''Librarian, '' ' + CHAR(13) + CHAR(10);
-				select @tempchar100 = Library_Name from Library where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);
+				select @tempchar100 = Library_Name from Library_Details where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);
 				set @message1 += 'PRINT ''' + @tempchar100 + ', ''' + CHAR(13) + CHAR(10);
-				select @tempchar100 = Library_Address from Library where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
+				select @tempchar100 = Library_Address from Library_Details where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
 				set @message1 += 'PRINT ''' + @tempchar100 + ', ''' + CHAR(13) + CHAR(10);
-				select @tempchar100 = Library_City from Library where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
+				select @tempchar100 = Library_City from Library_Details where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
 				set @message1 += 'PRINT ''' + @tempchar100 + ', ''' ;
-				select @tempchar100 = Library_State from Library where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
+				select @tempchar100 = Library_State from Library_Details where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
 				set @message1 += '+ ''' + @tempchar100 + ', ''';
-				select @tempchar100 = Library_ZipCode from Library where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
+				select @tempchar100 = Library_ZipCode from Library_Details where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
 				set @message1 += '+ ''' + @tempchar100 + ' ''' + ' + CHAR(13) + CHAR(10) + CHAR(13) + CHAR(10)' + CHAR(13) + CHAR(10);
 
 				set @message2 = @message1;
@@ -210,15 +210,15 @@ if (@message1 <> '')
 begin
 	set @file_path = 'C:\Data\Library_SQL_Project_2017\' + CAST(@curr_member_id as varchar(12)) + '.txt';
 	set @message1 += 'PRINT ''Yours sincerely, '' + CHAR(13) + CHAR(10) + ''Librarian, '' ' + CHAR(13) + CHAR(10);
-	select @tempchar100 = Library_Name from Library where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);
+	select @tempchar100 = Library_Name from Library_Details where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);
 	set @message1 += 'PRINT ''' + @tempchar100 + ', ''' + CHAR(13) + CHAR(10);
-	select @tempchar100 = Library_Address from Library where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
+	select @tempchar100 = Library_Address from Library_Details where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
 	set @message1 += 'PRINT ''' + @tempchar100 + ', ''' + CHAR(13) + CHAR(10);
-	select @tempchar100 = Library_City from Library where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
+	select @tempchar100 = Library_City from Library_Details where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
 	set @message1 += 'PRINT ''' + @tempchar100 + ', ''' ;
-	select @tempchar100 = Library_State from Library where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
+	select @tempchar100 = Library_State from Library_Details where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
 	set @message1 += '+ ''' + @tempchar100 + ', ''';
-	select @tempchar100 = Library_ZipCode from Library where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
+	select @tempchar100 = Library_ZipCode from Library_Details where Library_ID = (select Media_Library_ID from Media where Media_ID = @mediaid);;
 	set @message1 += '+ ''' + @tempchar100 + ' ''' + ' + CHAR(13) + CHAR(10) + CHAR(13) + CHAR(10)' + CHAR(13) + CHAR(10);
 
 --	PRINT ':SETVAR FilePath' + CAST(@member_no as varchar(12)) + ' ''' + @file_path + '''' + CHAR(13) + CHAR(10);

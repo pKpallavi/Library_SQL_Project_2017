@@ -1,0 +1,8 @@
+12.0
+6
+1       SQLCHAR             0       12      "|"      1     Orders_ID                                      ""
+2       SQLCHAR             0       12      "|"      2     Orders_Supplier_ID                             ""
+3       SQLCHAR             0       11      "|"      3     Orders_Date_Ordered                            ""
+4       SQLCHAR             0       11      "|"      4     Orders_Date_Required                           ""
+5       SQLCHAR             0       20      "|"      5     Orders_Status                                  SQL_Latin1_General_CP1_CI_AS
+6       SQLCHAR             0       12      "\r\n"   6     Orders_Payment_Amount                          ""

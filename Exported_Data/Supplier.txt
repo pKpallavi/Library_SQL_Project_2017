@@ -1,0 +1,5 @@
+10|ABC Suppliers Inc|258 Bartlett Ln|Bartlett|IL|60156|6308478990|0
+20|Variety Suppliers Inc|258 County Line Rd|Aurora|IL|60505|6308478990|0
+30|XYX Publishers and Suppliers Inc|258 Valley Lake Dr|Schaumburg|IL|60195|6308478990|0
+40|Trendy Books and Journals Inc|4581 Mandy Ln|Buffalo Grove|IL|60089|6308478990|0
+50|Arbor Trading Inc|E 60th Street|Chicago|IL|60007|6308478990|0
