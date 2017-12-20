@@ -34,16 +34,16 @@ delete from eBook_Details;
 delete from Media;
 delete from Library_Details;
 
-insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Year_Opened,Library_Timings)values (89, 'Mount Propspect Public Library', '(847) 253-5675','10 S Emerson St', 'Mount Prospect','IL','60056', 1951, 'Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
-insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Year_Opened,Library_Timings)values (90, 'Arlington Heights Memorial Library', '(847) 392-0100','500 N Dunton Ave',' Arlington Heights', 'IL','60004', 1952, 'Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
-insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (91, 'Prospect Heights Public Library', '(847) 259-3500','12 N Elm Street',' Prospect Heights', 'IL','60070','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
-insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (92, 'Evanston North Branch Library', '(847) 866-0330','2026 Central St',' Evanston', 'IL','60201','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
-insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (93, 'Jefferson Park Branch Chicago Public Library', '(312) 744-1998','5363 W Lawrence Ave','Chicago', 'IL','60630','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
-insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (94, 'Poplar Creek Public Library Sonya Crawshaw Branch', '(630) 372-0052','4300 Audrey Ln',' Hanover Park', 'IL',' 60133','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
-insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (95, 'Albany Park Library', '(773) 539-5450','3401 W Foster Ave',' Chicago', 'IL','60625','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
-insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (96, 'Conrad Sulzer Regional Library', '(312) 744-7616','4455 N Lincoln Ave',' Chicago', 'IL','60625','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
-insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (97, 'Mayfair Branch, Chicago Public Library ', '(312) 744-1254','4400 W Lawrence Ave',' Chicago', 'IL','60630','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
-insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (98, 'DePaul University - John T. Richardson Library', '(773) 325-7862','2350 N Kenmore Ave',' Chicago', 'IL','60614','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
+insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Year_Opened,Library_Timings)values (89, 'Mount Propspect Public Library', '(847) 253-5675','10 S Emerson St', 'Mount Prospect','IL','60056', 1951, 'Monday:9AMâ€“10PM Tuesday:9AMâ€“10PM Wednesday:9AMâ€“10PM Thursday:9AMâ€“10PM Friday:9AMâ€“10PM Saturday:9AMâ€“5PM Sunday:12â€“5PM');
+insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Year_Opened,Library_Timings)values (90, 'Arlington Heights Memorial Library', '(847) 392-0100','500 N Dunton Ave',' Arlington Heights', 'IL','60004', 1952, 'Monday:9AMâ€“10PM Tuesday:9AMâ€“10PM Wednesday:9AMâ€“10PM Thursday:9AMâ€“10PM Friday:9AMâ€“10PM Saturday:9AMâ€“5PM Sunday:12â€“5PM');
+insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (91, 'Prospect Heights Public Library', '(847) 259-3500','12 N Elm Street',' Prospect Heights', 'IL','60070','Monday:9AMâ€“10PM Tuesday:9AMâ€“10PM Wednesday:9AMâ€“10PM Thursday:9AMâ€“10PM Friday:9AMâ€“10PM Saturday:9AMâ€“5PM Sunday:12â€“5PM');
+insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (92, 'Evanston North Branch Library', '(847) 866-0330','2026 Central St',' Evanston', 'IL','60201','Monday:9AMâ€“10PM Tuesday:9AMâ€“10PM Wednesday:9AMâ€“10PM Thursday:9AMâ€“10PM Friday:9AMâ€“10PM Saturday:9AMâ€“5PM Sunday:12â€“5PM');
+insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (93, 'Jefferson Park Branch Chicago Public Library', '(312) 744-1998','5363 W Lawrence Ave','Chicago', 'IL','60630','Monday:9AMâ€“10PM Tuesday:9AMâ€“10PM Wednesday:9AMâ€“10PM Thursday:9AMâ€“10PM Friday:9AMâ€“10PM Saturday:9AMâ€“5PM Sunday:12â€“5PM');
+insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (94, 'Poplar Creek Public Library Sonya Crawshaw Branch', '(630) 372-0052','4300 Audrey Ln',' Hanover Park', 'IL',' 60133','Monday:9AMâ€“10PM Tuesday:9AMâ€“10PM Wednesday:9AMâ€“10PM Thursday:9AMâ€“10PM Friday:9AMâ€“10PM Saturday:9AMâ€“5PM Sunday:12â€“5PM');
+insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (95, 'Albany Park Library', '(773) 539-5450','3401 W Foster Ave',' Chicago', 'IL','60625','Monday:9AMâ€“10PM Tuesday:9AMâ€“10PM Wednesday:9AMâ€“10PM Thursday:9AMâ€“10PM Friday:9AMâ€“10PM Saturday:9AMâ€“5PM Sunday:12â€“5PM');
+insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (96, 'Conrad Sulzer Regional Library', '(312) 744-7616','4455 N Lincoln Ave',' Chicago', 'IL','60625','Monday:9AMâ€“10PM Tuesday:9AMâ€“10PM Wednesday:9AMâ€“10PM Thursday:9AMâ€“10PM Friday:9AMâ€“10PM Saturday:9AMâ€“5PM Sunday:12â€“5PM');
+insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (97, 'Mayfair Branch, Chicago Public Library ', '(312) 744-1254','4400 W Lawrence Ave',' Chicago', 'IL','60630','Monday:9AMâ€“10PM Tuesday:9AMâ€“10PM Wednesday:9AMâ€“10PM Thursday:9AMâ€“10PM Friday:9AMâ€“10PM Saturday:9AMâ€“5PM Sunday:12â€“5PM');
+insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (98, 'DePaul University - John T. Richardson Library', '(773) 325-7862','2350 N Kenmore Ave',' Chicago', 'IL','60614','Monday:9AMâ€“10PM Tuesday:9AMâ€“10PM Wednesday:9AMâ€“10PM Thursday:9AMâ€“10PM Friday:9AMâ€“10PM Saturday:9AMâ€“5PM Sunday:12â€“5PM');
 
 select * from Library_Details;
 
@@ -64,7 +64,7 @@ go
 create proc L_Insert_Media_Table @Media_ID as int, @Media_Format as varchar(30), @Media_Status as varchar(30), @Media_Library_ID as int 
 as
 begin
-insert into Media(Media_ID, Media_Format, Media_Status, Media_Library_ID) values(@Media_ID, @Media_Format, @Media_Status, @Media_Library_ID);
+insert into Media(Media_ID, Media_Format, Media_Status, Media_Library_ID)Â values(@Media_ID, @Media_Format, @Media_Status, @Media_Library_ID);
 end; --L_Insert_Media_Table
 
 go
@@ -258,7 +258,7 @@ go
 create proc L_Insert_Book_Details_Table @ISBN_No as int, @Published_Year as int, @Title as varchar(100), @Author_First_Name as varchar(30), @Author_Last_Name as varchar(30), @Language as varchar(30), @Rating as int, @Price as int
 as
 begin
-insert into dbo.Book_Details(Book_Details_ISBN_No, Book_Details_Published_Year, Book_Details_Title, Book_Details_Author_First_Name, Book_Details_Author_Last_Name, Book_Details_Language, Book_Details_Rating, Book_Details_Price) 
+insert into dbo.Book_Details(Book_Details_ISBN_No, Book_Details_Published_Year, Book_Details_Title, Book_Details_Author_First_Name, Book_Details_Author_Last_Name, Book_Details_Language, Book_Details_Rating, Book_Details_Price)Â 
 values(@ISBN_No , @Published_Year, @Title, @Author_First_Name, @Author_Last_Name, @Language, @Rating, @Price);
 end --L_Insert_Book_Details_Table 
 
@@ -303,7 +303,7 @@ begin
 	PRINT 'Error in Book_Bought_Date value. Should be later than Published year and Library opening year';
 	return;
 end;
-insert into Book(Book_Media_ID, Book_ISBN_No, Book_Bought_Date) values(@Media_ID, @ISBN_No, @Bought_Date) 
+insert into Book(Book_Media_ID, Book_ISBN_No, Book_Bought_Date)Â values(@Media_ID, @ISBN_No, @Bought_Date) 
 end;
 
 go
@@ -391,7 +391,7 @@ begin
 	print 'Error in eBook_Bought_Date value. Should be later than Published year and Library opening year';
 	RETURN;
 end;
-insert into eBook(eBook_Media_ID, eBook_ISBN_No, eBook_Bought_Date) values(@Media_ID, @ISBN_No, @Bought_Date) 
+insert into eBook(eBook_Media_ID, eBook_ISBN_No, eBook_Bought_Date)Â values(@Media_ID, @ISBN_No, @Bought_Date) 
 end;
 
 go
@@ -479,7 +479,7 @@ begin
 	PRINT 'Error in Journal_Bought_Date value. Should be later than Published date and Library opening year';
 	return;
 end;
-insert into Journal(Journal_Media_ID, Journal_ISSN_No, Journal_Bought_Date) values(@Media_ID, @ISSN_No, @Bought_Date) 
+insert into Journal(Journal_Media_ID, Journal_ISSN_No, Journal_Bought_Date)Â values(@Media_ID, @ISSN_No, @Bought_Date) 
 end;
 
 go
@@ -565,7 +565,7 @@ begin
 	PRINT 'Error in eJournal_Bought_Date value. Should be later than Published date and Library opening year';
 	return;
 end;
-insert into eJournal(eJournal_Media_ID, eJournal_ISSN_No, eJournal_Bought_Date) values(@Media_ID, @ISSN_No, @Bought_Date) 
+insert into eJournal(eJournal_Media_ID, eJournal_ISSN_No, eJournal_Bought_Date)Â values(@Media_ID, @ISSN_No, @Bought_Date) 
 end;
 
 go
@@ -652,7 +652,7 @@ begin
 	PRINT 'Error in Magazine_Bought_Date value. Should be later than Published date and Library opening year';
 	return;
 end;
-insert into Magazine(Magazine_Media_ID, Magazine_Internal_ID, Magazine_Bought_Date) values(@Media_ID, @Int_ID, @Bought_Date);
+insert into Magazine(Magazine_Media_ID, Magazine_Internal_ID, Magazine_Bought_Date)Â values(@Media_ID, @Int_ID, @Bought_Date);
 end;
 
 go
@@ -732,7 +732,7 @@ begin
 	PRINT 'Error in Digital_Magazine_Bought_Date value. Should be later than Published date and Library opening year';
 	return;
 end;
-insert into Digital_Magazine(Digital_Magazine_Media_ID, Digital_Magazine_Internal_ID, Digital_Magazine_Bought_Date) values(@Media_ID, @Int_ID, @Bought_Date);
+insert into Digital_Magazine(Digital_Magazine_Media_ID, Digital_Magazine_Internal_ID, Digital_Magazine_Bought_Date)Â values(@Media_ID, @Int_ID, @Bought_Date);
 end;
 
 go
@@ -815,7 +815,7 @@ begin
 	PRINT 'Error in DVD_Bought_Date value. Should be later than Published date and Library opening year';
 	return;
 end;
-insert into DVD(DVD_Media_ID, DVD_ISBN_No, DVD_Bought_Date) values(@Media_ID, @ISBN_No, @Bought_Date);
+insert into DVD(DVD_Media_ID, DVD_ISBN_No, DVD_Bought_Date)Â values(@Media_ID, @ISBN_No, @Bought_Date);
 end;
 
 go
@@ -862,7 +862,7 @@ go
 
 execute L_Insert_CD_Details	26000,'Greatest hits, the ballet','Ballet, Music','10/1/1989','','','CBS Records','Ballets -- Excerpts Orchestral music',10, 'English', '';
 execute L_Insert_CD_Details	26001,'Road less traveled','Country music','11/3/1994','Lauren','Alaina','Mercury Nashville','Country music',7, 'English', '';
-execute L_Insert_CD_Details	26002,'Attending : medicine, mindfulness, and humanity','Physician-patient relations','8/17/2016','Ronald','Epstein','Simon & Schuster Audio','Drawing on his clinical experiences and current research, and exploring four foundations of mindfulness—Attention, Curiosity, Beginner’s Mind, and Presence—Dr. Epstein introduces a revolutionary concept: by looking inward, health care practitioners can grow their capacity to provide high-quality care and the resilience to be there when their patients need them.',10, 'English','';
+execute L_Insert_CD_Details	26002,'Attending : medicine, mindfulness, and humanity','Physician-patient relations','8/17/2016','Ronald','Epstein','Simon & Schuster Audio','Drawing on his clinical experiences and current research, and exploring four foundations of mindfulnessâ€”Attention, Curiosity, Beginnerâ€™s Mind, and Presenceâ€”Dr. Epstein introduces a revolutionary concept: by looking inward, health care practitioners can grow their capacity to provide high-quality care and the resilience to be there when their patients need them.',10, 'English','';
 execute L_Insert_CD_Details	26003,'Kids in motion','Children''s exercise, Children''s songs','7/6/1987','Steve','Millang','Youngheart Music','Activities with games, exercises, and songs for developing physical fitness.',8, 'English', '';
 execute L_Insert_CD_Details	26004,'Music from India','Sitar, Raaga music','8/5/1991','Ram','Chandra','LaserLight','Raga bhairava (21:24) -- Raga Malakosha (19:48).',10, 'Hindi', '';
 execute L_Insert_CD_Details	26005,'When the wind blows','Fiction, Mystery','10/23/1947','James','Patterson','Books on Tape','Frannie O''Neill is a young and talented veterinarian living in Colorado. Plagued by the mysterious murder of her husband, Frannie tries to find forgetfulness in her work.',9, 'English', '';
@@ -893,7 +893,7 @@ begin
 	PRINT 'Error in CD_Bought_Date value. Should be later than Release date and Library opening year';
 	return;
 end;
-insert into CD(CD_Media_ID, CD_Internal_ID, CD_Bought_Date) values(@Media_ID, @Int_ID, @Bought_Date);
+insert into CD(CD_Media_ID, CD_Internal_ID, CD_Bought_Date)Â values(@Media_ID, @Int_ID, @Bought_Date);
 end;
 
 go
@@ -1493,13 +1493,10 @@ select * from Media_Check_Out;
 
 go
 
-<<<<<<< HEAD:Library_Data_Functions.sql
-=======
 select * from Media_Check_Out_Archive;
 
 go
 
->>>>>>> pKpallavi-patch-1:Library_Data_Insertion.sql
 execute L_Insert_Update_Media_Check_Out	1,890001000,890001,'11/09/2017';
 --execute L_Insert_Update_Media_Check_Out	2,890001001,890003;
 --execute L_Insert_Update_Media_Check_Out	3,890001002,890005;
