@@ -1,7 +1,7 @@
-/* if exists( Select * from Library)
-	 drop table Library; */
+/* if exists( Select * from Library_Details)
+	 drop table Library_Details; */
 
-create table Library
+create table Library_Details
 (
 	Library_ID int primary key,
 	Library_Name varchar(100) not null,
@@ -18,15 +18,15 @@ go
 
 /* if exists( Select * from Media)
 	drop table Media; */
-
+/* 'Order placed', 'Waiting', 'Order key'. 'On hold' can be made for media that is in any status other than
+	lost or damaged.*/
 create table Media
 (
 	Media_ID int primary key,
 	Media_Library_ID int not null,
 	Media_Format varchar(30) not null check(Media_Format in ('Book', 'eBook', 'Journal', 'eJournal', 'Magazine', 'Digital Magazine', 'DVD', 'CD')),
-	Media_Status varchar(30) not null check(Media_Status in ('Checked out', 'Returned', 'On shelf', 'Due', 'Lost', 'Damaged')), /* 'Order placed', 'Waiting', 'Order key'. 'On hold' can be made for media that is in any status other than
-	lost or damaged.*/
-	CONSTRAINT FK_Library_Table FOREIGN KEY(Media_Library_ID) REFERENCES Library(Library_ID)
+	Media_Status varchar(30) not null check(Media_Status in ('Checked out', 'Returned', 'On shelf', 'Due', 'Lost', 'Damaged')), 
+	CONSTRAINT FK_Library_Table FOREIGN KEY(Media_Library_ID) REFERENCES Library_Details(Library_ID)
 );
 
 go
@@ -59,8 +59,7 @@ create table Book
 	Book_Bought_Date date not null default CURRENT_TIMESTAMP,
 	Book_Entry_Changed date not null default CURRENT_TIMESTAMP,
 	CONSTRAINT FK_Media_Book_Table FOREIGN KEY(Book_Media_ID) REFERENCES Media(Media_ID),
-	CONSTRAINT FK_Book_Details_Table FOREIGN KEY(Book_ISBN_No) REFERENCES Book_Details(Book_Details_ISBN_No),
-	--CONSTRAINT Lib_Sem_Book_Bought_Date Check(Year(Book_Bought_Date) >= dbo.Book_Details.Book_Details_Published_Year)
+	CONSTRAINT FK_Book_Details_Table FOREIGN KEY(Book_ISBN_No) REFERENCES Book_Details(Book_Details_ISBN_No)
 );
 
 go
@@ -71,7 +70,7 @@ go
 create table eBook_Details
 ( 
 	eBook_Details_ISBN_No int primary key,
-	eBook_Details_Release_Date date /* not null */,
+	eBook_Details_Release_Date date not null,
 	eBook_Details_Title varchar(100) not null,
 	eBook_Details_Author_First_Name varchar(30) default '',
 	eBook_Details_Author_Last_Name varchar(30) not null,
@@ -106,7 +105,7 @@ create table Journal_Details
 (
 	Journal_Details_ISSN_Number int primary key,
 	Journal_Details_Title varchar(100) not null,
-	Journal_Details_Alternate_Title varchar(100) default '',--
+	Journal_Details_Alternate_Title varchar(100) default '',
 	Journal_Details_Source varchar(100) default '',
 	Journal_Details_Published_Date date not null,
 	Journal_Details_End_Date date default '',
@@ -164,7 +163,7 @@ create table eJournal
 (
 	eJournal_Media_ID int primary key,
 	eJournal_ISSN_No int not null,
-	eJournal_Bought_Date date not null default CURRENT_TIMESTAMP, --The default value should be date
+	eJournal_Bought_Date date not null default CURRENT_TIMESTAMP,
 	eJournal_Entry_Changed date not null default CURRENT_TIMESTAMP, 
 	CONSTRAINT FK_Media_eJournal_Table FOREIGN KEY(eJournal_Media_ID) REFERENCES Media(Media_ID),
 	CONSTRAINT FK_eJournal_Details_Table FOREIGN KEY(eJournal_ISSN_No) REFERENCES eJournal_Details(eJournal_Details_ISSN_Number)
@@ -174,10 +173,10 @@ go
 
 /* if exists( Select * from Magazine_Details)
 	drop table Magazine_Details; */
-
+/* Magazine is uniquely identified by Name, Volume, Issue */
 create table Magazine_Details
 (
-	Magazine_Details_Internal_ID int primary key, /* Magazine is uniquely identified by Name, Volume, Issue */
+	Magazine_Details_Internal_ID int primary key, 
 	Magazine_Details_Name varchar(100) not null,
 	Magazine_Details_Published_Date date not null,
 	Magazine_Details_Volume_Num int not null,
@@ -197,7 +196,7 @@ create table Magazine
 (
 	Magazine_Media_ID int primary key,
 	Magazine_Internal_ID int not null,
-	Magazine_Bought_Date date not null default CURRENT_TIMESTAMP, --The default value should be date
+	Magazine_Bought_Date date not null default CURRENT_TIMESTAMP,
 	Magazine_Entry_Changed date not null default CURRENT_TIMESTAMP, 
 	CONSTRAINT FK_Media_Magazine_Table FOREIGN KEY(Magazine_Media_ID) REFERENCES Media(Media_ID),
 	CONSTRAINT FK_Magazine_Details_Table FOREIGN KEY(Magazine_Internal_ID) REFERENCES Magazine_Details(Magazine_Details_Internal_ID)
@@ -207,10 +206,10 @@ go
 
 /* if exists( Select * from Digital_Magazine_Details)
 	drop table Digital_Magazine_Details; */
-
+/* Digital Magazine is uniquely identified by Name, Volume, Issue */
 create table Digital_Magazine_Details
 (
-	Digital_Magazine_Details_Internal_ID int primary key, /* Digital Magazine is uniquely identified by Name, Volume, Issue */
+	Digital_Magazine_Details_Internal_ID int primary key, 
 	Digital_Magazine_Name varchar(100) not null,
 	Digital_Magazine_Published_Date date not null,
 	Digital_Magazine_Volume_Num int default '',
@@ -231,7 +230,7 @@ create table Digital_Magazine
 (
 	Digital_Magazine_Media_ID int primary key,
 	Digital_Magazine_Internal_ID int not null,
-	Digital_Magazine_Bought_Date date not null default CURRENT_TIMESTAMP, --The default value should be date
+	Digital_Magazine_Bought_Date date not null default CURRENT_TIMESTAMP,
 	Digital_Magazine_Entry_Changed date not null default CURRENT_TIMESTAMP, 
 	CONSTRAINT FK_Media_Digital_Magazine_Table FOREIGN KEY(Digital_Magazine_Media_ID) REFERENCES Media(Media_ID),
 	CONSTRAINT FK_Digital_Magazine_Details_Table FOREIGN KEY(Digital_Magazine_Internal_ID) REFERENCES Digital_Magazine_Details(Digital_Magazine_Details_Internal_ID)
@@ -241,12 +240,12 @@ go
 
 /* if exists( Select * from DVD_Details)
 	drop table DVD_Details; */
-
+--Genre should be enumeration or user datatype
 create table DVD_Details
 (
 	DVD_Details_ISBN_No int primary key,
 	DVD_Details_Title varchar(100) default '',
-	DVD_Details_Genre varchar(30), --This type should be enumeration or user datatype
+	DVD_Details_Genre varchar(30) default '',
 	DVD_Details_Rating int default '',
 	DVD_Details_Release_Date date not null,
 	DVD_Details_Length time default '',
@@ -269,7 +268,7 @@ create table DVD
 (
 	DVD_Media_ID int primary key,
 	DVD_ISBN_No int not null,
-	DVD_Bought_Date date not null default CURRENT_TIMESTAMP, --The default value should be date
+	DVD_Bought_Date date not null default CURRENT_TIMESTAMP,
 	DVD_Entry_Changed date not null default CURRENT_TIMESTAMP, 
 	CONSTRAINT FK_Media_DVD_Table FOREIGN KEY(DVD_Media_ID) REFERENCES Media(Media_ID),
 	CONSTRAINT FK_DVD_Details_Table FOREIGN KEY(DVD_ISBN_No) REFERENCES DVD_Details(DVD_Details_ISBN_No)
@@ -279,10 +278,10 @@ go
 
 /* if exists( Select * from CD_Details)
 	drop table CD_Details; */
-
+ /* CD is uniquely identified by Title, Date, Author */
 create table CD_Details
 (
-	CD_Details_Internal_ID int primary key, /* CD is uniquely identified by Title, Date, Author */
+	CD_Details_Internal_ID int primary key,
 	CD_Details_Title varchar(100) not null,
 	CD_Details_Genre varchar(50) check (CD_Details_Genre IN ('Ballet, Music','Country music','Physician-patient relations','Children''s exercise, Children''s songs','Sitar, Raaga music','Fiction, Mystery','World Music','Juvenile fiction','Fiction, Firefighters','Music, Relaxation' )),
 	CD_Details_Length time default '',
@@ -305,7 +304,7 @@ create table CD
 (
 	CD_Media_ID int primary key,
 	CD_Internal_ID int not null,
-	CD_Bought_Date date not null default CURRENT_TIMESTAMP, --The default value should be date
+	CD_Bought_Date date not null default CURRENT_TIMESTAMP,
 	CD_Entry_Changed date not null default CURRENT_TIMESTAMP, 
 	CONSTRAINT FK_Media_CD_Table FOREIGN KEY(CD_Media_ID) REFERENCES Media(Media_ID),
 	CONSTRAINT FK_CD_Details_Table FOREIGN KEY(CD_Internal_ID) REFERENCES CD_Details(CD_Details_Internal_ID)
@@ -315,12 +314,12 @@ go
 
 /* if exists( Select * from Library_Member)
 	drop table Library_Member; */
-
+--Library_Member_Parent_ID refers to another row in Library_Member table of Parent
 create table Library_Member
 (
 	Library_Member_ID int primary key,
 	Library_Member_Library_ID int not null,
-	Library_Member_Parent_ID int default '', --this refers to another row in Library Member table of Parent
+	Library_Member_Parent_ID int default '',
 	Library_Member_First_Name varchar(30) default '',
 	Library_Member_Last_Name varchar(30) not null,
 	Library_Member_Email_Addr varchar(100) default '',
@@ -329,9 +328,9 @@ create table Library_Member
 	Library_Member_City varchar(20) default 'Mount Prospect',
 	Library_Member_State char(2) default 'IL',
 	Library_Member_Zip_code int default 60056,
-	Library_Member_Dues int default 0,
+	Library_Member_Dues int default '',
 	Library_Member_Since date default '10/6/2006',
-	CONSTRAINT FK_Library_Member_Table FOREIGN KEY(Library_Member_Library_ID) REFERENCES Library(Library_ID)
+	CONSTRAINT FK_Library_Member_Table FOREIGN KEY(Library_Member_Library_ID) REFERENCES Library_Details(Library_ID)
 );
 
 go
@@ -433,30 +432,37 @@ create table Supplier
 	Supplier_Payment_Due int default 0
 );
 
+go
+
 /* if exists( Select * from Orders)
 	drop table Orders;
 */
-
+/* Accepted, Pending, Cancelled, Not available, Partially Delivered, Delivered, Payment Due, Paid */
+/* Will be updated once order is delivered depending on the quantity or delivered items */
 create table Orders
 (
 	Orders_ID int primary key,
 	Orders_Supplier_ID int default '',
 	Orders_Date_Ordered date not null default CURRENT_TIMESTAMP,
 	Orders_Date_Required date not null default '',
-	Orders_Status varchar(20) default '', /* Accepted, Pending, Cancelled, Not available, Partially Delivered, Delivered, Payment Due, Paid */
-	Orders_Payment_Amount int default 0, /* Will be updated once order is delivered depending on the quantity or delivered items */
+	Orders_Status varchar(20) default '', 
+	Orders_Payment_Amount int default 0, 
 	CONSTRAINT FK_Orders_Supplier FOREIGN KEY(Orders_Supplier_ID) REFERENCES Supplier(Supplier_ID) 
 );
+
+go
 
 /* if exists( Select * from Orders_Details)
 	drop table Orders_Details;
 */
+--can be the ISBN or ISSN number or another unique number specified by publisher
+/* Accepted, Pending, Cancelled, Not available, Partially Delivered, Delivered, Payment Due, Paid */
 create table Orders_Details
 (
 	Orders_Details_Line_No int primary key,
 	Orders_Details_Orders_ID int not null, 
 
-	Orders_Details_Item_ID int default '', --can be the ISBN or ISSN number or another unique number specified by publisher
+	Orders_Details_Item_ID int default '', 
 	Orders_Details_Item_Title varchar(100) not null,
 	Orders_Details_Publisher varchar(100) default '',
 	Orders_Details_Author_First_Name varchar(30) default '',
@@ -473,10 +479,11 @@ create table Orders_Details
 	Orders_Details_Price_Per_Unit int default '',
 	Orders_Details_Price_Total int default '',
 	Orders_Details_Quantity int default '',
-	Orders_Details_Status varchar(20) default '', /* Accepted, Pending, Cancelled, Not available, Partially Delivered, Delivered, Payment Due, Paid */
+	Orders_Details_Status varchar(20) default '', 
 	Orders_Details_Date_Delivered date default '',
-	CONSTRAINT FK_Orders_Details_Orders FOREIGN KEY(Orders_Details_Orders_ID) REFERENCES Orders(Orders_ID),
+	CONSTRAINT FK_Orders_Details_Orders FOREIGN KEY(Orders_Details_Orders_ID) REFERENCES Orders(Orders_ID)
 );
 
+go
 
 

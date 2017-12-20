@@ -1,0 +1,11 @@
+12.0
+9
+1       SQLCHAR             0       12      "|"      1     Library_ID                                       ""
+2       SQLCHAR             0       100     "|"      2     Library_Name                                     SQL_Latin1_General_CP1_CI_AS
+3       SQLCHAR             0       15      "|"      3     Library_Contact_Number                           SQL_Latin1_General_CP1_CI_AS
+4       SQLCHAR             0       100     "|"      4     Library_Address                                  SQL_Latin1_General_CP1_CI_AS
+5       SQLCHAR             0       20      "|"      5     Library_City                                     SQL_Latin1_General_CP1_CI_AS
+6       SQLCHAR             0       2       "|"      6     Library_State                                    SQL_Latin1_General_CP1_CI_AS
+7       SQLCHAR             0       12      "|"      7     Library_ZipCode                                  ""
+8       SQLCHAR             0       12      "|"      8     Library_Year_Opened                              ""
+9       SQLCHAR             0       200     "\r\n"   9     Library_Timings                                  SQL_Latin1_General_CP1_CI_AS

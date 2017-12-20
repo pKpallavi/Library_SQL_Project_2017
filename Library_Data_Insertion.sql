@@ -32,20 +32,20 @@ delete from Book_Details;
 delete from eBook;
 delete from eBook_Details;
 delete from Media;
-delete from Library;
+delete from Library_Details;
 
-insert into Library (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Year_Opened,Library_Timings)values (89, 'Mount Propspect Public Library', '(847) 253-5675','10 S Emerson St', 'Mount Prospect','IL','60056', 1951, 'Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
-insert into Library (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Year_Opened,Library_Timings)values (90, 'Arlington Heights Memorial Library', '(847) 392-0100','500 N Dunton Ave',' Arlington Heights', 'IL','60004', 1952, 'Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
-insert into Library (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (91, 'Prospect Heights Public Library', '(847) 259-3500','12 N Elm Street',' Prospect Heights', 'IL','60070','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
-insert into Library (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (92, 'Evanston North Branch Library', '(847) 866-0330','2026 Central St',' Evanston', 'IL','60201','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
-insert into Library (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (93, 'Jefferson Park Branch Chicago Public Library', '(312) 744-1998','5363 W Lawrence Ave','Chicago', 'IL','60630','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
-insert into Library (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (94, 'Poplar Creek Public Library Sonya Crawshaw Branch', '(630) 372-0052','4300 Audrey Ln',' Hanover Park', 'IL',' 60133','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
-insert into Library (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (95, 'Albany Park Library', '(773) 539-5450','3401 W Foster Ave',' Chicago', 'IL','60625','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
-insert into Library (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (96, 'Conrad Sulzer Regional Library', '(312) 744-7616','4455 N Lincoln Ave',' Chicago', 'IL','60625','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
-insert into Library (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (97, 'Mayfair Branch, Chicago Public Library ', '(312) 744-1254','4400 W Lawrence Ave',' Chicago', 'IL','60630','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
-insert into Library (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (98, 'DePaul University - John T. Richardson Library', '(773) 325-7862','2350 N Kenmore Ave',' Chicago', 'IL','60614','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
+insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Year_Opened,Library_Timings)values (89, 'Mount Propspect Public Library', '(847) 253-5675','10 S Emerson St', 'Mount Prospect','IL','60056', 1951, 'Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
+insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Year_Opened,Library_Timings)values (90, 'Arlington Heights Memorial Library', '(847) 392-0100','500 N Dunton Ave',' Arlington Heights', 'IL','60004', 1952, 'Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
+insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (91, 'Prospect Heights Public Library', '(847) 259-3500','12 N Elm Street',' Prospect Heights', 'IL','60070','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
+insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (92, 'Evanston North Branch Library', '(847) 866-0330','2026 Central St',' Evanston', 'IL','60201','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
+insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (93, 'Jefferson Park Branch Chicago Public Library', '(312) 744-1998','5363 W Lawrence Ave','Chicago', 'IL','60630','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
+insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (94, 'Poplar Creek Public Library Sonya Crawshaw Branch', '(630) 372-0052','4300 Audrey Ln',' Hanover Park', 'IL',' 60133','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
+insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (95, 'Albany Park Library', '(773) 539-5450','3401 W Foster Ave',' Chicago', 'IL','60625','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
+insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (96, 'Conrad Sulzer Regional Library', '(312) 744-7616','4455 N Lincoln Ave',' Chicago', 'IL','60625','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
+insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (97, 'Mayfair Branch, Chicago Public Library ', '(312) 744-1254','4400 W Lawrence Ave',' Chicago', 'IL','60630','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
+insert into Library_Details (Library_ID,Library_Name,Library_Contact_Number,Library_Address,Library_City,Library_State,Library_ZipCode,Library_Timings)values (98, 'DePaul University - John T. Richardson Library', '(773) 325-7862','2350 N Kenmore Ave',' Chicago', 'IL','60614','Monday:9AM–10PM Tuesday:9AM–10PM Wednesday:9AM–10PM Thursday:9AM–10PM Friday:9AM–10PM Saturday:9AM–5PM Sunday:12–5PM');
 
-select * from Library;
+select * from Library_Details;
 
 go
 
@@ -295,7 +295,7 @@ as
 begin
 declare @msg varchar(100), @pub_year int, @lib_opened_year int;
 select @pub_year = Book_Details_Published_Year from Book_Details where Book_Details_ISBN_No = @ISBN_No;
-select @lib_opened_year = Library.Library_Year_Opened from Library, Media where Library.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
+select @lib_opened_year = Library_Details.Library_Year_Opened from Library_Details, Media where Library_Details.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
 if Year(@Bought_Date) < @pub_year or Year(@Bought_Date) < @lib_opened_year
 begin
 	--set @msg = 'Error in Book_Bought_Date value. Should be later than Published year and Library opening year';
@@ -383,7 +383,7 @@ as
 begin
 declare @msg varchar(100), @pub_year int, @lib_opened_year int;
 select @pub_year = Year(eBook_Details_Release_Date) from eBook_Details where eBook_Details_ISBN_No = @ISBN_No;
-select @lib_opened_year = Library.Library_Year_Opened from Library, Media where Library.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
+select @lib_opened_year = Library_Details.Library_Year_Opened from Library_Details, Media where Library_Details.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
 if Year(@Bought_Date) < @pub_year or Year(@Bought_Date) < @lib_opened_year
 begin
 	--set @msg = 'Error in eBook_Bought_Date value. Should be later than Published year and Library opening year';
@@ -471,7 +471,7 @@ as
 begin
 declare @msg varchar(100), @pub_year int, @lib_opened_year int;
 select @pub_year = Year(Journal_Details_Published_Date) from Journal_Details where Journal_Details_ISSN_Number = @ISSN_No;
-select @lib_opened_year = Library.Library_Year_Opened from Library, Media where Library.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
+select @lib_opened_year = Library_Details.Library_Year_Opened from Library_Details, Media where Library_Details.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
 if Year(@Bought_Date) < @pub_year or Year(@Bought_Date) < @lib_opened_year
 begin
 	--set @msg = 'Error in Journal_Bought_Date value. Should be later than Published date and Library opening year';
@@ -557,7 +557,7 @@ as
 begin
 declare @msg varchar(100), @pub_year int, @lib_opened_year int;
 select @pub_year = Year(eJournal_Details_Published_Date) from eJournal_Details where eJournal_Details_ISSN_Number = @ISSN_No;
-select @lib_opened_year = Library.Library_Year_Opened from Library, Media where Library.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
+select @lib_opened_year = Library_Details.Library_Year_Opened from Library_Details, Media where Library_Details.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
 if Year(@Bought_Date) < @pub_year or Year(@Bought_Date) < @lib_opened_year
 begin
 	--set @msg = 'Error in eJournal_Bought_Date value. Should be later than Published date and Library opening year';
@@ -644,7 +644,7 @@ as
 begin
 declare @msg varchar(100), @pub_year int, @lib_opened_year int;
 select @pub_year = Year(Magazine_Details_Published_Date) from Magazine_Details where Magazine_Details_Internal_ID = @Int_ID;
-select @lib_opened_year = Library.Library_Year_Opened from Library, Media where Library.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
+select @lib_opened_year = Library_Details.Library_Year_Opened from Library_Details, Media where Library_Details.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
 if Year(@Bought_Date) < @pub_year or Year(@Bought_Date) < @lib_opened_year
 begin
 	--set @msg = 'Error in Magazine_Bought_Date value. Should be later than Published date and Library opening year';
@@ -724,7 +724,7 @@ as
 begin
 declare @msg varchar(100), @pub_year int, @lib_opened_year int;
 select @pub_year = Year(Digital_Magazine_Published_Date) from Digital_Magazine_Details where Digital_Magazine_Details_Internal_ID = @Int_ID;
-select @lib_opened_year = Library.Library_Year_Opened from Library, Media where Library.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
+select @lib_opened_year = Library_Details.Library_Year_Opened from Library_Details, Media where Library_Details.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
 if Year(@Bought_Date) < @pub_year or Year(@Bought_Date) < @lib_opened_year
 begin
 	--set @msg = 'Error in Digital_Magazine_Bought_Date value. Should be later than Published date and Library opening year';
@@ -807,7 +807,7 @@ as
 begin
 declare @msg varchar(100), @pub_year int, @lib_opened_year int;
 select @pub_year = Year(DVD_Details_Release_Date) from DVD_Details where DVD_Details_ISBN_No = @ISBN_No;
-select @lib_opened_year = Library.Library_Year_Opened from Library, Media where Library.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
+select @lib_opened_year = Library_Details.Library_Year_Opened from Library_Details, Media where Library_Details.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
 if Year(@Bought_Date) < @pub_year or Year(@Bought_Date) < @lib_opened_year
 begin
 	--set @msg = 'Error in DVD_Bought_Date value. Should be later than Published date and Library opening year';
@@ -885,7 +885,7 @@ as
 begin
 declare @msg varchar(100), @pub_year int, @lib_opened_year int;
 select @pub_year = Year(CD_Details_Release_Date) from CD_Details where CD_Details_Internal_ID = @Int_ID;
-select @lib_opened_year = Library.Library_Year_Opened from Library, Media where Library.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
+select @lib_opened_year = Library_Details.Library_Year_Opened from Library_Details, Media where Library_Details.Library_ID = Media.Media_Library_ID and Media.Media_ID = @Media_ID;
 if Year(@Bought_Date) < @pub_year or Year(@Bought_Date) < @lib_opened_year
 begin
 	--set @msg = 'Error in CD_Bought_Date value. Should be later than Release date and Library opening year';
@@ -959,7 +959,7 @@ begin
 end;
 
 --Check for zip code to be among enrolled library or neighboring libraries.
-if (@Zip_code NOT IN (Select Library_ZipCode from Library))
+if (@Zip_code NOT IN (Select Library_ZipCode from Library_Details))
 begin
 	--set @msg = 'Error in data entered value. Zip Code should be among the list of neighboring libraries';
 	--Raiserror(@msg,16,1);
@@ -975,27 +975,29 @@ go
 
 --Max limit for int data type -2147483648 to 2147483647
 
-execute L_Insert_Library_Member	890001000,89,0,'John','Nova','7/8/1984','23, Washington Ave.','Mount Prospect','IL',60056;
+execute L_Insert_Library_Member	890001000,89,'','John','Nova','7/8/1984','23, Washington Ave.','Mount Prospect','IL',60056;
 execute L_Insert_Library_Member	890001001,89,890001000,'Mary','Nova','8/3/2008','23, Washington Ave.','Mount Prospect','IL',60056;
 execute L_Insert_Library_Member	890001002,89,890001000,'Nicki','Nova','7/4/2006','23, Washington Ave.','Mount Prospect','IL',60056;
-execute L_Insert_Library_Member	890001003,89,Null,'Mona','Smith','8/4/1975','40, Roadway Dr','Mount Prospect','IL',60056;
-execute L_Insert_Library_Member	890001004,89,Null,'Riddley','Smith','12/23/1972','40, Roadway Dr','Mount Prospect','IL',60056;
+execute L_Insert_Library_Member	890001003,89,'','Mona','Smith','8/4/1975','40, Roadway Dr','Mount Prospect','IL',60056;
+execute L_Insert_Library_Member	890001004,89,'','Riddley','Smith','12/23/1972','40, Roadway Dr','Mount Prospect','IL',60056;
 execute L_Insert_Library_Member	890001005,89,890001004,'Zack','Smith','9/30/2012','40, Roadway Dr','Mount Prospect','IL',60056;
-execute L_Insert_Library_Member	890001006,89,Null,'Rena','Xavier','8/23/1979','2400, Pine Rd','Mount Prospect','IL',60056;
-execute L_Insert_Library_Member	890001007,89,Null,'Iris','Johnson','4/18/1990','3401, Wacker Dr','Mount Prospect','IL',60056;
-execute L_Insert_Library_Member	890001008,89,Null,'Mike','Williams','6/5/1999','4509, Treehouse Ave','Mount Prospect','IL',60056;
-execute L_Insert_Library_Member	890001009,89,Null,'Julie','Xo','7/3/2000','78, Windy way','Mount Prospect','IL',60056;
+execute L_Insert_Library_Member	890001006,89,'','Rena','Xavier','8/23/1979','2400, Pine Rd','Mount Prospect','IL',60056;
+execute L_Insert_Library_Member	890001007,89,'','Iris','Johnson','4/18/1990','3401, Wacker Dr','Mount Prospect','IL',60056;
+execute L_Insert_Library_Member	890001008,89,'','Mike','Williams','6/5/1999','4509, Treehouse Ave','Mount Prospect','IL',60056;
+execute L_Insert_Library_Member	890001009,89,'','Julie','Xo','7/3/2000','78, Windy way','Mount Prospect','IL',60056;
 
-execute L_Insert_Library_Member	900001000,90,Null,'James','Jones','5/18/1983','78, Laraway Dr','Arlington Heights','IL',60004;
+execute L_Insert_Library_Member	900001000,90,'','James','Jones','5/18/1983','78, Laraway Dr','Arlington Heights','IL',60004;
 execute L_Insert_Library_Member	900001001,90,900001000,'Robert','Jones','9/23/2007','78, Laraway Dr','Arlington Heights','IL',60004;
 execute L_Insert_Library_Member	900001002,90,900001000,'Michael','Jones','7/14/2007','78, Laraway Dr','Arlington Heights','IL',60004;
-execute L_Insert_Library_Member	900001003,90,Null,'William','Brown','8/14/1979','6701, Runaway Dr','Arlington Heights','IL',60004;
-execute L_Insert_Library_Member	900001004,90,Null,'Patricia','Brown','9/20/1982','6701, Runaway Dr','Arlington Heights','IL',60004;
+execute L_Insert_Library_Member	900001003,90,'','William','Brown','8/14/1979','6701, Runaway Dr','Arlington Heights','IL',60004;
+execute L_Insert_Library_Member	900001004,90,'','Patricia','Brown','9/20/1982','6701, Runaway Dr','Arlington Heights','IL',60004;
 execute L_Insert_Library_Member	900001005,90,900001004,'Jennifer','Brown','8/27/2014','6701, Runaway Dr','Arlington Heights','IL',60004;
-execute L_Insert_Library_Member	900001006,90,Null,'Elizabeth','Miller','6/20/1980','4508, Lotto Ave.','Arlington Heights','IL',60004;
-execute L_Insert_Library_Member	900001007,90,Null,'Linda','Wilson','11/28/1992','6502, Park Dr.','Arlington Heights','IL',60004;
-execute L_Insert_Library_Member	900001008,90,Null,'David','Moore','8/15/1998','302, Wick Rd','Arlington Heights','IL',60004;
-execute L_Insert_Library_Member	900001009,90,Null,'Richard','Taylor','8/23/2001','2103, Yoyo Ave','Arlington Heights','IL',60004;
+execute L_Insert_Library_Member	900001006,90,'','Elizabeth','Miller','6/20/1980','4508, Lotto Ave.','Arlington Heights','IL',60004;
+execute L_Insert_Library_Member	900001007,90,'','Linda','Wilson','11/28/1992','6502, Park Dr.','Arlington Heights','IL',60004;
+execute L_Insert_Library_Member	900001008,90,'','David','Moore','8/15/1998','302, Wick Rd','Arlington Heights','IL',60004;
+execute L_Insert_Library_Member	900001009,90,'','Richard','Taylor','8/23/2001','2103, Yoyo Ave','Arlington Heights','IL',60004;
+
+go
 
 select * from Library_Member;
 
@@ -1041,7 +1043,7 @@ begin
 end;
 
 --Check for zip code to be among enrolled library or neighboring libraries.
-if (@Zip_code NOT IN (Select Library_ZipCode from Library))
+if (@Zip_code NOT IN (Select Library_ZipCode from Library_Details))
 begin
 	--set @msg = 'Error in data entered value. Zip Code should be among the list of neighboring libraries';
 	--Raiserror(@msg,16,1);
@@ -1056,6 +1058,27 @@ update dbo.Library_Member set Library_Member_State = @State where Library_Member
 update dbo.Library_Member set Library_Member_Zip_Code = @Zip_code where Library_Member_Zip_code = @Zip_code;
 
 end;
+
+go
+
+execute L_Update_Library_Member	890001003,'','40, Roadway Dr','Mount Prospect','IL',60056;
+execute L_Update_Library_Member	890001004,'','40, Roadway Dr','Mount Prospect','IL',60056;
+execute L_Update_Library_Member	890001006,'','2400, Pine Rd','Mount Prospect','IL',60056;
+execute L_Update_Library_Member	890001007,'','3401, Wacker Dr','Mount Prospect','IL',60056;
+execute L_Update_Library_Member	890001008,'','4509, Treehouse Ave','Mount Prospect','IL',60056;
+execute L_Update_Library_Member	890001009,'','78, Windy way','Mount Prospect','IL',60056;
+
+execute L_Update_Library_Member	900001000,'','78, Laraway Dr','Arlington Heights','IL',60004;
+execute L_Update_Library_Member	900001003,'','6701, Runaway Dr','Arlington Heights','IL',60004;
+execute L_Update_Library_Member	900001004,'','6701, Runaway Dr','Arlington Heights','IL',60004;
+execute L_Update_Library_Member	900001006,'','4508, Lotto Ave.','Arlington Heights','IL',60004;
+execute L_Update_Library_Member	900001007,'','6502, Park Dr.','Arlington Heights','IL',60004;
+execute L_Update_Library_Member	900001008,'','302, Wick Rd','Arlington Heights','IL',60004;
+execute L_Update_Library_Member	900001009,'','2103, Yoyo Ave','Arlington Heights','IL',60004;
+
+go
+
+select * from Library_Member;
 
 go
 

@@ -1,4 +1,4 @@
-use Library_SQL_Project;
+use tempdb;
 
 go
 
@@ -14,21 +14,21 @@ Use Library_SQL_Project_Imported;
 
 go
 
-:r "C:\Data\Library_SQL_Project_2017\Library.sql"
+:r "C:\Data\Library_SQL_Project_2017\Library_Definition.sql"
 
 go
 
 SET NOCOUNT OFF
 
-BULK INSERT Library_SQL_Project_Imported.dbo.Library FROM "C:\Data\Library_SQL_Project_2017\Exported_Data\Library.txt"
+BULK INSERT Library_SQL_Project_Imported.dbo.Library_Details FROM "C:\Data\Library_SQL_Project_2017\Exported_Data\Library_Details.txt"
    WITH (
       DATAFILETYPE = 'char',
-	  FORMATFILE = 'C:\Data\Library_SQL_Project_2017\Exported_Data\Library-c.fmt'
+	  FORMATFILE = 'C:\Data\Library_SQL_Project_2017\Exported_Data\Library_Details-c.fmt'
 );
 
 go
 
-select * from Library;
+select * from Library_Details;
 
 go
 
@@ -47,8 +47,7 @@ go
 BULK INSERT Library_SQL_Project_Imported.dbo.Book_Details FROM "C:\Data\Library_SQL_Project_2017\Exported_Data\Book_Details.txt"
    WITH (
       DATAFILETYPE = 'char',
-	  FORMATFILE = 'C:\Data\Library_SQL_Project_2017\Exported_Data\Book_Details-c.fmt',
-	  KEEPNULLS 
+	  FORMATFILE = 'C:\Data\Library_SQL_Project_2017\Exported_Data\Book_Details-c.fmt'
 );
 
 go
@@ -285,6 +284,18 @@ select * from Media_Check_Out;
 
 go
 
+BULK INSERT Library_SQL_Project_Imported.dbo.Media_Check_Out_Archive FROM "C:\Data\Library_SQL_Project_2017\Exported_Data\Media_Check_Out_Archive.txt"
+   WITH (
+      DATAFILETYPE = 'char',
+	  FORMATFILE = 'C:\Data\Library_SQL_Project_2017\Exported_Data\Media_Check_Out_Archive-c.fmt'
+);
+
+go
+
+select * from Media_Check_Out_Archive;
+
+go
+
 BULK INSERT Library_SQL_Project_Imported.dbo.Media_Hold FROM "C:\Data\Library_SQL_Project_2017\Exported_Data\Media_Hold.txt"
    WITH (
       DATAFILETYPE = 'char',
@@ -296,3 +307,40 @@ go
 select * from Media_Hold;
 
 go
+
+BULK INSERT Library_SQL_Project_Imported.dbo.Supplier FROM "C:\Data\Library_SQL_Project_2017\Exported_Data\Supplier.txt"
+   WITH (
+      DATAFILETYPE = 'char',
+	  FORMATFILE = 'C:\Data\Library_SQL_Project_2017\Exported_Data\Supplier-c.fmt'
+);
+
+go
+
+select * from Supplier;
+
+go
+
+BULK INSERT Library_SQL_Project_Imported.dbo.Orders FROM "C:\Data\Library_SQL_Project_2017\Exported_Data\Orders.txt"
+   WITH (
+      DATAFILETYPE = 'char',
+	  FORMATFILE = 'C:\Data\Library_SQL_Project_2017\Exported_Data\Orders-c.fmt'
+);
+
+go
+
+select * from Orders;
+
+go
+
+BULK INSERT Library_SQL_Project_Imported.dbo.Orders_Details FROM "C:\Data\Library_SQL_Project_2017\Exported_Data\Orders_Details.txt"
+   WITH (
+      DATAFILETYPE = 'char',
+	  FORMATFILE = 'C:\Data\Library_SQL_Project_2017\Exported_Data\Orders_Details-c.fmt'
+);
+
+go
+
+select * from Orders_Details;
+
+go
+

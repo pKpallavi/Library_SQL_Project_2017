@@ -1,4 +1,4 @@
-890001|89|Book|Due
+890001|89|Book|Checked out
 890002|89|Book|Returned
 890003|89|Book|Returned
 890004|89|Book|On shelf
@@ -6,119 +6,119 @@
 890006|89|Book|Lost
 890007|89|Book|Damaged
 890008|89|Book|On shelf
-890009|89|Book|Due
+890009|89|Book|Checked out
 890010|89|Book|Returned
-890011|89|Book|Due
-890200|89|eBook|Due
-890201|89|eBook|Due
+890011|89|Book|Checked out
+890200|89|eBook|Checked out
+890201|89|eBook|Checked out
 890202|89|eBook|Returned
-890203|89|eBook|Due
+890203|89|eBook|Checked out
 890204|89|eBook|On shelf
-890205|89|eBook|Due
-890206|89|eBook|Due
-890207|89|eBook|Due
+890205|89|eBook|Checked out
+890206|89|eBook|Checked out
+890207|89|eBook|Checked out
 890208|89|eBook|On shelf
-890209|89|eBook|Due
+890209|89|eBook|Checked out
 890210|89|eBook|Returned
 890400|89|DVD|On shelf
 890401|89|DVD|Returned
 890402|89|DVD|On shelf
 890403|89|DVD|On shelf
-890404|89|DVD|Due
+890404|89|DVD|Checked out
 890405|89|DVD|Lost
 890406|89|DVD|Damaged
 890407|89|DVD|On shelf
-890408|89|DVD|Due
-890409|89|DVD|Due
+890408|89|DVD|Checked out
+890409|89|DVD|Checked out
 890600|89|CD|On shelf
-890601|89|CD|Due
+890601|89|CD|Checked out
 890602|89|CD|Returned
 890603|89|CD|On shelf
 890604|89|CD|On shelf
-890605|89|CD|Due
+890605|89|CD|Checked out
 890606|89|CD|Lost
 890607|89|CD|Damaged
 890608|89|CD|On shelf
-890609|89|CD|Due
-890800|89|Magazine|Due
-890801|89|Magazine|Due
+890609|89|CD|Checked out
+890800|89|Magazine|Checked out
+890801|89|Magazine|Checked out
 890802|89|Magazine|Returned
-890803|89|Magazine|Due
+890803|89|Magazine|Checked out
 890804|89|Magazine|On shelf
-890805|89|Magazine|Due
+890805|89|Magazine|Checked out
 890806|89|Magazine|Lost
 890807|89|Magazine|Damaged
 890808|89|Magazine|On shelf
 890809|89|Magazine|Checked out
 890810|89|Magazine|Checked out
 891000|89|Digital Magazine|On shelf
-891001|89|Digital Magazine|Due
+891001|89|Digital Magazine|Checked out
 891002|89|Digital Magazine|Returned
 891003|89|Digital Magazine|On shelf
 891004|89|Digital Magazine|On shelf
-891005|89|Digital Magazine|Due
-891006|89|Digital Magazine|Due
-891007|89|Digital Magazine|Due
+891005|89|Digital Magazine|Checked out
+891006|89|Digital Magazine|Checked out
+891007|89|Digital Magazine|Checked out
 891008|89|Digital Magazine|On shelf
-891009|89|Digital Magazine|Due
-891010|89|Digital Magazine|Due
-891200|89|Journal|Due
-891201|89|Journal|Due
+891009|89|Digital Magazine|Checked out
+891010|89|Digital Magazine|Checked out
+891200|89|Journal|Checked out
+891201|89|Journal|Checked out
 891202|89|Journal|Returned
-891203|89|Journal|Due
+891203|89|Journal|Checked out
 891204|89|Journal|On shelf
-891205|89|Journal|Due
+891205|89|Journal|Checked out
 891206|89|Journal|Lost
 891207|89|Journal|Damaged
 891208|89|Journal|On shelf
-891209|89|Journal|Due
-891400|89|eJournal|Due
-891401|89|eJournal|Due
+891209|89|Journal|Checked out
+891400|89|eJournal|Checked out
+891401|89|eJournal|Checked out
 891402|89|eJournal|Returned
-891403|89|eJournal|Due
+891403|89|eJournal|Checked out
 891404|89|eJournal|On shelf
-891405|89|eJournal|Due
-891406|89|eJournal|Due
-891407|89|eJournal|Due
+891405|89|eJournal|Checked out
+891406|89|eJournal|Checked out
+891407|89|eJournal|Checked out
 891408|89|eJournal|On shelf
-891409|89|eJournal|Due
+891409|89|eJournal|Checked out
 900001|90|Book|On shelf
 900002|90|Book|Returned
-900003|90|Book|Due
+900003|90|Book|Checked out
 900004|90|Book|On shelf
-900005|90|Book|Due
+900005|90|Book|Checked out
 900006|90|Book|Lost
 900007|90|Book|Damaged
 900008|90|Book|On shelf
 900009|90|Book|On shelf
-900010|90|Book|Due
-900011|90|Book|Due
-900200|90|eBook|Due
+900010|90|Book|Checked out
+900011|90|Book|Checked out
+900200|90|eBook|Checked out
 900201|90|eBook|On shelf
 900202|90|eBook|Returned
-900203|90|eBook|Due
+900203|90|eBook|Checked out
 900204|90|eBook|On shelf
-900205|90|eBook|Due
-900206|90|eBook|Due
-900207|90|eBook|Due
+900205|90|eBook|Checked out
+900206|90|eBook|Checked out
+900207|90|eBook|Checked out
 900208|90|eBook|On shelf
 900209|90|eBook|On shelf
-900210|90|eBook|Due
-900400|90|DVD|Due
+900210|90|eBook|Checked out
+900400|90|DVD|Checked out
 900401|90|DVD|Returned
 900402|90|DVD|On shelf
 900403|90|DVD|On shelf
-900404|90|DVD|Due
+900404|90|DVD|Checked out
 900405|90|DVD|Lost
 900406|90|DVD|Damaged
 900407|90|DVD|On shelf
-900408|90|DVD|Due
-900409|90|DVD|Due
+900408|90|DVD|Checked out
+900409|90|DVD|Checked out
 900600|90|CD|On shelf
 900601|90|CD|Returned
 900602|90|CD|On shelf
 900603|90|CD|On shelf
-900604|90|CD|Due
+900604|90|CD|Checked out
 900605|90|CD|Lost
 900606|90|CD|Damaged
 900607|90|CD|On shelf
@@ -126,9 +126,9 @@
 900609|90|CD|On shelf
 900800|90|Magazine|On shelf
 900801|90|Magazine|Returned
-900802|90|Magazine|Due
+900802|90|Magazine|Checked out
 900803|90|Magazine|On shelf
-900804|90|Magazine|Due
+900804|90|Magazine|Checked out
 900805|90|Magazine|Lost
 900806|90|Magazine|Damaged
 900807|90|Magazine|On shelf
@@ -139,30 +139,30 @@
 901001|90|Digital Magazine|On shelf
 901002|90|Digital Magazine|On shelf
 901003|90|Digital Magazine|On shelf
-901004|90|Digital Magazine|Due
-901005|90|Digital Magazine|Due
-901006|90|Digital Magazine|Due
+901004|90|Digital Magazine|Checked out
+901005|90|Digital Magazine|Checked out
+901006|90|Digital Magazine|Checked out
 901007|90|Digital Magazine|On shelf
 901008|90|Digital Magazine|On shelf
 901009|90|Digital Magazine|On shelf
 901010|90|Digital Magazine|On shelf
-901200|90|Journal|Due
+901200|90|Journal|Checked out
 901201|90|Journal|On shelf
 901202|90|Journal|Returned
-901203|90|Journal|Due
+901203|90|Journal|Checked out
 901204|90|Journal|On shelf
-901205|90|Journal|Due
+901205|90|Journal|Checked out
 901206|90|Journal|Lost
 901207|90|Journal|Damaged
 901208|90|Journal|On shelf
 901209|90|Journal|On shelf
-901400|90|eJournal|Due
+901400|90|eJournal|Checked out
 901401|90|eJournal|On shelf
 901402|90|eJournal|Returned
-901403|90|eJournal|Due
+901403|90|eJournal|Checked out
 901404|90|eJournal|On shelf
-901405|90|eJournal|Due
-901406|90|eJournal|Due
-901407|90|eJournal|Due
+901405|90|eJournal|Checked out
+901406|90|eJournal|Checked out
+901407|90|eJournal|Checked out
 901408|90|eJournal|On shelf
 901409|90|eJournal|On shelf

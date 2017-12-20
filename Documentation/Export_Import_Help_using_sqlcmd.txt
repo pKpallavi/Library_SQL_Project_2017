@@ -1,0 +1,27 @@
+Export Library_SQL_Project Database using sqlcmd.
+------------------------------------------------
+1. Go to C:\Data\Library_SQL_Project_2017 directory on the command line. 
+
+2. Use the command in Export_Data_using_sqlcmd.txt to export data on command line. Server connection string is provided in this command and trusted connection option is set. Input sql file is provided. Database headers are set to off in this command. Field separator is set to '|', standard messages are redirected to console and trailing spaces are removed.
+
+2. The command in Export_Data_using_sqlcmd.txt uses sqlcmd_query_export.sql file to export data in C:\Data\Library_SQL_Project_2017\Exported_Data folder in character format.
+Update this sql file to update the database to be exported.
+
+3. Each table is exported in a separate text file.
+
+Import Library_SQL_Project Database using sqlcmd.
+------------------------------------------------
+
+1. Go to C:\Data\Library_SQL_Project_2017 directory on the command line after the data has been exported. 
+
+2. Create format files using bcp utility to import data. Format files specify the sequence of fields to be imported, field and row separator, field width, name and type stored in the character format. Refer Import_Data_Help_bcp_cmd.txt for the list of commands to create format files for tables in Library_SQL_Project database.
+
+3. Update this file to add/delete entries in the database which needs to be imported.
+
+4. Now open sqlcmd_query_import.sql in Microsoft SQL Server Management Studio, select the "SQLCMD Mode" from Query tab. Import data in Library_SQL_Project_Imported database by executing sqlcmd_query_import.sql.
+
+5. Update this file as well when the table entries in Library_SQL_Project are updated.
+
+
+
+ 

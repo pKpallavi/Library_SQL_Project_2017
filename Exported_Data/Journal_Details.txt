@@ -1,13 +1,13 @@
-60070|Consumer Price Index||US Bureau of Labor Statistics|2011-07-20|1900-01-01|31|11|Mark|Joyce|4|2017-11-19
-60080|The Education Journey||Society for Education|2013-06-22|1900-01-01|30|6|Deer|Hill|4|2017-11-19
-60241|The Heritage Parks||American Society for Parks |2010-07-23|1900-01-01|22|3|King|Happy|4|2017-11-19
-60618|The Science XYZ||Society for Science|2017-01-01|1900-01-01|78|1|Smith|Jason|5|2017-11-19
-61364|The Natural Science Journal||The Smithsonian Institute|2015-06-10|1900-01-01|24|6|Jam|Jello|6|2017-11-19
-62596|A History of Illinois||Society for Illinois study|2016-10-21|1900-01-01|20|10|Ampersand|Mark|7|2017-11-19
-62801|The Plant Journal||John Wiley & Sons Ltd|2016-09-01|1900-01-01|91|5|Sweetlove|Lee|0|2017-11-19
-62971|The Animals Journal||Society for Zoology|2015-08-22|1900-01-01|40|8|Doe|Jane|6|2017-11-19
-63189|A Knowledge of Nature||Society for Nature|2014-07-20|1900-01-01|20|7|Join|Just|4|2017-11-19
-63210|Development Outreach||World Bank|2012-08-22|1900-01-01|21|8|Vargaria|Roland|4|2017-11-19
-63601|The Automobile Journal||Society for Mechanics|2015-10-10|1900-01-01|33|10|Motors|Tata|6|2017-11-19
-63652|The Rare Gems Catalogue||Unique Jewellers|2013-10-02|1900-01-01|31|10|Joe|Rank|6|2017-11-19
-63821|Automotive Design and Production||AD P|2012-01-30|1900-01-01|14|10|Ford|Mustang|4|2017-11-19
+60070|Consumer Price Index||US Bureau of Labor Statistics|2011-07-20|1900-01-01|31|11|Mark|Joyce|4|2017-12-18
+60080|The Education Journey||Society for Education|2013-06-22|1900-01-01|30|6|Deer|Hill|4|2017-12-18
+60241|The Heritage Parks||American Society for Parks |2010-07-23|1900-01-01|22|3|King|Happy|4|2017-12-18
+60618|The Science XYZ||Society for Science|2017-01-01|1900-01-01|78|1|Smith|Jason|5|2017-12-18
+61364|The Natural Science Journal||The Smithsonian Institute|2015-06-10|1900-01-01|24|6|Jam|Jello|6|2017-12-18
+62596|A History of Illinois||Society for Illinois study|2016-10-21|1900-01-01|20|10|Ampersand|Mark|7|2017-12-18
+62801|The Plant Journal||John Wiley & Sons Ltd|2016-09-01|1900-01-01|91|5|Sweetlove|Lee|0|2017-12-18
+62971|The Animals Journal||Society for Zoology|2015-08-22|1900-01-01|40|8|Doe|Jane|6|2017-12-18
+63189|A Knowledge of Nature||Society for Nature|2014-07-20|1900-01-01|20|7|Join|Just|4|2017-12-18
+63210|Development Outreach||World Bank|2012-08-22|1900-01-01|21|8|Vargaria|Roland|4|2017-12-18
+63601|The Automobile Journal||Society for Mechanics|2015-10-10|1900-01-01|33|10|Motors|Tata|6|2017-12-18
+63652|The Rare Gems Catalogue||Unique Jewellers|2013-10-02|1900-01-01|31|10|Joe|Rank|6|2017-12-18
+63821|Automotive Design and Production||AD P|2012-01-30|1900-01-01|14|10|Ford|Mustang|4|2017-12-18

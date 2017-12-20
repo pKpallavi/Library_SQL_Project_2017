@@ -1,0 +1,9 @@
+12.0
+7
+1       SQLCHAR             0       12      "|"      1     Media_Check_Out_ID                                                         ""
+2       SQLCHAR             0       12      "|"      2     Media_Check_Out_Member_ID                                                  ""
+3       SQLCHAR             0       12      "|"      3     Media_Check_Out_Media_ID                                                   ""
+4       SQLCHAR             0       11      "|"      4     Media_Check_Out_Date                                                       ""
+5       SQLCHAR             0       11      "|"      5     Media_Check_Out_Due_Date                                                   ""
+6       SQLCHAR             0       12      "|"      6     Media_Check_Out_Times_Renewed                                              ""
+7       SQLCHAR             0       3       "\r\n"   7     Media_Check_Out_Member_Dues_Updated                                        SQL_Latin1_General_CP1_CI_AS

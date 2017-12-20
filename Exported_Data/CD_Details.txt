@@ -1,10 +1,10 @@
-26000|Greatest hits, the ballet|Ballet, Music|00:00:00.0000000|1989-10-01|English|||CBS Records|Ballets -- Excerpts Orchestral music|10|2017-11-19
-26001|Road less traveled|Country music|00:00:00.0000000|1994-11-03|English|Lauren|Alaina|Mercury Nashville|Country music|7|2017-11-19
-26002|Attending : medicine, mindfulness, and humanity|Physician-patient relations|00:00:00.0000000|2016-08-17|English|Ronald|Epstein|Simon & Schuster Audio|Drawing on his clinical experiences and current research, and exploring four foundations of mindfuln|10|2017-11-19
-26003|Kids in motion|Children's exercise, Children's songs|00:00:00.0000000|1987-07-06|English|Steve|Millang|Youngheart Music|Activities with games, exercises, and songs for developing physical fitness.|8|2017-11-19
-26004|Music from India|Sitar, Raaga music|00:00:00.0000000|1991-08-05|Hindi|Ram|Chandra|LaserLight|Raga bhairava (21:24) -- Raga Malakosha (19:48).|10|2017-11-19
-26005|When the wind blows|Fiction, Mystery|00:00:00.0000000|1947-10-23|English|James|Patterson|Books on Tape|Frannie O'Neill is a young and talented veterinarian living in Colorado. Plagued by the mysterious m|9|2017-11-19
-26006|World anthems|World Music|00:00:00.0000000|1998-02-03|English|Donald|Fraser|BMG Music|National songs, World music|8|2017-11-19
-26007|Harry Potter and the sorcerer's stone|Juvenile fiction|00:00:00.0000000|1999-10-04|English|J.K.|Rowling|Random House Audio|Rescued from the outrageous neglect of his aunt and uncle, a young boy with a great destiny proves h|8|2017-11-19
-26008|The rescue|Fiction, Firefighters|00:00:00.0000000|2000-08-05|English|Nicholas|Sparks|Time Warner AudioBooks|Fire fighters -- Fiction.|15|2017-11-19
-26009|Classics for relaxation : gentle dawn|Music, Relaxation|00:00:00.0000000|2003-09-12|English|Time-Life|Music|Time Life Music|Classics for relaxation : gentle dawn|8|2017-11-19
+26000|Greatest hits, the ballet|Ballet, Music|00:00:00.0000000|1989-10-01|English|||CBS Records|Ballets -- Excerpts Orchestral music|10|2017-12-18
+26001|Road less traveled|Country music|00:00:00.0000000|1994-11-03|English|Lauren|Alaina|Mercury Nashville|Country music|7|2017-12-18
+26002|Attending : medicine, mindfulness, and humanity|Physician-patient relations|00:00:00.0000000|2016-08-17|English|Ronald|Epstein|Simon & Schuster Audio|Drawing on his clinical experiences and current research, and exploring four foundations of mindfuln|10|2017-12-18
+26003|Kids in motion|Children's exercise, Children's songs|00:00:00.0000000|1987-07-06|English|Steve|Millang|Youngheart Music|Activities with games, exercises, and songs for developing physical fitness.|8|2017-12-18
+26004|Music from India|Sitar, Raaga music|00:00:00.0000000|1991-08-05|Hindi|Ram|Chandra|LaserLight|Raga bhairava (21:24) -- Raga Malakosha (19:48).|10|2017-12-18
+26005|When the wind blows|Fiction, Mystery|00:00:00.0000000|1947-10-23|English|James|Patterson|Books on Tape|Frannie O'Neill is a young and talented veterinarian living in Colorado. Plagued by the mysterious m|9|2017-12-18
+26006|World anthems|World Music|00:00:00.0000000|1998-02-03|English|Donald|Fraser|BMG Music|National songs, World music|8|2017-12-18
+26007|Harry Potter and the sorcerer's stone|Juvenile fiction|00:00:00.0000000|1999-10-04|English|J.K.|Rowling|Random House Audio|Rescued from the outrageous neglect of his aunt and uncle, a young boy with a great destiny proves h|8|2017-12-18
+26008|The rescue|Fiction, Firefighters|00:00:00.0000000|2000-08-05|English|Nicholas|Sparks|Time Warner AudioBooks|Fire fighters -- Fiction.|15|2017-12-18
+26009|Classics for relaxation : gentle dawn|Music, Relaxation|00:00:00.0000000|2003-09-12|English|Time-Life|Music|Time Life Music|Classics for relaxation : gentle dawn|8|2017-12-18

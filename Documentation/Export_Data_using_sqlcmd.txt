@@ -1,0 +1,1 @@
+sqlcmd -S DESKTOP-6NDUR2E\SQLEXPRESS -E -i "C:\Data\Library_SQL_Project_2017\sqlcmd_query_export.sql" -h-1 -s"|" -r1 -W
